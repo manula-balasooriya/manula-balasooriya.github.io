@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Manula Balasooriya</title>
+
   <meta
     name="description"
-    content="Official personal website of Manula Balasooriya — First Class Data Science Graduate (Batch Top), Advanced Level Physics Educator, and researcher."
-  />
+    content="Official personal website of Manula Balasooriya — First Class Data Science Graduate (Batch Top) and Advanced Level Physics Educator."
+  >
 
-  <!-- Social Icons -->
+  <!-- Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  >
 
   <style>
     * {
@@ -28,370 +29,481 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(circle at top, #18243b 0%, #0b1220 40%, #05070d 100%);
-      color: #ffffff;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       min-height: 100vh;
+      color: #ffffff;
+
+      background:
+        radial-gradient(circle at top left, #1f3561 0%, transparent 35%),
+        radial-gradient(circle at top right, #311f52 0%, transparent 30%),
+        linear-gradient(180deg, #0e1421 0%, #070a10 100%);
     }
 
     .container {
-      width: min(92%, 1050px);
+      width: min(92%, 900px);
       margin: auto;
-      padding: 60px 0 50px;
+      padding: 55px 0 40px;
     }
+
+    /* ---------------- HERO ---------------- */
 
     .hero {
       text-align: center;
-      margin-bottom: 50px;
     }
 
     .profile-image {
-      width: 155px;
-      height: 155px;
-      border-radius: 50%;
+      width: 125px;
+      height: 125px;
+
       object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.14);
+      border-radius: 50%;
+
+      border: 3px solid rgba(255,255,255,0.16);
+
       box-shadow:
-        0 0 0 10px rgba(255,255,255,0.03),
-        0 20px 60px rgba(0,0,0,0.45);
-      margin-bottom: 24px;
+        0 0 0 7px rgba(255,255,255,0.03),
+        0 15px 45px rgba(0,0,0,0.35);
+
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(2.4rem, 7vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: -1.8px;
-      margin-bottom: 16px;
+      font-size: clamp(2.3rem, 6vw, 3.7rem);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+
+      margin-bottom: 12px;
     }
 
     .subtitle {
-      max-width: 760px;
-      margin: 0 auto;
-      color: #b7c2d5;
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
+      color: #b8c3d7;
 
-    .section {
-      margin-top: 32px;
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 28px;
-      backdrop-filter: blur(10px);
-    }
-
-    .section h2 {
-      font-size: 1.55rem;
-      margin-bottom: 14px;
-    }
-
-    .section p {
-      color: #c2cada;
-      line-height: 1.85;
       font-size: 1rem;
+      line-height: 1.7;
+
+      max-width: 650px;
+      margin: auto;
     }
+
+    /* ---------------- GENERAL CARD ---------------- */
+
+    .card {
+      margin-top: 35px;
+
+      padding: 26px;
+
+      border-radius: 22px;
+
+      background: rgba(255,255,255,0.045);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.18);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .card h2 {
+      text-align: center;
+
+      font-size: 1.4rem;
+
+      margin-bottom: 20px;
+    }
+
+    /* ---------------- SOCIAL LINKS ---------------- */
 
     .social-grid {
-      margin-top: 28px;
+      max-width: 650px;
+      margin: auto;
+
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+
+      gap: 11px;
     }
 
     .social-link {
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
-      gap: 14px;
+
+      gap: 12px;
+
+      min-height: 52px;
+
+      padding: 12px 15px;
+
       text-decoration: none;
+
       color: #ffffff;
-      padding: 17px 18px;
-      border-radius: 16px;
+
+      border-radius: 13px;
+
       background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+
+      border: 1px solid rgba(255,255,255,0.07);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .social-link:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.10);
-      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+
+      background: rgba(255,255,255,0.11);
+
+      border-color: rgba(255,255,255,0.16);
     }
 
-    .social-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .social-left i {
-      font-size: 1.15rem;
+    .social-link i {
       width: 22px;
+
       text-align: center;
-      color: #9fc2ff;
+
+      font-size: 1.15rem;
     }
 
-    .social-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 0;
+    .social-name {
+      font-size: 0.93rem;
+      font-weight: 650;
     }
 
-    .social-title {
-      font-weight: 700;
-      font-size: 0.98rem;
+    /* Platform icon colors */
+
+    .facebook i {
+      color: #5f9cff;
     }
 
-    .social-subtitle {
-      color: #9aa7bb;
-      font-size: 0.83rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .youtube i {
+      color: #ff5151;
     }
 
-    .arrow {
-      color: #8e99ad;
+    .instagram i {
+      color: #ff75b5;
+    }
+
+    .threads i {
+      color: #ffffff;
+    }
+
+    .tiktok i {
+      color: #70e6e6;
+    }
+
+    .linkedin i {
+      color: #6db8ff;
+    }
+
+    .github i {
+      color: #ffffff;
+    }
+
+    .email i {
+      color: #ffcf70;
+    }
+
+    .whatsapp i {
+      color: #52dc88;
+    }
+
+    .spotify i {
+      color: #58df86;
+    }
+
+    /* ---------------- ABOUT ---------------- */
+
+    .about {
+      max-width: 720px;
+
+      margin: auto;
+
+      color: #c3cada;
+
       font-size: 1rem;
-      flex-shrink: 0;
+
+      line-height: 1.9;
+
+      text-align: center;
     }
 
-    .featured-image {
-      margin-top: 18px;
-      width: 100%;
-      border-radius: 18px;
+    /* ---------------- IMAGE ---------------- */
+
+    .graduation-wrapper {
+      text-align: center;
+    }
+
+    .graduation-image {
       display: block;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+
+      width: 100%;
+      max-width: 650px;
+
+      margin: auto;
+
+      border-radius: 18px;
+
+      border: 1px solid rgba(255,255,255,0.09);
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,0.35);
     }
 
-    .caption {
-      margin-top: 14px;
-      color: #aeb8cb;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
+    /* ---------------- FOOTER ---------------- */
 
     footer {
       text-align: center;
+
       margin-top: 38px;
-      color: #748097;
-      font-size: 0.9rem;
+
+      color: #69758a;
+
+      font-size: 0.86rem;
     }
 
-    @media (max-width: 800px) {
-      .social-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    /* ---------------- MOBILE ---------------- */
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+
       .container {
-        padding-top: 42px;
+        width: 91%;
+        padding-top: 38px;
       }
 
       .profile-image {
-        width: 130px;
-        height: 130px;
+        width: 110px;
+        height: 110px;
       }
 
-      .section {
-        padding: 22px;
+      .social-grid {
+        grid-template-columns: 1fr;
       }
 
-      .social-subtitle {
-        white-space: normal;
+      .social-link {
+        max-width: 420px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .card {
+        padding: 21px 16px;
+      }
+
+      .graduation-image {
+        max-width: 100%;
       }
     }
   </style>
 </head>
+
+
 <body>
 
   <main class="container">
 
+    <!-- PROFILE -->
+
     <section class="hero">
+
       <img
         class="profile-image"
         src="https://github.com/manula-balasooriya.png"
         alt="Manula Balasooriya"
-      />
+      >
 
       <h1>Manula Balasooriya</h1>
 
       <p class="subtitle">
-        First Class Data Science Graduate (Batch Top) | Advanced Level Physics Educator
+        First Class Data Science Graduate (Batch Top)
+        <br>
+        Advanced Level Physics Educator
       </p>
+
     </section>
 
-    <section class="section">
+
+    <!-- SOCIAL LINKS -->
+
+    <section class="card">
+
       <h2>Connect With Me</h2>
 
       <div class="social-grid">
 
-        <a class="social-link" href="https://facebook.com/manula.balasooriya.page" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-facebook"></i>
-            <div class="social-text">
-              <span class="social-title">Facebook Page</span>
-              <span class="social-subtitle">facebook.com/manula.balasooriya.page</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        <a
+          class="social-link facebook"
+          href="https://facebook.com/manula.balasooriya.page"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-facebook"></i>
+          <span class="social-name">Facebook Page</span>
         </a>
 
-        <a class="social-link" href="https://facebook.com/manula.balasooriya.profile" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-facebook-f"></i>
-            <div class="social-text">
-              <span class="social-title">Facebook Profile</span>
-              <span class="social-subtitle">facebook.com/manula.balasooriya.profile</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link facebook"
+          href="https://facebook.com/manula.balasooriya.profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+          <span class="social-name">Facebook Profile</span>
         </a>
 
-        <a class="social-link" href="https://youtube.com/@manula.balasooriya" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-youtube"></i>
-            <div class="social-text">
-              <span class="social-title">YouTube</span>
-              <span class="social-subtitle">youtube.com/@manula.balasooriya</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link youtube"
+          href="https://youtube.com/@manula.balasooriya"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-youtube"></i>
+          <span class="social-name">YouTube</span>
         </a>
 
-        <a class="social-link" href="https://instagram.com/manula.balasooriya" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-instagram"></i>
-            <div class="social-text">
-              <span class="social-title">Instagram</span>
-              <span class="social-subtitle">instagram.com/manula.balasooriya</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link instagram"
+          href="https://instagram.com/manula.balasooriya"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-instagram"></i>
+          <span class="social-name">Instagram</span>
         </a>
 
-        <a class="social-link" href="https://threads.com/@manula.balasooriya" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-threads"></i>
-            <div class="social-text">
-              <span class="social-title">Threads</span>
-              <span class="social-subtitle">threads.com/@manula.balasooriya</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link threads"
+          href="https://threads.com/@manula.balasooriya"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-threads"></i>
+          <span class="social-name">Threads</span>
         </a>
 
-        <a class="social-link" href="https://tiktok.com/@manula.balasooriya" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-tiktok"></i>
-            <div class="social-text">
-              <span class="social-title">TikTok</span>
-              <span class="social-subtitle">tiktok.com/@manula.balasooriya</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link tiktok"
+          href="https://tiktok.com/@manula.balasooriya"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+          <span class="social-name">TikTok</span>
         </a>
 
-        <a class="social-link" href="https://linkedin.com/in/manula-balasooriya" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-linkedin"></i>
-            <div class="social-text">
-              <span class="social-title">LinkedIn</span>
-              <span class="social-subtitle">linkedin.com/in/manula-balasooriya</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link linkedin"
+          href="https://linkedin.com/in/manula-balasooriya"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-linkedin-in"></i>
+          <span class="social-name">LinkedIn</span>
         </a>
 
-        <a class="social-link" href="https://github.com/manula-balasooriya" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-github"></i>
-            <div class="social-text">
-              <span class="social-title">GitHub</span>
-              <span class="social-subtitle">github.com/manula-balasooriya</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link github"
+          href="https://github.com/manula-balasooriya"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-github"></i>
+          <span class="social-name">GitHub</span>
         </a>
 
-        <a class="social-link" href="mailto:manulab.official@gmail.com">
-          <div class="social-left">
-            <i class="fa-solid fa-envelope"></i>
-            <div class="social-text">
-              <span class="social-title">Email</span>
-              <span class="social-subtitle">manulab.official@gmail.com</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link email"
+          href="mailto:manulab.official@gmail.com"
+        >
+          <i class="fa-solid fa-envelope"></i>
+          <span class="social-name">Email</span>
         </a>
 
-        <a class="social-link" href="https://whatsapp.com/channel/0029VbDYV67FCCoUpdNgdy0G" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-whatsapp"></i>
-            <div class="social-text">
-              <span class="social-title">WhatsApp Channel</span>
-              <span class="social-subtitle">whatsapp.com/channel/0029VbDYV67FCCoUpdNgdy0G</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link whatsapp"
+          href="https://wa.me/94715476427"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="social-name">WhatsApp</span>
         </a>
 
-        <!-- Replace 947XXXXXXXX with your real number -->
-        <a class="social-link" href="https://wa.me/947XXXXXXXX" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-whatsapp"></i>
-            <div class="social-text">
-              <span class="social-title">WhatsApp Number</span>
-              <span class="social-subtitle">Replace with your real WhatsApp number</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link whatsapp"
+          href="https://whatsapp.com/channel/0029VbDYV67FCCoUpdNgdy0G"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="social-name">WhatsApp Channel</span>
         </a>
 
-        <!-- Replace with your real Spotify profile/artist URL -->
-        <a class="social-link" href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">
-          <div class="social-left">
-            <i class="fa-brands fa-spotify"></i>
-            <div class="social-text">
-              <span class="social-title">Spotify</span>
-              <span class="social-subtitle">Replace with your Spotify link</span>
-            </div>
-          </div>
-          <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+
+        <a
+          class="social-link spotify"
+          href="https://open.spotify.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-spotify"></i>
+          <span class="social-name">Spotify</span>
         </a>
 
       </div>
+
     </section>
 
-    <section class="section">
+
+    <!-- ABOUT -->
+
+    <section class="card">
+
       <h2>About Me</h2>
-      <p>
+
+      <p class="about">
         I am an Advanced Level Physics Educator with over 6 years of experience,
         passionate about making complex scientific concepts clear and engaging.
         My passion extends to artificial intelligence, computational neuroscience,
-        and brain-inspired computing, with a focus on research that connects these fields.
+        and brain-inspired computing, with a focus on research that connects
+        these fields.
       </p>
+
     </section>
 
-    <section class="section">
-      <h2>Featured Image</h2>
 
-      <!-- Make sure your uploaded file name is exactly graduation.jpg -->
+    <!-- GRADUATION IMAGE -->
+
+    <section class="card graduation-wrapper">
+
       <img
         src="graduation.jpg"
-        alt="Manula Balasooriya graduation achievement"
-        class="featured-image"
-      />
+        alt="Manula Balasooriya Graduation"
+        class="graduation-image"
+      >
 
-      <p class="caption">
-        Graduation and achievement highlight — First Class Data Science Graduate (Batch Top).
-      </p>
     </section>
+
 
     <footer>
       © 2026 Manula Balasooriya
