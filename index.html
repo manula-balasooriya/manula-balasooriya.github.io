@@ -8,16 +8,20 @@
 
   <meta
     name="description"
-    content="Official personal website of Manula Balasooriya — First Class Data Science Graduate (Batch Top) and Advanced Level Physics Educator."
+    content="Personal website of Manula Balasooriya — First Class Data Science Graduate (Batch Top) and Advanced Level Physics Educator."
   >
 
-  <!-- Font Awesome Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
   <style>
+
+    /* =========================
+       GLOBAL
+    ========================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -30,6 +34,7 @@
 
     body {
       font-family:
+        Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -38,450 +43,525 @@
         Arial,
         sans-serif;
 
-      min-height: 100vh;
-      color: #ffffff;
+      color: #20202a;
 
       background:
-        radial-gradient(circle at 10% 5%, rgba(107, 132, 255, 0.20), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(208, 121, 255, 0.15), transparent 28%),
-        radial-gradient(circle at 50% 80%, rgba(72, 219, 190, 0.08), transparent 35%),
-        #070b12;
+        radial-gradient(circle at 10% 5%, #e6e4ff 0, transparent 28%),
+        radial-gradient(circle at 90% 10%, #ffe5ef 0, transparent 27%),
+        radial-gradient(circle at 50% 85%, #e1f7f4 0, transparent 30%),
+        #f8f8fb;
 
-      overflow-x: hidden;
+      min-height: 100vh;
     }
 
-    /* Decorative glow */
-
-    body::before {
-      content: "";
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: rgba(105, 121, 255, 0.09);
-      filter: blur(80px);
-      top: 15%;
-      left: -130px;
-      pointer-events: none;
+    a {
+      color: inherit;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: rgba(201, 105, 255, 0.07);
-      filter: blur(80px);
-      bottom: 5%;
-      right: -120px;
-      pointer-events: none;
-    }
-
-    .container {
-      width: min(91%, 820px);
+    .page {
+      width: min(92%, 980px);
       margin: auto;
-      padding: 52px 0 38px;
-      position: relative;
-      z-index: 1;
+      padding: 42px 0 35px;
     }
 
-    /* ---------------- HERO ---------------- */
+
+    /* =========================
+       HERO
+    ========================== */
 
     .hero {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .profile-wrap {
-      display: inline-block;
-      position: relative;
-      margin-bottom: 21px;
-    }
-
-    .profile-image {
-      width: 118px;
-      height: 118px;
-      object-fit: cover;
-      border-radius: 50%;
-
-      border: 3px solid rgba(255,255,255,0.16);
-
-      box-shadow:
-        0 0 0 7px rgba(255,255,255,0.025),
-        0 18px 45px rgba(0,0,0,0.4);
-    }
-
-    .status-dot {
-      position: absolute;
-
-      width: 19px;
-      height: 19px;
-
-      right: 6px;
-      bottom: 9px;
-
-      background: #5ee3a3;
-
-      border: 4px solid #0b1018;
-
-      border-radius: 50%;
-    }
-
-    .hello {
-      display: inline-block;
-
-      padding: 7px 13px;
-
-      margin-bottom: 13px;
-
-      border-radius: 999px;
-
-      background: rgba(255,255,255,0.06);
-
-      border: 1px solid rgba(255,255,255,0.08);
-
-      color: #bfc9da;
-
-      font-size: 0.83rem;
-      font-weight: 600;
-
-      letter-spacing: 0.2px;
-    }
-
-    h1 {
-      font-size: clamp(2.35rem, 7vw, 3.7rem);
-
-      line-height: 1.05;
-
-      letter-spacing: -1.8px;
-
-      margin-bottom: 14px;
-    }
-
-    .subtitle {
-      max-width: 620px;
-      margin: auto;
-
-      color: #b8c1d1;
-
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    /* ---------------- CARD ---------------- */
-
-    .card {
-      margin-top: 24px;
-
-      padding: 24px;
-
-      border-radius: 23px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.06),
-          rgba(255,255,255,0.028)
-        );
-
-      border: 1px solid rgba(255,255,255,0.08);
-
-      box-shadow:
-        0 16px 45px rgba(0,0,0,0.18);
-
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-
-    .section-title {
-      text-align: center;
-
-      font-size: 1.3rem;
-
-      margin-bottom: 19px;
-
-      letter-spacing: -0.3px;
-    }
-
-    .section-title i {
-      margin-right: 7px;
-
-      color: #aebaff;
-    }
-
-    /* ---------------- SOCIALS ---------------- */
-
-    .social-grid {
-      width: 100%;
-      max-width: 620px;
-
-      margin: auto;
-
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 10px;
-    }
-
-    .social-link {
-      min-height: 49px;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 11px;
-
-      padding: 11px 14px;
-
-      border-radius: 14px;
-
-      color: #ffffff;
-
-      text-decoration: none;
-
-      background: rgba(255,255,255,0.045);
-
-      border: 1px solid rgba(255,255,255,0.065);
-
-      transition:
-        transform 0.22s ease,
-        background 0.22s ease,
-        border-color 0.22s ease,
-        box-shadow 0.22s ease;
-    }
-
-    .social-link:hover {
-      transform: translateY(-3px);
-
-      background: rgba(255,255,255,0.09);
-
-      border-color: rgba(255,255,255,0.15);
-
-      box-shadow:
-        0 9px 25px rgba(0,0,0,0.16);
-    }
-
-    .icon-box {
-      width: 30px;
-      height: 30px;
-
-      border-radius: 9px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: rgba(255,255,255,0.055);
-
-      flex-shrink: 0;
-    }
-
-    .social-link i {
-      font-size: 1rem;
-    }
-
-    .social-name {
-      font-size: 0.91rem;
-      font-weight: 650;
-    }
-
-    .facebook i {
-      color: #78aaff;
-    }
-
-    .youtube i {
-      color: #ff6666;
-    }
-
-    .instagram i {
-      color: #ff87c9;
-    }
-
-    .threads i {
-      color: #ffffff;
-    }
-
-    .tiktok i {
-      color: #76eeee;
-    }
-
-    .linkedin i {
-      color: #77bfff;
-    }
-
-    .github i {
-      color: #ffffff;
-    }
-
-    .email i {
-      color: #ffd47c;
-    }
-
-    .whatsapp i {
-      color: #69e59b;
-    }
-
-    .spotify i {
-      color: #65df91;
-    }
-
-    /* ---------------- ABOUT ---------------- */
-
-    .about {
-      max-width: 660px;
-
-      margin: auto;
-
-      text-align: center;
-
-      color: #c3cada;
-
-      line-height: 1.9;
-
-      font-size: 0.98rem;
-    }
-
-    /* ---------------- GALLERY ---------------- */
-
-    .gallery {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 11px;
-
-      max-width: 690px;
-
-      margin: auto;
-    }
-
-    .gallery-item {
       position: relative;
 
       overflow: hidden;
 
-      border-radius: 17px;
+      padding: 52px 32px 42px;
 
-      background: rgba(255,255,255,0.04);
+      text-align: center;
 
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.78);
+
+      border: 1px solid rgba(255,255,255,0.9);
+
+      border-radius: 32px;
 
       box-shadow:
-        0 12px 30px rgba(0,0,0,0.22);
+        0 20px 60px rgba(41, 39, 70, 0.08);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
-    .gallery-item img {
-      width: 100%;
+    .hero::before {
+      content: "";
 
+      position: absolute;
+
+      width: 220px;
       height: 220px;
+
+      top: -100px;
+      left: -80px;
+
+      border-radius: 50%;
+
+      background: linear-gradient(
+        135deg,
+        rgba(133, 118, 255, 0.20),
+        rgba(190, 162, 255, 0.05)
+      );
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 200px;
+      height: 200px;
+
+      right: -80px;
+      bottom: -100px;
+
+      border-radius: 50%;
+
+      background: linear-gradient(
+        135deg,
+        rgba(255, 150, 190, 0.16),
+        rgba(255, 205, 222, 0.05)
+      );
+
+      pointer-events: none;
+    }
+
+    .profile-image {
+      position: relative;
+      z-index: 2;
+
+      width: 118px;
+      height: 118px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      padding: 4px;
+
+      background: white;
+
+      border: 1px solid #ececf3;
+
+      box-shadow:
+        0 13px 35px rgba(54, 50, 95, 0.15);
+    }
+
+    .hello {
+      margin-top: 18px;
+
+      font-size: 0.83rem;
+
+      color: #746ca9;
+
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 8px;
+
+      font-size: clamp(2.35rem, 7vw, 4.3rem);
+
+      line-height: 1;
+
+      letter-spacing: -2.5px;
+
+      color: #1d1c27;
+    }
+
+    .headline {
+      margin: 17px auto 0;
+
+      max-width: 650px;
+
+      color: #656474;
+
+      font-size: 1.03rem;
+
+      line-height: 1.75;
+    }
+
+
+    /* =========================
+       SOCIAL PILLS
+    ========================== */
+
+    .socials {
+      position: relative;
+      z-index: 2;
+
+      max-width: 760px;
+
+      margin: 27px auto 0;
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .social {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 10px 14px;
+
+      background: white;
+
+      border: 1px solid #e9e8ef;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: 0.86rem;
+
+      font-weight: 650;
+
+      box-shadow:
+        0 5px 14px rgba(25, 23, 48, 0.045);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .social:hover {
+      transform: translateY(-3px);
+
+      border-color: #d8d5eb;
+
+      box-shadow:
+        0 10px 24px rgba(38, 34, 75, 0.10);
+    }
+
+    .social i {
+      width: 17px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .facebook i {
+      color: #1877f2;
+    }
+
+    .youtube i {
+      color: #ff0033;
+    }
+
+    .instagram i {
+      color: #d83f87;
+    }
+
+    .threads i {
+      color: #111111;
+    }
+
+    .tiktok i {
+      color: #111111;
+    }
+
+    .linkedin i {
+      color: #0a66c2;
+    }
+
+    .github i {
+      color: #171515;
+    }
+
+    .email i {
+      color: #775ee9;
+    }
+
+    .whatsapp i {
+      color: #20b95a;
+    }
+
+    .spotify i {
+      color: #1db954;
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================== */
+
+    .section {
+      margin-top: 22px;
+
+      padding: 32px;
+
+      background: rgba(255,255,255,0.78);
+
+      border: 1px solid rgba(255,255,255,0.9);
+
+      border-radius: 28px;
+
+      box-shadow:
+        0 15px 45px rgba(41,39,70,0.065);
+
+      backdrop-filter: blur(16px);
+    }
+
+    .section-label {
+      color: #8b82b5;
+
+      font-size: 0.77rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.11em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      font-size: 1.7rem;
+
+      letter-spacing: -0.7px;
+
+      margin-bottom: 17px;
+    }
+
+    .about-text {
+      max-width: 750px;
+
+      color: #60606e;
+
+      font-size: 1rem;
+
+      line-height: 1.9;
+    }
+
+
+    /* =========================
+       MINI INFO CARDS
+    ========================== */
+
+    .mini-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+    .mini-card {
+      padding: 18px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(243, 242, 255, 0.95),
+          rgba(255,255,255,0.95)
+        );
+
+      border: 1px solid #ebe9f5;
+
+      text-align: center;
+    }
+
+    .mini-card strong {
+      display: block;
+
+      font-size: 1.08rem;
+
+      color: #29263a;
+
+      margin-bottom: 4px;
+    }
+
+    .mini-card span {
+      color: #82808e;
+
+      font-size: 0.82rem;
+    }
+
+
+    /* =========================
+       PHOTO GALLERY
+    ========================== */
+
+    .gallery {
+      display: grid;
+
+      grid-template-columns: 1.2fr 0.8fr;
+
+      grid-template-rows: 215px 215px;
+
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+    .photo {
+      overflow: hidden;
+
+      border-radius: 20px;
+
+      position: relative;
+
+      background: #eeeef3;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
 
       object-fit: cover;
 
       display: block;
 
       transition:
-        transform 0.45s ease,
-        filter 0.45s ease;
+        transform 0.45s ease;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.045);
-      filter: brightness(1.05);
+    .photo:hover img {
+      transform: scale(1.035);
     }
 
-    /* first image slightly bigger visually */
-
-    .gallery-item:first-child {
-      grid-column: span 2;
+    .photo.large {
+      grid-row: span 2;
     }
 
-    .gallery-item:first-child img {
-      height: 320px;
+    .small-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 12px;
     }
 
-    /* ---------------- FOOTER ---------------- */
+    .small-grid .photo {
+      height: 180px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      margin-top: 30px;
-
-      padding-bottom: 5px;
-
       text-align: center;
 
-      color: #6d788b;
+      padding-top: 30px;
+
+      color: #9996a5;
 
       font-size: 0.82rem;
     }
 
-    .heart {
-      color: #d494ff;
-    }
 
-    /* ---------------- MOBILE ---------------- */
+    /* =========================
+       MOBILE
+    ========================== */
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
 
-      .container {
-        width: 92%;
-        padding-top: 36px;
+      .page {
+        width: 93%;
+        padding-top: 22px;
+      }
+
+      .hero {
+        padding:
+          38px 18px
+          31px;
       }
 
       .profile-image {
-        width: 105px;
-        height: 105px;
+        width: 102px;
+        height: 102px;
       }
 
-      .card {
-        padding: 19px 15px;
-        border-radius: 20px;
+      h1 {
+        letter-spacing: -1.7px;
       }
 
-      .social-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+      .headline {
+        font-size: 0.94rem;
       }
 
-      .social-link {
-        padding: 10px;
+      .socials {
+        gap: 7px;
       }
 
-      .social-name {
-        font-size: 0.82rem;
+      .social {
+        font-size: 0.80rem;
+        padding: 9px 12px;
       }
 
-      .icon-box {
-        width: 28px;
-        height: 28px;
+      .section {
+        padding: 23px 19px;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
       }
 
       .gallery {
+        display: grid;
+
         grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+
+        gap: 10px;
       }
 
-      .gallery-item:first-child {
-        grid-column: auto;
+      .photo,
+      .photo.large {
+        height: auto;
+
+        grid-row: auto;
       }
 
-      .gallery-item img,
-      .gallery-item:first-child img {
+      .photo img {
         height: auto;
         aspect-ratio: 16 / 10;
       }
-    }
 
-    @media (max-width: 410px) {
-
-      .social-grid {
-        grid-template-columns: 1fr;
+      .small-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
       }
 
-      .social-link {
-        max-width: 330px;
-        width: 100%;
-        margin: auto;
+      .small-grid .photo {
+        height: auto;
       }
+
+      .small-grid .photo img {
+        aspect-ratio: 1 / 1;
+      }
+
     }
 
   </style>
@@ -490,217 +570,168 @@
 
 <body>
 
-  <main class="container">
+  <main class="page">
 
-    <!-- HERO -->
+
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
-      <div class="profile-wrap">
+      <img
+        src="https://github.com/manula-balasooriya.png"
+        alt="Manula Balasooriya"
+        class="profile-image"
+      >
 
-        <img
-          class="profile-image"
-          src="https://github.com/manula-balasooriya.png"
-          alt="Manula Balasooriya"
-        >
-
-        <span class="status-dot"></span>
-
+      <div class="hello">
+        Hello, I'm
       </div>
 
-      <br>
+      <h1>
+        Manula Balasooriya
+      </h1>
 
-      <span class="hello">
-        ✨ Hello, I'm
-      </span>
-
-      <h1>Manula Balasooriya</h1>
-
-      <p class="subtitle">
+      <p class="headline">
         First Class Data Science Graduate (Batch Top)
-        <br>
+        &nbsp;•&nbsp;
         Advanced Level Physics Educator
       </p>
 
-    </section>
 
+      <!-- SOCIAL MEDIA -->
 
-
-    <!-- SOCIAL LINKS -->
-
-    <section class="card">
-
-      <h2 class="section-title">
-        <i class="fa-solid fa-link"></i>
-        Connect With Me
-      </h2>
-
-      <div class="social-grid">
+      <div class="socials">
 
 
         <a
-          class="social-link facebook"
+          class="social facebook"
           href="https://facebook.com/manula.balasooriya.page"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-facebook-f"></i>
-          </span>
-
-          <span class="social-name">Facebook Page</span>
+          <i class="fa-brands fa-facebook-f"></i>
+          Page
         </a>
 
 
         <a
-          class="social-link facebook"
+          class="social facebook"
           href="https://facebook.com/manula.balasooriya.profile"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-facebook-f"></i>
-          </span>
-
-          <span class="social-name">Facebook Profile</span>
+          <i class="fa-brands fa-facebook-f"></i>
+          Facebook
         </a>
 
 
         <a
-          class="social-link youtube"
-          href="https://youtube.com/@manula.balasooriya"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="icon-box">
-            <i class="fa-brands fa-youtube"></i>
-          </span>
-
-          <span class="social-name">YouTube</span>
-        </a>
-
-
-        <a
-          class="social-link instagram"
+          class="social instagram"
           href="https://instagram.com/manula.balasooriya"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-instagram"></i>
-          </span>
-
-          <span class="social-name">Instagram</span>
+          <i class="fa-brands fa-instagram"></i>
+          Instagram
         </a>
 
 
         <a
-          class="social-link threads"
+          class="social youtube"
+          href="https://youtube.com/@manula.balasooriya"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-youtube"></i>
+          YouTube
+        </a>
+
+
+        <a
+          class="social threads"
           href="https://threads.com/@manula.balasooriya"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-threads"></i>
-          </span>
-
-          <span class="social-name">Threads</span>
+          <i class="fa-brands fa-threads"></i>
+          Threads
         </a>
 
 
         <a
-          class="social-link tiktok"
+          class="social tiktok"
           href="https://tiktok.com/@manula.balasooriya"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-tiktok"></i>
-          </span>
-
-          <span class="social-name">TikTok</span>
+          <i class="fa-brands fa-tiktok"></i>
+          TikTok
         </a>
 
 
         <a
-          class="social-link linkedin"
+          class="social linkedin"
           href="https://linkedin.com/in/manula-balasooriya"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </span>
-
-          <span class="social-name">LinkedIn</span>
+          <i class="fa-brands fa-linkedin-in"></i>
+          LinkedIn
         </a>
 
 
         <a
-          class="social-link github"
+          class="social github"
           href="https://github.com/manula-balasooriya"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-github"></i>
-          </span>
-
-          <span class="social-name">GitHub</span>
+          <i class="fa-brands fa-github"></i>
+          GitHub
         </a>
 
 
         <a
-          class="social-link email"
-          href="mailto:manulab.official@gmail.com"
-        >
-          <span class="icon-box">
-            <i class="fa-solid fa-envelope"></i>
-          </span>
-
-          <span class="social-name">Email</span>
-        </a>
-
-
-        <a
-          class="social-link whatsapp"
+          class="social whatsapp"
           href="https://wa.me/94715476427"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-whatsapp"></i>
-          </span>
-
-          <span class="social-name">WhatsApp</span>
+          <i class="fa-brands fa-whatsapp"></i>
+          WhatsApp
         </a>
 
 
         <a
-          class="social-link whatsapp"
+          class="social whatsapp"
           href="https://whatsapp.com/channel/0029VbDYV67FCCoUpdNgdy0G"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-whatsapp"></i>
-          </span>
-
-          <span class="social-name">WhatsApp Channel</span>
+          <i class="fa-brands fa-whatsapp"></i>
+          Channel
         </a>
 
 
         <a
-          class="social-link spotify"
+          class="social email"
+          href="mailto:manulab.official@gmail.com"
+        >
+          <i class="fa-solid fa-envelope"></i>
+          Email
+        </a>
+
+
+        <a
+          class="social spotify"
           href="https://open.spotify.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="icon-box">
-            <i class="fa-brands fa-spotify"></i>
-          </span>
-
-          <span class="social-name">Spotify</span>
+          <i class="fa-brands fa-spotify"></i>
+          Spotify
         </a>
 
 
@@ -710,44 +741,72 @@
 
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
-    <section class="card">
+    <section class="section">
 
-      <h2 class="section-title">
-        <i class="fa-regular fa-user"></i>
-        About Me
+      <div class="section-label">
+        About
+      </div>
+
+      <h2>
+        A little about me
       </h2>
 
-      <p class="about">
-
-        I am an Advanced Level Physics Educator with over 6 years of experience,
-        passionate about making complex scientific concepts clear and engaging.
-
+      <p class="about-text">
+        I am an Advanced Level Physics Educator with over 6 years of
+        experience, passionate about making complex scientific concepts
+        clear and engaging.
         <br><br>
-
-        My passion extends to artificial intelligence, computational neuroscience,
-        and brain-inspired computing, with a focus on research that connects
-        these fields.
-
+        My passion extends to artificial intelligence, computational
+        neuroscience, and brain-inspired computing, with a focus on
+        research that connects these fields.
       </p>
+
+
+      <div class="mini-grid">
+
+        <div class="mini-card">
+          <strong>6+ Years</strong>
+          <span>Physics Education</span>
+        </div>
+
+        <div class="mini-card">
+          <strong>First Class</strong>
+          <span>Data Science</span>
+        </div>
+
+        <div class="mini-card">
+          <strong>Batch Top</strong>
+          <span>Academic Achievement</span>
+        </div>
+
+      </div>
 
     </section>
 
 
 
-    <!-- PHOTO GALLERY -->
+    <!-- =========================
+         PHOTOS
+    ========================== -->
 
-    <section class="card">
+    <section class="section">
 
-      <h2 class="section-title">
-        <i class="fa-regular fa-images"></i>
+      <div class="section-label">
+        Gallery
+      </div>
+
+      <h2>
         Moments
       </h2>
 
+
       <div class="gallery">
 
-        <div class="gallery-item">
+        <div class="photo large">
           <img
             src="img1.jpg"
             alt="Manula Balasooriya"
@@ -756,16 +815,16 @@
         </div>
 
 
-        <div class="gallery-item">
+        <div class="photo">
           <img
             src="img2.jpg"
-            alt="Manula Balasooriya Graduation"
+            alt="Manula Balasooriya graduation"
             loading="lazy"
           >
         </div>
 
 
-        <div class="gallery-item">
+        <div class="photo">
           <img
             src="img3.jpg"
             alt="Manula Balasooriya"
@@ -773,8 +832,12 @@
           >
         </div>
 
+      </div>
 
-        <div class="gallery-item">
+
+      <div class="small-grid">
+
+        <div class="photo">
           <img
             src="img4.jpg"
             alt="Manula Balasooriya"
@@ -789,11 +852,9 @@
 
 
     <footer>
-
       © 2026 Manula Balasooriya
-      <span class="heart">♥</span>
-
     </footer>
+
 
   </main>
 
