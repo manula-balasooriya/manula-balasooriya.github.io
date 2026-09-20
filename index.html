@@ -87,7 +87,6 @@
 
     /* ==================================================
        TOP NAV
-       UNCHANGED
     ================================================== */
 
     .topbar {
@@ -183,7 +182,6 @@
 
     /* ==================================================
        HERO
-       UNCHANGED
     ================================================== */
 
     .hero-section {
@@ -293,7 +291,6 @@
 
     /* ==================================================
        SOCIAL LINKS
-       UNCHANGED
     ================================================== */
 
     .socials {
@@ -399,7 +396,6 @@
 
     /* ==================================================
        HERO PROFILE
-       UNCHANGED
     ================================================== */
 
     .profile-panel {
@@ -478,7 +474,7 @@
 
 
     /* ==================================================
-       NEW ABOUT DESIGN
+       ABOUT
     ================================================== */
 
     .about-wrapper {
@@ -503,8 +499,6 @@
         rgba(29, 40, 58, 0.055);
     }
 
-
-    /* LEFT ABOUT PANEL */
 
     .about-intro {
       position: relative;
@@ -610,8 +604,6 @@
       background: var(--blue);
     }
 
-
-    /* RIGHT SIDE */
 
     .about-content {
       padding:
@@ -773,28 +765,33 @@
 
 
     /* ==================================================
-       ADAPTIVE IMAGE SLIDER
-       NO CROPPING
-       NO EMPTY SPACE
+       GALLERY SLIDER
     ================================================== */
 
     .slider-shell {
-      width: min(100%, 760px);
+      width: 100%;
 
-      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
 
     .slider {
       position: relative;
 
-      width: 100%;
+      display: inline-block;
+
+      width: auto;
+
+      max-width: 760px;
+      max-height: 540px;
 
       overflow: hidden;
 
       border-radius: 22px;
 
-      background: transparent;
+      background: #edf0f4;
 
       box-shadow:
         0 20px 50px
@@ -803,21 +800,26 @@
 
 
     /*
-      Important:
+      Images keep their natural aspect ratio.
 
-      There is no fixed height and
-      no fixed aspect ratio.
+      Maximum:
+      width  = 760px
+      height = 540px
 
-      Each image keeps its original
-      proportions and controls the
-      gallery height.
+      No cropping.
+      No stretching.
     */
 
     .gallery-image {
-      width: 100%;
+      display: block;
+
+      width: auto;
       height: auto;
 
-      display: block;
+      max-width: 760px;
+      max-height: 540px;
+
+      object-fit: contain;
 
       border-radius: 22px;
 
@@ -863,7 +865,7 @@
       color: white;
 
       background:
-        rgba(13, 23, 38, 0.82);
+        rgba(13, 23, 38, 0.84);
 
       box-shadow:
         0 7px 20px
@@ -938,7 +940,7 @@
 
 
     /* ==================================================
-       DARK FOOTER
+       FOOTER
     ================================================== */
 
     .footer {
@@ -947,7 +949,7 @@
       overflow: hidden;
 
       padding:
-        38px 0;
+        35px 0;
 
       background: var(--navy);
 
@@ -960,11 +962,11 @@
 
       position: absolute;
 
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
 
-      right: -140px;
-      top: -150px;
+      right: -150px;
+      top: -170px;
 
       border-radius: 50%;
 
@@ -979,53 +981,90 @@
 
     .footer-inner {
       position: relative;
+
       z-index: 2;
 
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 25px;
-    }
-
-
-    .footer-brand {
-      display: flex;
-
-      align-items: center;
-
-      gap: 11px;
-
-      font-size: 0.9rem;
-
-      font-weight: 700;
-    }
-
-
-    .footer-mark {
-      width: 35px;
-      height: 35px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 9px;
-
-      background: #3977f6;
-
-      font-size: 0.74rem;
-
-      font-weight: 800;
+      text-align: center;
     }
 
 
     .footer-copy {
-      color: #8f9bad;
+      color: #94a0b1;
 
-      font-size: 0.8rem;
+      font-size: 0.81rem;
+
+      letter-spacing: 0.02em;
+    }
+
+
+    /* ==================================================
+       BACK TO TOP BUTTON
+    ================================================== */
+
+    .back-to-top {
+      position: fixed;
+
+      right: 24px;
+      bottom: 24px;
+
+      z-index: 200;
+
+      width: 46px;
+      height: 46px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 0;
+
+      border-radius: 14px;
+
+      background: var(--navy);
+
+      color: white;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 12px 30px
+        rgba(13, 23, 38, 0.25);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transform:
+        translateY(12px);
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease,
+        background 0.2s ease;
+    }
+
+
+    .back-to-top.show {
+      opacity: 1;
+
+      visibility: visible;
+
+      transform:
+        translateY(0);
+    }
+
+
+    .back-to-top:hover {
+      background: var(--blue);
+
+      transform:
+        translateY(-3px);
+    }
+
+
+    .back-to-top i {
+      font-size: 0.95rem;
     }
 
 
@@ -1105,6 +1144,18 @@
         flex-direction: column;
 
         gap: 12px;
+      }
+
+
+      .slider {
+        max-width: 100%;
+      }
+
+
+      .gallery-image {
+        max-width: 100%;
+
+        max-height: 540px;
       }
 
     }
@@ -1208,11 +1259,17 @@
 
 
       .slider {
+        max-width: 100%;
+
         border-radius: 17px;
       }
 
 
       .gallery-image {
+        max-width: 100%;
+
+        max-height: 70vh;
+
         border-radius: 17px;
       }
 
@@ -1233,10 +1290,20 @@
       }
 
 
-      .footer-inner {
-        flex-direction: column;
+      .footer {
+        padding:
+          31px 0;
+      }
 
-        text-align: center;
+
+      .back-to-top {
+        right: 16px;
+        bottom: 16px;
+
+        width: 43px;
+        height: 43px;
+
+        border-radius: 12px;
       }
 
     }
@@ -1251,7 +1318,6 @@
 
   <!-- ==================================================
        NAVIGATION
-       UNCHANGED
   ================================================== -->
 
   <header class="topbar">
@@ -1296,7 +1362,6 @@
 
   <!-- ==================================================
        HERO
-       UNCHANGED
   ================================================== -->
 
   <section
@@ -1330,8 +1395,6 @@
         </p>
 
 
-
-        <!-- SOCIAL MEDIA -->
 
         <div class="socials">
 
@@ -1472,8 +1535,6 @@
 
 
 
-      <!-- PROFILE IMAGE -->
-
       <div class="profile-panel">
 
         <div class="profile-frame">
@@ -1505,7 +1566,7 @@
 
 
       <!-- ==================================================
-           NEW ABOUT ME PANEL
+           ABOUT
       ================================================== -->
 
       <section
@@ -1516,8 +1577,6 @@
 
         <div class="about-wrapper">
 
-
-          <!-- LEFT -->
 
           <div class="about-intro">
 
@@ -1541,8 +1600,6 @@
           </div>
 
 
-
-          <!-- RIGHT -->
 
           <div class="about-content">
 
@@ -1720,14 +1777,6 @@
           <div class="slider">
 
 
-            <!--
-              One image element only.
-
-              JavaScript changes the image source,
-              allowing every photo to keep its own
-              original aspect ratio.
-            -->
-
             <img
               id="galleryImage"
               class="gallery-image"
@@ -1761,8 +1810,6 @@
           </div>
 
 
-
-          <!-- DOTS -->
 
           <div class="slider-dots">
 
@@ -1805,7 +1852,7 @@
 
 
   <!-- ==================================================
-       DARK FOOTER
+       FOOTER
   ================================================== -->
 
   <footer
@@ -1815,25 +1862,12 @@
 
     <div class="container footer-inner">
 
-
-      <div class="footer-brand">
-
-        <div class="footer-mark">
-          MB
-        </div>
-
-        Manula Balasooriya
-
-      </div>
-
-
       <div class="footer-copy">
 
         © 2026 Manula Balasooriya.
         All rights reserved.
 
       </div>
-
 
     </div>
 
@@ -1842,10 +1876,31 @@
 
 
   <!-- ==================================================
-       ADAPTIVE GALLERY JAVASCRIPT
+       BACK TO TOP
+  ================================================== -->
+
+  <button
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top"
+    title="Back to top"
+  >
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+  </button>
+
+
+
+  <!-- ==================================================
+       JAVASCRIPT
   ================================================== -->
 
   <script>
+
+    /* =========================================
+       GALLERY
+    ========================================== */
 
     const images = [
       "img1.jpg",
@@ -1877,11 +1932,7 @@
 
 
 
-    /*
-      Preload all images so changing
-      between differently sized photos
-      feels smoother.
-    */
+    /* Preload gallery images */
 
     images.forEach(function(src) {
 
@@ -1918,7 +1969,9 @@
         % images.length;
 
 
-      galleryImage.classList.add("fade");
+      galleryImage
+        .classList
+        .add("fade");
 
 
       setTimeout(
@@ -2045,8 +2098,52 @@
     );
 
 
-
     startAutoSlide();
+
+
+
+    /* =========================================
+       BACK TO TOP
+    ========================================== */
+
+    const backToTopButton =
+      document.getElementById("backToTop");
+
+
+    window.addEventListener(
+      "scroll",
+      function() {
+
+        if (window.scrollY > 400) {
+
+          backToTopButton
+            .classList
+            .add("show");
+
+        } else {
+
+          backToTopButton
+            .classList
+            .remove("show");
+
+        }
+
+      }
+    );
+
+
+
+    backToTopButton.addEventListener(
+      "click",
+      function() {
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
 
   </script>
 
