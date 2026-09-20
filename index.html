@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Personal website of Manula Balasooriya — First Class Data Science Graduate (Batch Top) and Advanced Level Physics Educator."
+    content="Personal website of Manula Balasooriya — Advanced Level Physics Educator, Musician, First Class Data Science Graduate (Batch Top), and researcher."
   >
 
   <link
@@ -17,10 +17,6 @@
   >
 
   <style>
-
-    /* =========================
-       GLOBAL
-    ========================== */
 
     * {
       margin: 0;
@@ -71,7 +67,6 @@
 
     .hero {
       position: relative;
-
       overflow: hidden;
 
       padding: 52px 32px 42px;
@@ -104,11 +99,12 @@
 
       border-radius: 50%;
 
-      background: linear-gradient(
-        135deg,
-        rgba(133, 118, 255, 0.20),
-        rgba(190, 162, 255, 0.05)
-      );
+      background:
+        linear-gradient(
+          135deg,
+          rgba(133, 118, 255, 0.20),
+          rgba(190, 162, 255, 0.05)
+        );
 
       pointer-events: none;
     }
@@ -126,11 +122,12 @@
 
       border-radius: 50%;
 
-      background: linear-gradient(
-        135deg,
-        rgba(255, 150, 190, 0.16),
-        rgba(255, 205, 222, 0.05)
-      );
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 150, 190, 0.16),
+          rgba(255, 205, 222, 0.05)
+        );
 
       pointer-events: none;
     }
@@ -182,16 +179,123 @@
       color: #1d1c27;
     }
 
-    .headline {
-      margin: 17px auto 0;
 
-      max-width: 650px;
+    /* =========================
+       MAIN ROLES
+    ========================== */
 
-      color: #656474;
+    .roles {
+      display: flex;
 
-      font-size: 1.03rem;
+      justify-content: center;
 
-      line-height: 1.75;
+      flex-wrap: wrap;
+
+      gap: 9px;
+
+      margin-top: 22px;
+    }
+
+    .role-badge {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 10px 15px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #efeaff,
+          #f7efff
+        );
+
+      color: #5f4b9e;
+
+      border: 1px solid #e0d7f6;
+
+      font-size: 0.9rem;
+
+      font-weight: 750;
+
+      box-shadow:
+        0 5px 15px rgba(80, 61, 130, 0.07);
+    }
+
+    .role-badge i {
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================
+       ACADEMIC TITLE
+    ========================== */
+
+    .academic-title {
+      margin-top: 15px;
+
+      color: #5f5d6c;
+
+      font-size: 0.98rem;
+
+      font-weight: 650;
+
+      line-height: 1.7;
+    }
+
+    .academic-title i {
+      color: #b38a34;
+
+      margin-right: 5px;
+    }
+
+
+    /* =========================
+       HOBBIES
+    ========================== */
+
+    .hobbies {
+      margin-top: 15px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+    .hobby {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      padding: 7px 11px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,0.75);
+
+      border: 1px solid #e9e7ef;
+
+      color: #777482;
+
+      font-size: 0.79rem;
+
+      font-weight: 600;
+    }
+
+    .hobby i {
+      color: #9185bd;
     }
 
 
@@ -205,7 +309,7 @@
 
       max-width: 760px;
 
-      margin: 27px auto 0;
+      margin: 28px auto 0;
 
       display: flex;
 
@@ -303,7 +407,7 @@
 
 
     /* =========================
-       CONTENT
+       CONTENT SECTIONS
     ========================== */
 
     .section {
@@ -346,7 +450,7 @@
     }
 
     .about-text {
-      max-width: 750px;
+      max-width: 760px;
 
       color: #60606e;
 
@@ -355,9 +459,13 @@
       line-height: 1.9;
     }
 
+    .about-text p + p {
+      margin-top: 16px;
+    }
+
 
     /* =========================
-       MINI INFO CARDS
+       MINI CARDS
     ========================== */
 
     .mini-grid {
@@ -390,7 +498,7 @@
     .mini-card strong {
       display: block;
 
-      font-size: 1.08rem;
+      font-size: 1.05rem;
 
       color: #29263a;
 
@@ -405,7 +513,7 @@
 
 
     /* =========================
-       PHOTO GALLERY
+       GALLERY
     ========================== */
 
     .gallery {
@@ -438,8 +546,7 @@
 
       display: block;
 
-      transition:
-        transform 0.45s ease;
+      transition: transform 0.45s ease;
     }
 
     .photo:hover img {
@@ -492,9 +599,7 @@
       }
 
       .hero {
-        padding:
-          38px 18px
-          31px;
+        padding: 38px 17px 31px;
       }
 
       .profile-image {
@@ -506,8 +611,13 @@
         letter-spacing: -1.7px;
       }
 
-      .headline {
-        font-size: 0.94rem;
+      .role-badge {
+        font-size: 0.80rem;
+        padding: 9px 12px;
+      }
+
+      .academic-title {
+        font-size: 0.90rem;
       }
 
       .socials {
@@ -528,19 +638,14 @@
       }
 
       .gallery {
-        display: grid;
-
         grid-template-columns: 1fr;
-
         grid-template-rows: auto;
-
         gap: 10px;
       }
 
       .photo,
       .photo.large {
         height: auto;
-
         grid-row: auto;
       }
 
@@ -550,7 +655,7 @@
       }
 
       .small-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 10px;
       }
 
@@ -559,9 +664,8 @@
       }
 
       .small-grid .photo img {
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 16 / 10;
       }
-
     }
 
   </style>
@@ -573,9 +677,7 @@
   <main class="page">
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -593,14 +695,59 @@
         Manula Balasooriya
       </h1>
 
-      <p class="headline">
+
+      <!-- MAIN PROFESSIONAL IDENTITIES -->
+
+      <div class="roles">
+
+        <span class="role-badge">
+          <i class="fa-solid fa-atom"></i>
+          Advanced Level Physics Educator
+        </span>
+
+        <span class="role-badge">
+          <i class="fa-solid fa-music"></i>
+          Musician
+        </span>
+
+      </div>
+
+
+      <!-- ACADEMIC ACHIEVEMENT -->
+
+      <div class="academic-title">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
         First Class Data Science Graduate (Batch Top)
-        &nbsp;•&nbsp;
-        Advanced Level Physics Educator
-      </p>
+
+      </div>
 
 
-      <!-- SOCIAL MEDIA -->
+      <!-- INTERESTS / HOBBIES -->
+
+      <div class="hobbies">
+
+        <span class="hobby">
+          <i class="fa-solid fa-video"></i>
+          Travel Vlogging
+        </span>
+
+        <span class="hobby">
+          <i class="fa-solid fa-hand-fist"></i>
+          MMA
+        </span>
+
+        <span class="hobby">
+          <i class="fa-solid fa-microscope"></i>
+          Research
+        </span>
+
+      </div>
+
+
+
+      <!-- SOCIAL LINKS -->
 
       <div class="socials">
 
@@ -741,9 +888,7 @@
 
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+    <!-- ABOUT -->
 
     <section class="section">
 
@@ -755,15 +900,26 @@
         A little about me
       </h2>
 
-      <p class="about-text">
-        I am an Advanced Level Physics Educator with over 6 years of
-        experience, passionate about making complex scientific concepts
-        clear and engaging.
-        <br><br>
-        My passion extends to artificial intelligence, computational
-        neuroscience, and brain-inspired computing, with a focus on
-        research that connects these fields.
-      </p>
+      <div class="about-text">
+
+        <p>
+          I am an Advanced Level Physics Educator with over 6 years of
+          experience, passionate about making complex scientific concepts
+          clear and engaging.
+        </p>
+
+        <p>
+          I am passionate about audio engineering and music production and
+          hold a Diploma in Audio Engineering and Music Production.
+        </p>
+
+        <p>
+          My interests also extend to artificial intelligence,
+          computational neuroscience, and brain-inspired computing,
+          with a focus on research that connects these fields.
+        </p>
+
+      </div>
 
 
       <div class="mini-grid">
@@ -775,12 +931,12 @@
 
         <div class="mini-card">
           <strong>First Class</strong>
-          <span>Data Science</span>
+          <span>Data Science • Batch Top</span>
         </div>
 
         <div class="mini-card">
-          <strong>Batch Top</strong>
-          <span>Academic Achievement</span>
+          <strong>Diploma</strong>
+          <span>Audio Engineering & Music Production</span>
         </div>
 
       </div>
@@ -789,9 +945,7 @@
 
 
 
-    <!-- =========================
-         PHOTOS
-    ========================== -->
+    <!-- GALLERY -->
 
     <section class="section">
 
@@ -818,7 +972,7 @@
         <div class="photo">
           <img
             src="img2.jpg"
-            alt="Manula Balasooriya graduation"
+            alt="Manula Balasooriya"
             loading="lazy"
           >
         </div>
@@ -850,11 +1004,9 @@
     </section>
 
 
-
     <footer>
       © 2026 Manula Balasooriya
     </footer>
-
 
   </main>
 
