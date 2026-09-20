@@ -11,7 +11,7 @@
     content="Official personal website of Manula Balasooriya — First Class Data Science Graduate (Batch Top) and Advanced Level Physics Educator."
   >
 
-  <!-- Icons -->
+  <!-- Font Awesome Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -42,156 +42,261 @@
       color: #ffffff;
 
       background:
-        radial-gradient(circle at top left, #1f3561 0%, transparent 35%),
-        radial-gradient(circle at top right, #311f52 0%, transparent 30%),
-        linear-gradient(180deg, #0e1421 0%, #070a10 100%);
+        radial-gradient(circle at 10% 5%, rgba(107, 132, 255, 0.20), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(208, 121, 255, 0.15), transparent 28%),
+        radial-gradient(circle at 50% 80%, rgba(72, 219, 190, 0.08), transparent 35%),
+        #070b12;
+
+      overflow-x: hidden;
+    }
+
+    /* Decorative glow */
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(105, 121, 255, 0.09);
+      filter: blur(80px);
+      top: 15%;
+      left: -130px;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(201, 105, 255, 0.07);
+      filter: blur(80px);
+      bottom: 5%;
+      right: -120px;
+      pointer-events: none;
     }
 
     .container {
-      width: min(92%, 900px);
+      width: min(91%, 820px);
       margin: auto;
-      padding: 55px 0 40px;
+      padding: 52px 0 38px;
+      position: relative;
+      z-index: 1;
     }
 
     /* ---------------- HERO ---------------- */
 
     .hero {
       text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-wrap {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 21px;
     }
 
     .profile-image {
-      width: 125px;
-      height: 125px;
-
+      width: 118px;
+      height: 118px;
       object-fit: cover;
       border-radius: 50%;
 
       border: 3px solid rgba(255,255,255,0.16);
 
       box-shadow:
-        0 0 0 7px rgba(255,255,255,0.03),
-        0 15px 45px rgba(0,0,0,0.35);
+        0 0 0 7px rgba(255,255,255,0.025),
+        0 18px 45px rgba(0,0,0,0.4);
+    }
 
-      margin-bottom: 22px;
+    .status-dot {
+      position: absolute;
+
+      width: 19px;
+      height: 19px;
+
+      right: 6px;
+      bottom: 9px;
+
+      background: #5ee3a3;
+
+      border: 4px solid #0b1018;
+
+      border-radius: 50%;
+    }
+
+    .hello {
+      display: inline-block;
+
+      padding: 7px 13px;
+
+      margin-bottom: 13px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,0.06);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      color: #bfc9da;
+
+      font-size: 0.83rem;
+      font-weight: 600;
+
+      letter-spacing: 0.2px;
     }
 
     h1 {
-      font-size: clamp(2.3rem, 6vw, 3.7rem);
-      letter-spacing: -1.5px;
-      line-height: 1.1;
+      font-size: clamp(2.35rem, 7vw, 3.7rem);
 
-      margin-bottom: 12px;
+      line-height: 1.05;
+
+      letter-spacing: -1.8px;
+
+      margin-bottom: 14px;
     }
 
     .subtitle {
-      color: #b8c3d7;
+      max-width: 620px;
+      margin: auto;
+
+      color: #b8c1d1;
 
       font-size: 1rem;
-      line-height: 1.7;
-
-      max-width: 650px;
-      margin: auto;
+      line-height: 1.75;
     }
 
-    /* ---------------- GENERAL CARD ---------------- */
+    /* ---------------- CARD ---------------- */
 
     .card {
-      margin-top: 35px;
+      margin-top: 24px;
 
-      padding: 26px;
+      padding: 24px;
 
-      border-radius: 22px;
+      border-radius: 23px;
 
-      background: rgba(255,255,255,0.045);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.06),
+          rgba(255,255,255,0.028)
+        );
 
       border: 1px solid rgba(255,255,255,0.08);
 
       box-shadow:
-        0 20px 50px rgba(0,0,0,0.18);
+        0 16px 45px rgba(0,0,0,0.18);
 
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
-    .card h2 {
+    .section-title {
       text-align: center;
 
-      font-size: 1.4rem;
+      font-size: 1.3rem;
 
-      margin-bottom: 20px;
+      margin-bottom: 19px;
+
+      letter-spacing: -0.3px;
     }
 
-    /* ---------------- SOCIAL LINKS ---------------- */
+    .section-title i {
+      margin-right: 7px;
+
+      color: #aebaff;
+    }
+
+    /* ---------------- SOCIALS ---------------- */
 
     .social-grid {
-      max-width: 650px;
+      width: 100%;
+      max-width: 620px;
+
       margin: auto;
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
-      gap: 11px;
+      gap: 10px;
     }
 
     .social-link {
+      min-height: 49px;
+
       display: flex;
 
       align-items: center;
 
-      gap: 12px;
+      gap: 11px;
 
-      min-height: 52px;
+      padding: 11px 14px;
 
-      padding: 12px 15px;
-
-      text-decoration: none;
+      border-radius: 14px;
 
       color: #ffffff;
 
-      border-radius: 13px;
+      text-decoration: none;
 
-      background: rgba(255,255,255,0.055);
+      background: rgba(255,255,255,0.045);
 
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.065);
 
       transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+        transform 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
     }
 
     .social-link:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
 
-      background: rgba(255,255,255,0.11);
+      background: rgba(255,255,255,0.09);
 
-      border-color: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.15);
+
+      box-shadow:
+        0 9px 25px rgba(0,0,0,0.16);
+    }
+
+    .icon-box {
+      width: 30px;
+      height: 30px;
+
+      border-radius: 9px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,0.055);
+
+      flex-shrink: 0;
     }
 
     .social-link i {
-      width: 22px;
-
-      text-align: center;
-
-      font-size: 1.15rem;
+      font-size: 1rem;
     }
 
     .social-name {
-      font-size: 0.93rem;
+      font-size: 0.91rem;
       font-weight: 650;
     }
 
-    /* Platform icon colors */
-
     .facebook i {
-      color: #5f9cff;
+      color: #78aaff;
     }
 
     .youtube i {
-      color: #ff5151;
+      color: #ff6666;
     }
 
     .instagram i {
-      color: #ff75b5;
+      color: #ff87c9;
     }
 
     .threads i {
@@ -199,11 +304,11 @@
     }
 
     .tiktok i {
-      color: #70e6e6;
+      color: #76eeee;
     }
 
     .linkedin i {
-      color: #6db8ff;
+      color: #77bfff;
     }
 
     .github i {
@@ -211,65 +316,107 @@
     }
 
     .email i {
-      color: #ffcf70;
+      color: #ffd47c;
     }
 
     .whatsapp i {
-      color: #52dc88;
+      color: #69e59b;
     }
 
     .spotify i {
-      color: #58df86;
+      color: #65df91;
     }
 
     /* ---------------- ABOUT ---------------- */
 
     .about {
-      max-width: 720px;
+      max-width: 660px;
 
       margin: auto;
+
+      text-align: center;
 
       color: #c3cada;
 
-      font-size: 1rem;
-
       line-height: 1.9;
 
-      text-align: center;
+      font-size: 0.98rem;
     }
 
-    /* ---------------- IMAGE ---------------- */
+    /* ---------------- GALLERY ---------------- */
 
-    .graduation-wrapper {
-      text-align: center;
-    }
+    .gallery {
+      display: grid;
 
-    .graduation-image {
-      display: block;
+      grid-template-columns: repeat(2, 1fr);
 
-      width: 100%;
-      max-width: 650px;
+      gap: 11px;
+
+      max-width: 690px;
 
       margin: auto;
+    }
 
-      border-radius: 18px;
+    .gallery-item {
+      position: relative;
 
-      border: 1px solid rgba(255,255,255,0.09);
+      overflow: hidden;
+
+      border-radius: 17px;
+
+      background: rgba(255,255,255,0.04);
+
+      border: 1px solid rgba(255,255,255,0.08);
 
       box-shadow:
-        0 18px 45px rgba(0,0,0,0.35);
+        0 12px 30px rgba(0,0,0,0.22);
+    }
+
+    .gallery-item img {
+      width: 100%;
+
+      height: 220px;
+
+      object-fit: cover;
+
+      display: block;
+
+      transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.045);
+      filter: brightness(1.05);
+    }
+
+    /* first image slightly bigger visually */
+
+    .gallery-item:first-child {
+      grid-column: span 2;
+    }
+
+    .gallery-item:first-child img {
+      height: 320px;
     }
 
     /* ---------------- FOOTER ---------------- */
 
     footer {
+      margin-top: 30px;
+
+      padding-bottom: 5px;
+
       text-align: center;
 
-      margin-top: 38px;
+      color: #6d788b;
 
-      color: #69758a;
+      font-size: 0.82rem;
+    }
 
-      font-size: 0.86rem;
+    .heart {
+      color: #d494ff;
     }
 
     /* ---------------- MOBILE ---------------- */
@@ -277,33 +424,66 @@
     @media (max-width: 650px) {
 
       .container {
-        width: 91%;
-        padding-top: 38px;
+        width: 92%;
+        padding-top: 36px;
       }
 
       .profile-image {
-        width: 110px;
-        height: 110px;
+        width: 105px;
+        height: 105px;
       }
+
+      .card {
+        padding: 19px 15px;
+        border-radius: 20px;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .social-link {
+        padding: 10px;
+      }
+
+      .social-name {
+        font-size: 0.82rem;
+      }
+
+      .icon-box {
+        width: 28px;
+        height: 28px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item:first-child {
+        grid-column: auto;
+      }
+
+      .gallery-item img,
+      .gallery-item:first-child img {
+        height: auto;
+        aspect-ratio: 16 / 10;
+      }
+    }
+
+    @media (max-width: 410px) {
 
       .social-grid {
         grid-template-columns: 1fr;
       }
 
       .social-link {
-        max-width: 420px;
+        max-width: 330px;
         width: 100%;
         margin: auto;
       }
-
-      .card {
-        padding: 21px 16px;
-      }
-
-      .graduation-image {
-        max-width: 100%;
-      }
     }
+
   </style>
 </head>
 
@@ -312,15 +492,27 @@
 
   <main class="container">
 
-    <!-- PROFILE -->
+    <!-- HERO -->
 
     <section class="hero">
 
-      <img
-        class="profile-image"
-        src="https://github.com/manula-balasooriya.png"
-        alt="Manula Balasooriya"
-      >
+      <div class="profile-wrap">
+
+        <img
+          class="profile-image"
+          src="https://github.com/manula-balasooriya.png"
+          alt="Manula Balasooriya"
+        >
+
+        <span class="status-dot"></span>
+
+      </div>
+
+      <br>
+
+      <span class="hello">
+        ✨ Hello, I'm
+      </span>
 
       <h1>Manula Balasooriya</h1>
 
@@ -333,13 +525,18 @@
     </section>
 
 
+
     <!-- SOCIAL LINKS -->
 
     <section class="card">
 
-      <h2>Connect With Me</h2>
+      <h2 class="section-title">
+        <i class="fa-solid fa-link"></i>
+        Connect With Me
+      </h2>
 
       <div class="social-grid">
+
 
         <a
           class="social-link facebook"
@@ -347,7 +544,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-facebook"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-facebook-f"></i>
+          </span>
+
           <span class="social-name">Facebook Page</span>
         </a>
 
@@ -358,7 +558,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-facebook-f"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-facebook-f"></i>
+          </span>
+
           <span class="social-name">Facebook Profile</span>
         </a>
 
@@ -369,7 +572,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-youtube"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-youtube"></i>
+          </span>
+
           <span class="social-name">YouTube</span>
         </a>
 
@@ -380,7 +586,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-instagram"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-instagram"></i>
+          </span>
+
           <span class="social-name">Instagram</span>
         </a>
 
@@ -391,7 +600,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-threads"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-threads"></i>
+          </span>
+
           <span class="social-name">Threads</span>
         </a>
 
@@ -402,7 +614,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-tiktok"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-tiktok"></i>
+          </span>
+
           <span class="social-name">TikTok</span>
         </a>
 
@@ -413,7 +628,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-linkedin-in"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </span>
+
           <span class="social-name">LinkedIn</span>
         </a>
 
@@ -424,7 +642,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-github"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-github"></i>
+          </span>
+
           <span class="social-name">GitHub</span>
         </a>
 
@@ -433,7 +654,10 @@
           class="social-link email"
           href="mailto:manulab.official@gmail.com"
         >
-          <i class="fa-solid fa-envelope"></i>
+          <span class="icon-box">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+
           <span class="social-name">Email</span>
         </a>
 
@@ -444,7 +668,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-whatsapp"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-whatsapp"></i>
+          </span>
+
           <span class="social-name">WhatsApp</span>
         </a>
 
@@ -455,7 +682,10 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-whatsapp"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-whatsapp"></i>
+          </span>
+
           <span class="social-name">WhatsApp Channel</span>
         </a>
 
@@ -466,47 +696,103 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-spotify"></i>
+          <span class="icon-box">
+            <i class="fa-brands fa-spotify"></i>
+          </span>
+
           <span class="social-name">Spotify</span>
         </a>
+
 
       </div>
 
     </section>
 
 
+
     <!-- ABOUT -->
 
     <section class="card">
 
-      <h2>About Me</h2>
+      <h2 class="section-title">
+        <i class="fa-regular fa-user"></i>
+        About Me
+      </h2>
 
       <p class="about">
+
         I am an Advanced Level Physics Educator with over 6 years of experience,
         passionate about making complex scientific concepts clear and engaging.
+
+        <br><br>
+
         My passion extends to artificial intelligence, computational neuroscience,
         and brain-inspired computing, with a focus on research that connects
         these fields.
+
       </p>
 
     </section>
 
 
-    <!-- GRADUATION IMAGE -->
 
-    <section class="card graduation-wrapper">
+    <!-- PHOTO GALLERY -->
 
-      <img
-        src="graduation.jpg"
-        alt="Manula Balasooriya Graduation"
-        class="graduation-image"
-      >
+    <section class="card">
+
+      <h2 class="section-title">
+        <i class="fa-regular fa-images"></i>
+        Moments
+      </h2>
+
+      <div class="gallery">
+
+        <div class="gallery-item">
+          <img
+            src="img1.jpg"
+            alt="Manula Balasooriya"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="gallery-item">
+          <img
+            src="img2.jpg"
+            alt="Manula Balasooriya Graduation"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="gallery-item">
+          <img
+            src="img3.jpg"
+            alt="Manula Balasooriya"
+            loading="lazy"
+          >
+        </div>
+
+
+        <div class="gallery-item">
+          <img
+            src="img4.jpg"
+            alt="Manula Balasooriya"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
 
     </section>
 
 
+
     <footer>
+
       © 2026 Manula Balasooriya
+      <span class="heart">♥</span>
+
     </footer>
 
   </main>
