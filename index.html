@@ -87,6 +87,7 @@
 
     /* ==================================================
        TOP NAV
+       UNCHANGED
     ================================================== */
 
     .topbar {
@@ -182,6 +183,7 @@
 
     /* ==================================================
        HERO
+       UNCHANGED
     ================================================== */
 
     .hero-section {
@@ -291,6 +293,7 @@
 
     /* ==================================================
        SOCIAL LINKS
+       UNCHANGED
     ================================================== */
 
     .socials {
@@ -396,6 +399,7 @@
 
     /* ==================================================
        HERO PROFILE
+       UNCHANGED
     ================================================== */
 
     .profile-panel {
@@ -464,25 +468,265 @@
     main {
       padding:
         76px 0
-        55px;
+        65px;
     }
 
 
     .section {
-      margin-bottom: 78px;
+      margin-bottom: 80px;
     }
 
 
-    .section-heading {
+    /* ==================================================
+       NEW ABOUT DESIGN
+    ================================================== */
+
+    .about-wrapper {
       display: grid;
 
       grid-template-columns:
-        250px
-        1fr;
+        0.38fr
+        0.62fr;
 
-      gap: 45px;
+      background: white;
 
-      margin-bottom: 35px;
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 26px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 16px 45px
+        rgba(29, 40, 58, 0.055);
+    }
+
+
+    /* LEFT ABOUT PANEL */
+
+    .about-intro {
+      position: relative;
+
+      padding:
+        44px 38px;
+
+      background:
+        linear-gradient(
+          155deg,
+          #111e30,
+          #172840
+        );
+
+      color: white;
+
+      overflow: hidden;
+    }
+
+
+    .about-intro::after {
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      left: -100px;
+      bottom: -110px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(70, 130, 255, 0.28),
+          transparent 68%
+        );
+    }
+
+
+    .about-kicker {
+      position: relative;
+      z-index: 2;
+
+      color: #78a7ff;
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+    }
+
+
+    .about-intro h2 {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 11px;
+
+      font-size:
+        clamp(
+          2.2rem,
+          5vw,
+          3.2rem
+        );
+
+      letter-spacing: -1.8px;
+
+      line-height: 1.05;
+    }
+
+
+    .about-intro p {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 22px;
+
+      color: #b8c5d6;
+
+      font-size: 0.94rem;
+
+      line-height: 1.85;
+    }
+
+
+    .about-line {
+      position: relative;
+      z-index: 2;
+
+      width: 48px;
+      height: 3px;
+
+      margin-top: 28px;
+
+      border-radius: 999px;
+
+      background: var(--blue);
+    }
+
+
+    /* RIGHT SIDE */
+
+    .about-content {
+      padding:
+        38px 42px;
+    }
+
+
+    .journey-item {
+      display: grid;
+
+      grid-template-columns:
+        48px 1fr;
+
+      gap: 18px;
+
+      position: relative;
+
+      padding-bottom: 34px;
+    }
+
+
+    .journey-item:last-child {
+      padding-bottom: 0;
+    }
+
+
+    .journey-marker {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+    }
+
+
+    .journey-icon {
+      position: relative;
+      z-index: 3;
+
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background: var(--blue-soft);
+
+      color: var(--blue);
+
+      font-size: 0.98rem;
+    }
+
+
+    .journey-item:not(:last-child)
+    .journey-marker::after {
+      content: "";
+
+      position: absolute;
+
+      top: 45px;
+      bottom: -31px;
+
+      width: 1px;
+
+      background: #dfe5ef;
+    }
+
+
+    .journey-content h3 {
+      margin-bottom: 8px;
+
+      color: var(--navy);
+
+      font-size: 1.07rem;
+
+      letter-spacing: -0.25px;
+    }
+
+
+    .journey-content p {
+      color: #687383;
+
+      font-size: 0.93rem;
+
+      line-height: 1.82;
+    }
+
+
+    .journey-content p + p {
+      margin-top: 11px;
+    }
+
+
+    .highlight {
+      color: #2861c8;
+
+      font-weight: 750;
+    }
+
+
+    /* ==================================================
+       GALLERY
+    ================================================== */
+
+    .gallery-heading {
+      display: flex;
+
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-bottom: 28px;
     }
 
 
@@ -499,8 +743,8 @@
     }
 
 
-    .section-heading h2 {
-      margin-top: 8px;
+    .gallery-heading h2 {
+      margin-top: 7px;
 
       color: var(--navy);
 
@@ -511,224 +755,86 @@
           2.7rem
         );
 
-      letter-spacing: -1.4px;
+      letter-spacing: -1.3px;
 
       line-height: 1.1;
     }
 
 
-    .section-intro {
-      align-self: end;
-
-      max-width: 620px;
+    .gallery-heading p {
+      max-width: 470px;
 
       color: var(--text-soft);
 
-      font-size: 0.96rem;
+      font-size: 0.94rem;
 
       line-height: 1.8;
     }
 
 
     /* ==================================================
-       ABOUT
-    ================================================== */
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-
-    .about-card {
-      position: relative;
-
-      padding:
-        27px 25px
-        28px;
-
-      background: white;
-
-      border:
-        1px solid
-        var(--border);
-
-      border-radius:
-        var(--radius);
-
-      box-shadow:
-        0 12px 35px
-        rgba(29, 40, 58, 0.05);
-    }
-
-
-    .about-number {
-      margin-bottom: 18px;
-
-      color: #aab4c1;
-
-      font-size: 0.72rem;
-
-      font-weight: 800;
-
-      letter-spacing: 0.12em;
-    }
-
-
-    .about-card h3 {
-      margin-bottom: 14px;
-
-      color: var(--navy);
-
-      font-size: 1.18rem;
-
-      letter-spacing: -0.4px;
-    }
-
-
-    .about-card p {
-      color: #687383;
-
-      font-size: 0.94rem;
-
-      line-height: 1.85;
-    }
-
-
-    .about-card p + p {
-      margin-top: 13px;
-    }
-
-
-    .highlight {
-      color: #225ccc;
-
-      font-weight: 750;
-    }
-
-
-    /* ==================================================
-       GALLERY
-    ================================================== */
-
-    .gallery-layout {
-      display: grid;
-
-      grid-template-columns:
-        0.7fr
-        1.3fr;
-
-      gap: 40px;
-
-      align-items: center;
-    }
-
-
-    .gallery-copy h3 {
-      color: var(--navy);
-
-      font-size:
-        clamp(
-          1.8rem,
-          4vw,
-          2.5rem
-        );
-
-      letter-spacing: -1px;
-
-      line-height: 1.1;
-    }
-
-
-    .gallery-copy p {
-      margin-top: 17px;
-
-      color: var(--text-soft);
-
-      line-height: 1.85;
-
-      font-size: 0.95rem;
-    }
-
-
-    /* ==================================================
-       SLIDER
+       ADAPTIVE IMAGE SLIDER
+       NO CROPPING
+       NO EMPTY SPACE
     ================================================== */
 
     .slider-shell {
-      width: 100%;
+      width: min(100%, 760px);
+
+      margin: auto;
     }
 
 
     .slider {
       position: relative;
 
+      width: 100%;
+
       overflow: hidden;
 
-      border-radius: 24px;
+      border-radius: 22px;
 
-      background: #e9edf3;
+      background: transparent;
 
       box-shadow:
-        0 18px 45px
-        rgba(26, 35, 49, 0.13);
+        0 20px 50px
+        rgba(25, 34, 48, 0.14);
     }
 
 
-    .slides {
-      position: relative;
+    /*
+      Important:
 
+      There is no fixed height and
+      no fixed aspect ratio.
+
+      Each image keeps its original
+      proportions and controls the
+      gallery height.
+    */
+
+    .gallery-image {
       width: 100%;
-
-      aspect-ratio:
-        16 / 10;
-    }
-
-
-    .slide {
-      position: absolute;
-
-      inset: 0;
-
-      opacity: 0;
-
-      transform:
-        scale(1.018);
-
-      transition:
-        opacity 0.65s ease,
-        transform 0.65s ease;
-    }
-
-
-    .slide.active {
-      opacity: 1;
-
-      transform:
-        scale(1);
-
-      z-index: 2;
-    }
-
-
-    .slide img {
-      width: 100%;
-      height: 100%;
+      height: auto;
 
       display: block;
 
-      object-fit: contain;
+      border-radius: 22px;
 
-      background: #eef1f5;
+      opacity: 1;
+
+      transition:
+        opacity 0.32s ease;
+    }
+
+
+    .gallery-image.fade {
+      opacity: 0;
     }
 
 
     /* ==================================================
-       SLIDER BUTTONS
+       GALLERY BUTTONS
     ================================================== */
 
     .slider-button {
@@ -754,14 +860,14 @@
 
       cursor: pointer;
 
+      color: white;
+
       background:
         rgba(13, 23, 38, 0.82);
 
-      color: white;
-
       box-shadow:
         0 7px 20px
-        rgba(0, 0, 0, 0.15);
+        rgba(0, 0, 0, 0.17);
 
       transition:
         background 0.2s ease,
@@ -789,7 +895,7 @@
 
 
     /* ==================================================
-       DOTS
+       GALLERY DOTS
     ================================================== */
 
     .slider-dots {
@@ -808,11 +914,11 @@
       width: 7px;
       height: 7px;
 
+      padding: 0;
+
       border: 0;
 
       border-radius: 999px;
-
-      padding: 0;
 
       cursor: pointer;
 
@@ -825,99 +931,99 @@
 
 
     .dot.active {
-      width: 26px;
+      width: 27px;
 
       background: var(--blue);
     }
 
 
     /* ==================================================
-       CONTACT STRIP
+       DARK FOOTER
     ================================================== */
 
-    .contact-strip {
+    .footer {
+      position: relative;
+
+      overflow: hidden;
+
       padding:
-        34px 38px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 30px;
+        38px 0;
 
       background: var(--navy);
-
-      border-radius: 24px;
 
       color: white;
     }
 
 
-    .contact-strip h3 {
-      font-size: 1.45rem;
+    .footer::before {
+      content: "";
 
-      letter-spacing: -0.5px;
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      right: -140px;
+      top: -150px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(62, 119, 246, 0.18),
+          transparent 68%
+        );
     }
 
 
-    .contact-strip p {
-      margin-top: 5px;
+    .footer-inner {
+      position: relative;
+      z-index: 2;
 
-      color: #acb8c8;
+      display: flex;
 
-      font-size: 0.9rem;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 25px;
     }
 
 
-    .contact-button {
-      flex-shrink: 0;
+    .footer-brand {
+      display: flex;
 
-      display: inline-flex;
       align-items: center;
 
-      gap: 9px;
+      gap: 11px;
 
-      padding:
-        12px 18px;
+      font-size: 0.9rem;
 
-      border-radius: 11px;
-
-      text-decoration: none;
-
-      background: white;
-
-      color: var(--navy);
-
-      font-size: 0.88rem;
-      font-weight: 750;
-
-      transition:
-        transform 0.2s ease;
+      font-weight: 700;
     }
 
 
-    .contact-button:hover {
-      transform:
-        translateY(-2px);
+    .footer-mark {
+      width: 35px;
+      height: 35px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 9px;
+
+      background: #3977f6;
+
+      font-size: 0.74rem;
+
+      font-weight: 800;
     }
 
 
-    /* ==================================================
-       FOOTER
-    ================================================== */
-
-    footer {
-      padding:
-        30px 0
-        36px;
-
-      border-top:
-        1px solid
-        #e4e7ec;
-
-      color: #8e97a4;
-
-      text-align: center;
+    .footer-copy {
+      color: #8f9bad;
 
       font-size: 0.8rem;
     }
@@ -976,22 +1082,29 @@
       }
 
 
-      .section-heading {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-      }
-
-
-      .about-grid {
+      .about-wrapper {
         grid-template-columns: 1fr;
       }
 
 
-      .gallery-layout {
-        grid-template-columns: 1fr;
+      .about-intro {
+        padding:
+          35px 32px;
+      }
 
-        gap: 25px;
+
+      .about-content {
+        padding:
+          34px 31px;
+      }
+
+
+      .gallery-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
       }
 
     }
@@ -1044,29 +1157,63 @@
 
 
       main {
-        padding-top: 53px;
+        padding:
+          50px 0
+          48px;
       }
 
 
       .section {
-        margin-bottom: 57px;
+        margin-bottom: 56px;
       }
 
 
-      .about-card {
+      .about-intro {
         padding:
-          23px 20px;
+          31px 24px;
       }
 
 
-      .slides {
-        aspect-ratio:
-          4 / 3;
+      .about-content {
+        padding:
+          29px 21px;
+      }
+
+
+      .journey-item {
+        grid-template-columns:
+          40px 1fr;
+
+        gap: 13px;
+      }
+
+
+      .journey-icon {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 10px;
+      }
+
+
+      .journey-item:not(:last-child)
+      .journey-marker::after {
+        top: 39px;
+      }
+
+
+      .journey-content p {
+        font-size: 0.9rem;
       }
 
 
       .slider {
-        border-radius: 18px;
+        border-radius: 17px;
+      }
+
+
+      .gallery-image {
+        border-radius: 17px;
       }
 
 
@@ -1076,13 +1223,20 @@
       }
 
 
-      .contact-strip {
-        padding:
-          28px 24px;
+      .prev {
+        left: 9px;
+      }
 
+
+      .next {
+        right: 9px;
+      }
+
+
+      .footer-inner {
         flex-direction: column;
 
-        align-items: flex-start;
+        text-align: center;
       }
 
     }
@@ -1097,6 +1251,7 @@
 
   <!-- ==================================================
        NAVIGATION
+       UNCHANGED
   ================================================== -->
 
   <header class="topbar">
@@ -1141,6 +1296,7 @@
 
   <!-- ==================================================
        HERO
+       UNCHANGED
   ================================================== -->
 
   <section
@@ -1340,7 +1496,7 @@
 
 
   <!-- ==================================================
-       MAIN CONTENT
+       MAIN
   ================================================== -->
 
   <main>
@@ -1349,7 +1505,7 @@
 
 
       <!-- ==================================================
-           ABOUT
+           NEW ABOUT ME PANEL
       ================================================== -->
 
       <section
@@ -1358,137 +1514,165 @@
       >
 
 
-        <div class="section-heading">
+        <div class="about-wrapper">
 
-          <div>
 
-            <div class="section-kicker">
+          <!-- LEFT -->
+
+          <div class="about-intro">
+
+            <div class="about-kicker">
               About
             </div>
 
             <h2>
-              About Me
+              About
+              <br>
+              Me
             </h2>
+
+            <p>
+              A journey shaped by education,
+              science, technology and music.
+            </p>
+
+            <div class="about-line"></div>
 
           </div>
 
 
-          <p class="section-intro">
-            My journey brings together education, technology,
-            science and music — areas that continue to shape
-            both my professional and creative interests.
-          </p>
 
-        </div>
+          <!-- RIGHT -->
+
+          <div class="about-content">
 
 
+            <!-- TEACHING -->
 
-        <div class="about-grid">
+            <div class="journey-item">
+
+              <div class="journey-marker">
+
+                <div class="journey-icon">
+                  <i class="fa-solid fa-atom"></i>
+                </div>
+
+              </div>
 
 
-          <!-- TEACHING -->
+              <div class="journey-content">
 
-          <article class="about-card">
+                <h3>
+                  Teaching
+                </h3>
 
-            <div class="about-number">
-              01
+                <p>
+                  I am an
+                  <span class="highlight">
+                    Advanced Level Physics Educator with over 6 years of experience
+                  </span>,
+                  passionate about making complex concepts clear and engaging
+                  while supporting students throughout their academic journey.
+                </p>
+
+              </div>
+
             </div>
 
-            <h3>
-              Teaching
-            </h3>
-
-            <p>
-              I am an
-              <span class="highlight">
-                Advanced Level Physics Educator with over 6 years of experience
-              </span>,
-              passionate about making complex concepts clear and engaging
-              while supporting students throughout their academic journey.
-            </p>
-
-          </article>
 
 
+            <!-- ACADEMIC JOURNEY -->
 
-          <!-- ACADEMIC -->
+            <div class="journey-item">
 
-          <article class="about-card">
+              <div class="journey-marker">
 
-            <div class="about-number">
-              02
+                <div class="journey-icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+              </div>
+
+
+              <div class="journey-content">
+
+                <h3>
+                  My Academic Journey
+                </h3>
+
+                <p>
+                  I completed my Advanced Level studies in
+                  <span class="highlight">
+                    Combined Mathematics, Chemistry, and Physics
+                  </span>
+                  and was selected for admission to a
+                  <span class="highlight">
+                    BSc Engineering programme at the University of Ruhuna
+                  </span>.
+                  However, driven by my interest in
+                  <span class="highlight">
+                    Artificial Intelligence and Data Science
+                  </span>,
+                  I chose to pursue my higher education at SLIIT.
+                </p>
+
+                <p>
+                  I graduated with a
+                  <span class="highlight">
+                    Bachelor’s Honours Degree in Information Technology,
+                    specializing in Data Science, with First Class Honours
+                  </span>.
+                  I was also honoured to receive the
+                  <span class="highlight">
+                    Best Performance Award (Batch Top)
+                  </span>
+                  in the Data Science specialization.
+                </p>
+
+              </div>
+
             </div>
 
-            <h3>
-              My Academic Journey
-            </h3>
-
-            <p>
-              I completed my Advanced Level studies in
-              <span class="highlight">
-                Combined Mathematics, Chemistry, and Physics
-              </span>
-              and was selected for admission to a
-              <span class="highlight">
-                BSc Engineering programme at the University of Ruhuna
-              </span>.
-            </p>
-
-            <p>
-              However, driven by my interest in
-              <span class="highlight">
-                Artificial Intelligence and Data Science
-              </span>,
-              I chose to pursue my higher education at SLIIT.
-            </p>
-
-            <p>
-              I graduated with a
-              <span class="highlight">
-                Bachelor’s Honours Degree in Information Technology,
-                specializing in Data Science, with First Class Honours
-              </span>.
-              I was also honoured to receive the
-              <span class="highlight">
-                Best Performance Award (Batch Top)
-              </span>
-              in the Data Science specialization.
-            </p>
-
-          </article>
 
 
+            <!-- MUSIC -->
 
-          <!-- MUSIC -->
+            <div class="journey-item">
 
-          <article class="about-card">
+              <div class="journey-marker">
 
-            <div class="about-number">
-              03
+                <div class="journey-icon">
+                  <i class="fa-solid fa-music"></i>
+                </div>
+
+              </div>
+
+
+              <div class="journey-content">
+
+                <h3>
+                  Music
+                </h3>
+
+                <p>
+                  Music has been a lifelong passion of mine,
+                  which led me to pursue a
+                  <span class="highlight">
+                    Diploma in Audio Engineering and Music Production
+                  </span>.
+                  I have a strong interest in
+                  <span class="highlight">
+                    singing, songwriting, composition,
+                    audio engineering, and music production
+                  </span>.
+                </p>
+
+              </div>
+
             </div>
 
-            <h3>
-              Music
-            </h3>
 
-            <p>
-              Music has been a lifelong passion of mine,
-              which led me to pursue a
-              <span class="highlight">
-                Diploma in Audio Engineering and Music Production
-              </span>.
-            </p>
-
-            <p>
-              I have a strong interest in
-              <span class="highlight">
-                singing, songwriting, composition,
-                audio engineering, and music production
-              </span>.
-            </p>
-
-          </article>
-
+          </div>
 
         </div>
 
@@ -1506,179 +1690,108 @@
       >
 
 
-        <div class="gallery-layout">
+        <div class="gallery-heading">
 
-
-          <div class="gallery-copy">
+          <div>
 
             <div class="section-kicker">
               Gallery
             </div>
 
-            <h3>
+            <h2>
               Moments
-            </h3>
-
-            <p>
-              A collection of moments from my academic,
-              professional and personal journey.
-            </p>
+            </h2>
 
           </div>
 
 
-
-          <div class="slider-shell">
-
-
-            <div class="slider">
-
-
-              <div class="slides">
-
-
-                <div class="slide active">
-
-                  <img
-                    src="img1.jpg"
-                    alt="Manula Balasooriya"
-                  >
-
-                </div>
-
-
-                <div class="slide">
-
-                  <img
-                    src="img2.jpg"
-                    alt="Manula Balasooriya"
-                  >
-
-                </div>
-
-
-                <div class="slide">
-
-                  <img
-                    src="img3.jpg"
-                    alt="Manula Balasooriya"
-                  >
-
-                </div>
-
-
-                <div class="slide">
-
-                  <img
-                    src="img4.jpg"
-                    alt="Manula Balasooriya"
-                  >
-
-                </div>
-
-
-              </div>
-
-
-
-              <button
-                class="slider-button prev"
-                aria-label="Previous image"
-              >
-
-                <i class="fa-solid fa-chevron-left"></i>
-
-              </button>
-
-
-
-              <button
-                class="slider-button next"
-                aria-label="Next image"
-              >
-
-                <i class="fa-solid fa-chevron-right"></i>
-
-              </button>
-
-
-            </div>
-
-
-
-            <div class="slider-dots">
-
-              <button
-                class="dot active"
-                data-slide="0"
-                aria-label="Image 1"
-              ></button>
-
-              <button
-                class="dot"
-                data-slide="1"
-                aria-label="Image 2"
-              ></button>
-
-              <button
-                class="dot"
-                data-slide="2"
-                aria-label="Image 3"
-              ></button>
-
-              <button
-                class="dot"
-                data-slide="3"
-                aria-label="Image 4"
-              ></button>
-
-            </div>
-
-
-          </div>
-
+          <p>
+            A collection of moments from my academic,
+            professional and personal journey.
+          </p>
 
         </div>
 
-      </section>
+
+
+        <div class="slider-shell">
+
+
+          <div class="slider">
+
+
+            <!--
+              One image element only.
+
+              JavaScript changes the image source,
+              allowing every photo to keep its own
+              original aspect ratio.
+            -->
+
+            <img
+              id="galleryImage"
+              class="gallery-image"
+              src="img1.jpg"
+              alt="Manula Balasooriya"
+            >
 
 
 
-      <!-- ==================================================
-           CONTACT
-      ================================================== -->
+            <button
+              class="slider-button prev"
+              aria-label="Previous image"
+            >
 
-      <section
-        class="section"
-        id="contact"
-      >
+              <i class="fa-solid fa-chevron-left"></i>
 
-        <div class="contact-strip">
+            </button>
 
-          <div>
 
-            <h3>
-              Get in touch
-            </h3>
 
-            <p>
-              Feel free to connect with me for education,
-              research, technology or music.
-            </p>
+            <button
+              class="slider-button next"
+              aria-label="Next image"
+            >
+
+              <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
 
           </div>
 
 
-          <a
-            class="contact-button"
-            href="mailto:manulab.official@gmail.com"
-          >
 
-            <i class="fa-solid fa-envelope"></i>
+          <!-- DOTS -->
 
-            Contact Me
+          <div class="slider-dots">
 
-          </a>
+            <button
+              class="dot active"
+              data-slide="0"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="dot"
+              data-slide="1"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="dot"
+              data-slide="2"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="dot"
+              data-slide="3"
+              aria-label="Image 4"
+            ></button>
+
+          </div>
+
 
         </div>
 
@@ -1692,14 +1805,35 @@
 
 
   <!-- ==================================================
-       FOOTER
+       DARK FOOTER
   ================================================== -->
 
-  <footer>
+  <footer
+    class="footer"
+    id="contact"
+  >
 
-    <div class="container">
+    <div class="container footer-inner">
 
-      © 2026 Manula Balasooriya
+
+      <div class="footer-brand">
+
+        <div class="footer-mark">
+          MB
+        </div>
+
+        Manula Balasooriya
+
+      </div>
+
+
+      <div class="footer-copy">
+
+        © 2026 Manula Balasooriya.
+        All rights reserved.
+
+      </div>
+
 
     </div>
 
@@ -1708,19 +1842,30 @@
 
 
   <!-- ==================================================
-       SLIDER JAVASCRIPT
+       ADAPTIVE GALLERY JAVASCRIPT
   ================================================== -->
 
   <script>
 
-    const slides =
-      document.querySelectorAll(".slide");
+    const images = [
+      "img1.jpg",
+      "img2.jpg",
+      "img3.jpg",
+      "img4.jpg"
+    ];
+
+
+    const galleryImage =
+      document.getElementById("galleryImage");
+
 
     const dots =
       document.querySelectorAll(".dot");
 
+
     const previousButton =
       document.querySelector(".prev");
+
 
     const nextButton =
       document.querySelector(".next");
@@ -1732,29 +1877,76 @@
 
 
 
+    /*
+      Preload all images so changing
+      between differently sized photos
+      feels smoother.
+    */
+
+    images.forEach(function(src) {
+
+      const image =
+        new Image();
+
+      image.src = src;
+
+    });
+
+
+
+    function updateDots() {
+
+      dots.forEach(
+        function(dot, index) {
+
+          dot.classList.toggle(
+            "active",
+            index === currentSlide
+          );
+
+        }
+      );
+
+    }
+
+
+
     function showSlide(index) {
 
-      slides[currentSlide]
-        .classList
-        .remove("active");
-
-      dots[currentSlide]
-        .classList
-        .remove("active");
+      const newIndex =
+        (index + images.length)
+        % images.length;
 
 
-      currentSlide =
-        (index + slides.length)
-        % slides.length;
+      galleryImage.classList.add("fade");
 
 
-      slides[currentSlide]
-        .classList
-        .add("active");
+      setTimeout(
+        function() {
 
-      dots[currentSlide]
-        .classList
-        .add("active");
+          currentSlide =
+            newIndex;
+
+
+          galleryImage.src =
+            images[currentSlide];
+
+
+          galleryImage.onload =
+            function() {
+
+              galleryImage
+                .classList
+                .remove("fade");
+
+            };
+
+
+          updateDots();
+
+        },
+        250
+      );
 
     }
 
