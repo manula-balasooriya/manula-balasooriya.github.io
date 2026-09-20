@@ -16,18 +16,33 @@
     content="Personal website of Manula Balasooriya — First Class Data Science Graduate (Batch Top), Advanced Level Physics Educator, Singer-Songwriter and Composer."
   >
 
-  <!-- Font Awesome Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
-
   <style>
 
-    /* =========================================
+    /* ==================================================
        GLOBAL
-    ========================================== */
+    ================================================== */
+
+    :root {
+      --navy: #0d1726;
+      --navy-light: #152236;
+      --blue: #3977f6;
+      --blue-soft: #eaf1ff;
+
+      --text: #1b2430;
+      --text-soft: #657080;
+
+      --border: #e7eaf0;
+      --surface: #ffffff;
+      --surface-soft: #f6f8fb;
+
+      --radius: 22px;
+    }
+
 
     * {
       margin: 0;
@@ -35,13 +50,14 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       font-family:
-        Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -50,221 +66,240 @@
         Arial,
         sans-serif;
 
-      color: #25232e;
+      background: #f4f6f9;
+
+      color: var(--text);
+
+      line-height: 1.6;
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    .container {
+      width: min(92%, 1080px);
+      margin: auto;
+    }
+
+
+    /* ==================================================
+       TOP NAV
+    ================================================== */
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
 
       background:
-        radial-gradient(
-          circle at 8% 5%,
-          #e8e5ff 0,
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 93% 8%,
-          #ffe5ef 0,
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 50% 90%,
-          #def7f2 0,
-          transparent 32%
-        ),
-        #f8f8fc;
+        rgba(255, 255, 255, 0.93);
 
-      min-height: 100vh;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border-bottom:
+        1px solid rgba(20, 30, 45, 0.07);
     }
 
 
-    .page {
-      width: min(92%, 920px);
-      margin: auto;
+    .nav {
+      min-height: 68px;
 
-      padding:
-        38px 0
-        35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
     }
 
 
-    /* =========================================
+    .brand {
+      display: flex;
+      align-items: center;
+
+      text-decoration: none;
+
+      font-weight: 800;
+      letter-spacing: -0.4px;
+
+      color: var(--navy);
+    }
+
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 10px;
+
+      border-radius: 10px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2f6fee,
+          #5c8fff
+        );
+
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 25px;
+    }
+
+
+    .nav-links a {
+      text-decoration: none;
+
+      font-size: 0.88rem;
+      font-weight: 600;
+
+      color: #697383;
+
+      transition: color 0.2s ease;
+    }
+
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+
+    /* ==================================================
        HERO
-    ========================================== */
+    ================================================== */
 
-    .hero {
+    .hero-section {
+      background: var(--navy);
+
       position: relative;
 
       overflow: hidden;
-
-      text-align: center;
-
-      padding:
-        48px 30px
-        38px;
-
-      border-radius: 32px;
-
-      background:
-        rgba(255, 255, 255, 0.80);
-
-      border:
-        1px solid
-        rgba(255, 255, 255, 0.95);
-
-      box-shadow:
-        0 20px 60px
-        rgba(49, 43, 82, 0.08);
-
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
     }
 
 
-    .hero::before {
+    .hero-section::before {
       content: "";
 
       position: absolute;
 
-      width: 230px;
-      height: 230px;
+      width: 520px;
+      height: 520px;
 
-      top: -120px;
-      left: -95px;
-
-      border-radius: 50%;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(139, 123, 255, 0.22),
-          rgba(210, 190, 255, 0.05)
-        );
-    }
-
-
-    .hero::after {
-      content: "";
-
-      position: absolute;
-
-      width: 220px;
-      height: 220px;
-
-      right: -100px;
-      bottom: -120px;
+      top: -280px;
+      right: -180px;
 
       border-radius: 50%;
 
       background:
-        linear-gradient(
-          135deg,
-          rgba(255, 150, 190, 0.18),
-          rgba(255, 215, 230, 0.04)
+        radial-gradient(
+          circle,
+          rgba(70, 130, 255, 0.24),
+          rgba(70, 130, 255, 0)
         );
     }
 
 
-    .hero-content {
+    .hero {
       position: relative;
       z-index: 2;
+
+      min-height: 580px;
+
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+
+      align-items: center;
+
+      gap: 55px;
+
+      padding:
+        75px 0
+        70px;
     }
 
 
-    /* =========================================
-       PROFILE IMAGE
-    ========================================== */
+    .hero-eyebrow {
+      display: inline-block;
 
-    .profile-image {
-      width: 118px;
-      height: 118px;
+      margin-bottom: 16px;
 
-      object-fit: cover;
-
-      border-radius: 50%;
-
-      padding: 4px;
-
-      background: white;
-
-      border:
-        1px solid
-        #eceaf3;
-
-      box-shadow:
-        0 14px 38px
-        rgba(57, 49, 99, 0.15);
-    }
-
-
-    .hello {
-      margin-top: 17px;
-
-      color: #8b7ab9;
+      color: #83aaff;
 
       font-size: 0.78rem;
 
       font-weight: 800;
 
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
 
       text-transform: uppercase;
     }
 
 
-    h1 {
-      margin-top: 7px;
+    .hero h1 {
+      max-width: 700px;
+
+      color: white;
 
       font-size:
         clamp(
-          2.35rem,
+          3.2rem,
           7vw,
-          4.25rem
+          5.7rem
         );
 
-      line-height: 1;
+      line-height: 0.98;
 
-      letter-spacing: -2.4px;
-
-      color: #211f2b;
+      letter-spacing: -4px;
     }
 
-
-    /* =========================================
-       TAGLINE
-    ========================================== */
 
     .tagline {
       max-width: 760px;
 
-      margin:
-        18px auto
-        0;
+      margin-top: 25px;
 
-      color: #615f6e;
+      color: #c4cfdd;
 
-      font-size: 1rem;
+      font-size:
+        clamp(
+          1rem,
+          2vw,
+          1.14rem
+        );
 
-      font-weight: 600;
+      line-height: 1.8;
 
-      line-height: 1.75;
+      font-weight: 500;
     }
 
 
-    /* =========================================
-       SOCIAL MEDIA LINKS
-    ========================================== */
+    /* ==================================================
+       SOCIAL LINKS
+    ================================================== */
 
     .socials {
-      max-width: 760px;
-
-      margin:
-        26px auto
-        0;
-
       display: flex;
-
-      justify-content: center;
-
       flex-wrap: wrap;
 
-      gap: 8px;
+      gap: 9px;
+
+      margin-top: 30px;
     }
 
 
@@ -273,266 +308,374 @@
 
       align-items: center;
 
-      gap: 7px;
+      gap: 8px;
 
       padding:
         9px 13px;
 
-      border-radius: 999px;
+      border-radius: 10px;
 
       text-decoration: none;
 
-      background: white;
-
-      color: #36343e;
+      background:
+        rgba(255, 255, 255, 0.07);
 
       border:
         1px solid
-        #e9e7ef;
+        rgba(255, 255, 255, 0.10);
 
-      font-size: 0.83rem;
+      color: #e8edf5;
 
-      font-weight: 650;
-
-      box-shadow:
-        0 5px 14px
-        rgba(30, 27, 54, 0.04);
+      font-size: 0.82rem;
+      font-weight: 600;
 
       transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
+        background 0.2s ease,
         border-color 0.2s ease;
     }
 
 
     .social:hover {
       transform:
-        translateY(-3px);
+        translateY(-2px);
+
+      background:
+        rgba(255, 255, 255, 0.13);
 
       border-color:
-        #d8d3e9;
-
-      box-shadow:
-        0 10px 25px
-        rgba(44, 36, 82, 0.10);
+        rgba(255, 255, 255, 0.20);
     }
 
 
     .social i {
-      width: 16px;
-
-      text-align: center;
-
       font-size: 0.98rem;
     }
 
 
     .facebook i {
-      color: #1877f2;
+      color: #68a4ff;
     }
 
     .youtube i {
-      color: #ff0033;
+      color: #ff5e69;
     }
 
     .instagram i {
-      color: #d83f87;
+      color: #ff7fb2;
     }
 
     .threads i {
-      color: #111111;
+      color: #ffffff;
     }
 
     .tiktok i {
-      color: #111111;
+      color: #74e3e3;
     }
 
     .linkedin i {
-      color: #0a66c2;
+      color: #64adff;
     }
 
     .github i {
-      color: #171515;
+      color: #ffffff;
     }
 
     .email i {
-      color: #7660dd;
+      color: #ffd47a;
     }
 
     .whatsapp i {
-      color: #20b95a;
+      color: #67e597;
     }
 
     .spotify i {
-      color: #1db954;
+      color: #61df8e;
     }
 
 
-    /* =========================================
-       GENERAL SECTION
-    ========================================== */
+    /* ==================================================
+       HERO PROFILE
+    ================================================== */
 
-    .section {
-      margin-top: 22px;
+    .profile-panel {
+      display: flex;
+      justify-content: center;
+    }
 
-      padding:
-        31px 32px;
 
-      border-radius: 28px;
+    .profile-frame {
+      position: relative;
+
+      width: min(100%, 285px);
+
+      aspect-ratio: 1;
+
+      padding: 12px;
+
+      border-radius: 38px;
 
       background:
-        rgba(255, 255, 255, 0.82);
+        rgba(255, 255, 255, 0.06);
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.95);
+        rgba(255, 255, 255, 0.12);
 
       box-shadow:
-        0 15px 45px
-        rgba(41, 39, 70, 0.065);
-
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+        0 30px 80px
+        rgba(0, 0, 0, 0.30);
     }
 
 
-    .section-label {
-      margin-bottom: 7px;
+    .profile-frame::after {
+      content: "";
 
-      color: #9586bd;
+      position: absolute;
 
-      font-size: 0.75rem;
+      inset: -12px;
+
+      border:
+        1px solid
+        rgba(91, 142, 255, 0.16);
+
+      border-radius: 46px;
+
+      pointer-events: none;
+    }
+
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      border-radius: 29px;
+    }
+
+
+    /* ==================================================
+       MAIN
+    ================================================== */
+
+    main {
+      padding:
+        76px 0
+        55px;
+    }
+
+
+    .section {
+      margin-bottom: 78px;
+    }
+
+
+    .section-heading {
+      display: grid;
+
+      grid-template-columns:
+        250px
+        1fr;
+
+      gap: 45px;
+
+      margin-bottom: 35px;
+    }
+
+
+    .section-kicker {
+      color: var(--blue);
+
+      font-size: 0.76rem;
 
       font-weight: 800;
 
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
 
       text-transform: uppercase;
     }
 
 
-    .section h2 {
-      margin-bottom: 23px;
+    .section-heading h2 {
+      margin-top: 8px;
 
-      color: #25232e;
+      color: var(--navy);
 
-      font-size: 1.75rem;
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.7rem
+        );
 
-      letter-spacing: -0.7px;
+      letter-spacing: -1.4px;
+
+      line-height: 1.1;
     }
 
 
-    /* =========================================
-       ABOUT ME
-    ========================================== */
+    .section-intro {
+      align-self: end;
 
-    .about-block {
+      max-width: 620px;
+
+      color: var(--text-soft);
+
+      font-size: 0.96rem;
+
+      line-height: 1.8;
+    }
+
+
+    /* ==================================================
+       ABOUT
+    ================================================== */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+
+    .about-card {
       position: relative;
 
-      padding-left: 20px;
+      padding:
+        27px 25px
+        28px;
 
-      margin-top: 23px;
+      background: white;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        var(--radius);
+
+      box-shadow:
+        0 12px 35px
+        rgba(29, 40, 58, 0.05);
     }
 
 
-    .about-block:first-of-type {
-      margin-top: 0;
-    }
+    .about-number {
+      margin-bottom: 18px;
 
+      color: #aab4c1;
 
-    .about-block::before {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      top: 4px;
-      bottom: 4px;
-
-      width: 3px;
-
-      border-radius: 999px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #a88cec,
-          #e9a7c8
-        );
-    }
-
-
-    .about-block h3 {
-      margin-bottom: 8px;
-
-      color: #4d426d;
-
-      font-size: 1.02rem;
+      font-size: 0.72rem;
 
       font-weight: 800;
+
+      letter-spacing: 0.12em;
     }
 
 
-    .about-block p {
-      max-width: 800px;
+    .about-card h3 {
+      margin-bottom: 14px;
 
-      color: #64626f;
+      color: var(--navy);
 
-      font-size: 0.97rem;
+      font-size: 1.18rem;
 
-      line-height: 1.9;
+      letter-spacing: -0.4px;
     }
 
 
-    /*
-       All <strong> words in the About
-       section become bold + colored.
-    */
+    .about-card p {
+      color: #687383;
 
-    .about-block strong {
-      color: #775bc2;
+      font-size: 0.94rem;
+
+      line-height: 1.85;
+    }
+
+
+    .about-card p + p {
+      margin-top: 13px;
+    }
+
+
+    .highlight {
+      color: #225ccc;
 
       font-weight: 750;
     }
 
 
-    /* =========================================
-       IMAGE SLIDER
-    ========================================== */
+    /* ==================================================
+       GALLERY
+    ================================================== */
 
-    .slider-section {
-      text-align: center;
+    .gallery-layout {
+      display: grid;
+
+      grid-template-columns:
+        0.7fr
+        1.3fr;
+
+      gap: 40px;
+
+      align-items: center;
+    }
+
+
+    .gallery-copy h3 {
+      color: var(--navy);
+
+      font-size:
+        clamp(
+          1.8rem,
+          4vw,
+          2.5rem
+        );
+
+      letter-spacing: -1px;
+
+      line-height: 1.1;
+    }
+
+
+    .gallery-copy p {
+      margin-top: 17px;
+
+      color: var(--text-soft);
+
+      line-height: 1.85;
+
+      font-size: 0.95rem;
+    }
+
+
+    /* ==================================================
+       SLIDER
+    ================================================== */
+
+    .slider-shell {
+      width: 100%;
     }
 
 
     .slider {
       position: relative;
 
-      width: 100%;
-      max-width: 700px;
-
-      margin:
-        5px auto
-        0;
-
       overflow: hidden;
 
       border-radius: 24px;
 
-      background:
-        linear-gradient(
-          135deg,
-          #f1eef8,
-          #f7f5fa
-        );
-
-      border:
-        1px solid
-        #ebe8f0;
+      background: #e9edf3;
 
       box-shadow:
-        0 15px 38px
-        rgba(44, 37, 76, 0.09);
+        0 18px 45px
+        rgba(26, 35, 49, 0.13);
     }
 
 
@@ -551,13 +694,10 @@
 
       inset: 0;
 
-      width: 100%;
-      height: 100%;
-
       opacity: 0;
 
       transform:
-        scale(1.025);
+        scale(1.018);
 
       transition:
         opacity 0.65s ease,
@@ -571,7 +711,7 @@
       transform:
         scale(1);
 
-      z-index: 1;
+      z-index: 2;
     }
 
 
@@ -583,100 +723,100 @@
 
       object-fit: contain;
 
-      background: #f3f1f6;
+      background: #eef1f5;
     }
 
 
-    /* =========================================
-       SLIDER ARROWS
-    ========================================== */
+    /* ==================================================
+       SLIDER BUTTONS
+    ================================================== */
 
     .slider-button {
       position: absolute;
 
-      z-index: 5;
+      z-index: 10;
 
       top: 50%;
 
       transform:
         translateY(-50%);
 
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      border: none;
+      border: 0;
 
       border-radius: 50%;
 
       cursor: pointer;
 
-      color: #4e465f;
-
       background:
-        rgba(255, 255, 255, 0.88);
+        rgba(13, 23, 38, 0.82);
+
+      color: white;
 
       box-shadow:
-        0 6px 18px
-        rgba(28, 24, 43, 0.12);
+        0 7px 20px
+        rgba(0, 0, 0, 0.15);
 
       transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
 
     .slider-button:hover {
-      background: white;
+      background: var(--blue);
 
       transform:
         translateY(-50%)
-        scale(1.07);
+        scale(1.06);
     }
 
 
     .prev {
-      left: 13px;
+      left: 14px;
     }
 
 
     .next {
-      right: 13px;
+      right: 14px;
     }
 
 
-    /* =========================================
-       SLIDER DOTS
-    ========================================== */
+    /* ==================================================
+       DOTS
+    ================================================== */
 
     .slider-dots {
       display: flex;
 
+      align-items: center;
       justify-content: center;
 
-      gap: 7px;
+      gap: 8px;
 
       margin-top: 17px;
     }
 
 
     .dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
+
+      border: 0;
+
+      border-radius: 999px;
 
       padding: 0;
 
-      border: none;
-
-      border-radius: 50%;
-
       cursor: pointer;
 
-      background: #d4cfdd;
+      background: #bec5cf;
 
       transition:
         width 0.25s ease,
@@ -685,108 +825,237 @@
 
 
     .dot.active {
-      width: 24px;
+      width: 26px;
 
-      border-radius: 999px;
-
-      background: #9176d2;
+      background: var(--blue);
     }
 
 
-    /* =========================================
+    /* ==================================================
+       CONTACT STRIP
+    ================================================== */
+
+    .contact-strip {
+      padding:
+        34px 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      background: var(--navy);
+
+      border-radius: 24px;
+
+      color: white;
+    }
+
+
+    .contact-strip h3 {
+      font-size: 1.45rem;
+
+      letter-spacing: -0.5px;
+    }
+
+
+    .contact-strip p {
+      margin-top: 5px;
+
+      color: #acb8c8;
+
+      font-size: 0.9rem;
+    }
+
+
+    .contact-button {
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+
+      gap: 9px;
+
+      padding:
+        12px 18px;
+
+      border-radius: 11px;
+
+      text-decoration: none;
+
+      background: white;
+
+      color: var(--navy);
+
+      font-size: 0.88rem;
+      font-weight: 750;
+
+      transition:
+        transform 0.2s ease;
+    }
+
+
+    .contact-button:hover {
+      transform:
+        translateY(-2px);
+    }
+
+
+    /* ==================================================
        FOOTER
-    ========================================== */
+    ================================================== */
 
     footer {
-      padding-top: 29px;
+      padding:
+        30px 0
+        36px;
+
+      border-top:
+        1px solid
+        #e4e7ec;
+
+      color: #8e97a4;
 
       text-align: center;
 
-      color: #9a97a6;
-
-      font-size: 0.81rem;
+      font-size: 0.8rem;
     }
 
 
-    /* =========================================
-       MOBILE
-    ========================================== */
+    /* ==================================================
+       RESPONSIVE
+    ================================================== */
 
-    @media (max-width: 700px) {
-
-      .page {
-        width: 93%;
-
-        padding-top: 20px;
-      }
-
+    @media (max-width: 850px) {
 
       .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 45px;
+
         padding:
-          37px 17px
-          29px;
-
-        border-radius: 25px;
+          60px 0
+          58px;
       }
 
 
-      .profile-image {
-        width: 102px;
-        height: 102px;
-      }
-
-
-      h1 {
-        letter-spacing: -1.7px;
+      .hero h1 {
+        margin: auto;
       }
 
 
       .tagline {
-        font-size: 0.90rem;
-
-        line-height: 1.65;
+        margin:
+          23px auto
+          0;
       }
 
 
       .socials {
-        margin-top: 22px;
+        justify-content: center;
+      }
 
-        gap: 6px;
+
+      .profile-panel {
+        grid-row: 1;
+      }
+
+
+      .profile-frame {
+        width: 205px;
+
+        border-radius: 30px;
+      }
+
+
+      .profile-image {
+        border-radius: 22px;
+      }
+
+
+      .section-heading {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+      }
+
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .gallery-layout {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+      }
+
+    }
+
+
+    @media (max-width: 640px) {
+
+      .nav-links {
+        display: none;
+      }
+
+
+      .container {
+        width: 91%;
+      }
+
+
+      .hero {
+        min-height: unset;
+
+        padding:
+          46px 0
+          45px;
+      }
+
+
+      .hero h1 {
+        font-size:
+          clamp(
+            2.75rem,
+            14vw,
+            4rem
+          );
+
+        letter-spacing: -2.7px;
+      }
+
+
+      .tagline {
+        font-size: 0.91rem;
       }
 
 
       .social {
-        padding:
-          8px 11px;
-
         font-size: 0.77rem;
+
+        padding:
+          8px 10px;
+      }
+
+
+      main {
+        padding-top: 53px;
       }
 
 
       .section {
-        margin-top: 16px;
+        margin-bottom: 57px;
+      }
 
+
+      .about-card {
         padding:
-          24px 19px;
-
-        border-radius: 23px;
-      }
-
-
-      .section h2 {
-        font-size: 1.5rem;
-      }
-
-
-      .about-block {
-        padding-left: 16px;
-      }
-
-
-      .about-block p {
-        font-size: 0.92rem;
-
-        line-height: 1.8;
+          23px 20px;
       }
 
 
@@ -802,48 +1071,99 @@
 
 
       .slider-button {
-        width: 35px;
-        height: 35px;
+        width: 36px;
+        height: 36px;
+      }
+
+
+      .contact-strip {
+        padding:
+          28px 24px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
       }
 
     }
 
   </style>
+
 </head>
 
 
 <body>
 
-  <main class="page">
+
+  <!-- ==================================================
+       NAVIGATION
+  ================================================== -->
+
+  <header class="topbar">
+
+    <div class="container nav">
+
+      <a
+        class="brand"
+        href="#home"
+      >
+
+        <span class="brand-mark">
+          MB
+        </span>
+
+        Manula Balasooriya
+
+      </a>
 
 
-    <!-- =====================================
-         HERO
-    ====================================== -->
+      <nav class="nav-links">
 
-    <section class="hero">
+        <a href="#about">
+          About
+        </a>
 
-      <div class="hero-content">
+        <a href="#gallery">
+          Gallery
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
 
 
-        <img
-          src="https://github.com/manula-balasooriya.png"
-          alt="Manula Balasooriya"
-          class="profile-image"
-        >
+
+  <!-- ==================================================
+       HERO
+  ================================================== -->
+
+  <section
+    class="hero-section"
+    id="home"
+  >
+
+    <div class="container hero">
 
 
-        <div class="hello">
-          Hello, I'm
-        </div>
+      <div class="hero-copy">
+
+        <span class="hero-eyebrow">
+          Personal Portfolio
+        </span>
 
 
         <h1>
-          Manula Balasooriya
+          Manula
+          <br>
+          Balasooriya
         </h1>
 
-
-        <!-- ONLY TAGLINE UNDER NAME -->
 
         <p class="tagline">
           First Class Data Science Graduate (Batch Top)
@@ -855,7 +1175,7 @@
 
 
 
-        <!-- SOCIAL LINKS -->
+        <!-- SOCIAL MEDIA -->
 
         <div class="socials">
 
@@ -994,258 +1314,402 @@
 
       </div>
 
-    </section>
 
 
+      <!-- PROFILE IMAGE -->
 
-    <!-- =====================================
-         ABOUT ME
-    ====================================== -->
+      <div class="profile-panel">
 
-    <section class="section">
+        <div class="profile-frame">
 
-      <div class="section-label">
-        About
-      </div>
+          <img
+            src="https://github.com/manula-balasooriya.png"
+            alt="Manula Balasooriya"
+            class="profile-image"
+          >
 
-      <h2>
-        About Me
-      </h2>
-
-
-
-      <!-- TEACHING -->
-
-      <div class="about-block">
-
-        <h3>
-          Teaching
-        </h3>
-
-        <p>
-          I am an
-          <strong>
-            Advanced Level Physics Educator with over 6 years of experience
-          </strong>,
-          passionate about making complex concepts clear and engaging while
-          supporting students throughout their academic journey.
-        </p>
+        </div>
 
       </div>
 
 
+    </div>
 
-      <!-- ACADEMIC JOURNEY -->
-
-      <div class="about-block">
-
-        <h3>
-          My Academic Journey
-        </h3>
-
-        <p>
-          I completed my Advanced Level studies in
-          <strong>
-            Combined Mathematics, Chemistry, and Physics
-          </strong>
-          and was selected for admission to a
-          <strong>
-            BSc Engineering programme at the University of Ruhuna
-          </strong>.
-          However, driven by my interest in
-          <strong>
-            Artificial Intelligence and Data Science
-          </strong>,
-          I chose to pursue my higher education at SLIIT.
-        </p>
-
-        <p style="margin-top: 13px;">
-          I graduated with a
-          <strong>
-            Bachelor’s Honours Degree in Information Technology,
-            specializing in Data Science, with First Class Honours
-          </strong>.
-          I was also honoured to receive the
-          <strong>
-            Best Performance Award (Batch Top)
-          </strong>
-          in the Data Science specialization.
-        </p>
-
-      </div>
+  </section>
 
 
 
-      <!-- MUSIC -->
+  <!-- ==================================================
+       MAIN CONTENT
+  ================================================== -->
 
-      <div class="about-block">
+  <main>
 
-        <h3>
-          Music
-        </h3>
-
-        <p>
-          Music has been a lifelong passion of mine, which led me to pursue a
-          <strong>
-            Diploma in Audio Engineering and Music Production
-          </strong>.
-          I have a strong interest in
-          <strong>
-            singing, songwriting, composition, audio engineering,
-            and music production
-          </strong>.
-        </p>
-
-      </div>
-
-    </section>
+    <div class="container">
 
 
+      <!-- ==================================================
+           ABOUT
+      ================================================== -->
 
-    <!-- =====================================
-         IMAGE SLIDER
-    ====================================== -->
-
-    <section class="section slider-section">
-
-      <div class="section-label">
-        Gallery
-      </div>
-
-      <h2>
-        Moments
-      </h2>
+      <section
+        class="section"
+        id="about"
+      >
 
 
-      <div class="slider">
+        <div class="section-heading">
 
+          <div>
 
-        <div class="slides">
+            <div class="section-kicker">
+              About
+            </div>
 
-
-          <div class="slide active">
-
-            <img
-              src="img1.jpg"
-              alt="Manula Balasooriya"
-            >
+            <h2>
+              About Me
+            </h2>
 
           </div>
 
 
-          <div class="slide">
+          <p class="section-intro">
+            My journey brings together education, technology,
+            science and music — areas that continue to shape
+            both my professional and creative interests.
+          </p>
 
-            <img
-              src="img2.jpg"
-              alt="Manula Balasooriya"
-            >
+        </div>
+
+
+
+        <div class="about-grid">
+
+
+          <!-- TEACHING -->
+
+          <article class="about-card">
+
+            <div class="about-number">
+              01
+            </div>
+
+            <h3>
+              Teaching
+            </h3>
+
+            <p>
+              I am an
+              <span class="highlight">
+                Advanced Level Physics Educator with over 6 years of experience
+              </span>,
+              passionate about making complex concepts clear and engaging
+              while supporting students throughout their academic journey.
+            </p>
+
+          </article>
+
+
+
+          <!-- ACADEMIC -->
+
+          <article class="about-card">
+
+            <div class="about-number">
+              02
+            </div>
+
+            <h3>
+              My Academic Journey
+            </h3>
+
+            <p>
+              I completed my Advanced Level studies in
+              <span class="highlight">
+                Combined Mathematics, Chemistry, and Physics
+              </span>
+              and was selected for admission to a
+              <span class="highlight">
+                BSc Engineering programme at the University of Ruhuna
+              </span>.
+            </p>
+
+            <p>
+              However, driven by my interest in
+              <span class="highlight">
+                Artificial Intelligence and Data Science
+              </span>,
+              I chose to pursue my higher education at SLIIT.
+            </p>
+
+            <p>
+              I graduated with a
+              <span class="highlight">
+                Bachelor’s Honours Degree in Information Technology,
+                specializing in Data Science, with First Class Honours
+              </span>.
+              I was also honoured to receive the
+              <span class="highlight">
+                Best Performance Award (Batch Top)
+              </span>
+              in the Data Science specialization.
+            </p>
+
+          </article>
+
+
+
+          <!-- MUSIC -->
+
+          <article class="about-card">
+
+            <div class="about-number">
+              03
+            </div>
+
+            <h3>
+              Music
+            </h3>
+
+            <p>
+              Music has been a lifelong passion of mine,
+              which led me to pursue a
+              <span class="highlight">
+                Diploma in Audio Engineering and Music Production
+              </span>.
+            </p>
+
+            <p>
+              I have a strong interest in
+              <span class="highlight">
+                singing, songwriting, composition,
+                audio engineering, and music production
+              </span>.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ==================================================
+           GALLERY
+      ================================================== -->
+
+      <section
+        class="section"
+        id="gallery"
+      >
+
+
+        <div class="gallery-layout">
+
+
+          <div class="gallery-copy">
+
+            <div class="section-kicker">
+              Gallery
+            </div>
+
+            <h3>
+              Moments
+            </h3>
+
+            <p>
+              A collection of moments from my academic,
+              professional and personal journey.
+            </p>
 
           </div>
 
 
-          <div class="slide">
 
-            <img
-              src="img3.jpg"
-              alt="Manula Balasooriya"
-            >
-
-          </div>
+          <div class="slider-shell">
 
 
-          <div class="slide">
+            <div class="slider">
 
-            <img
-              src="img4.jpg"
-              alt="Manula Balasooriya"
-            >
+
+              <div class="slides">
+
+
+                <div class="slide active">
+
+                  <img
+                    src="img1.jpg"
+                    alt="Manula Balasooriya"
+                  >
+
+                </div>
+
+
+                <div class="slide">
+
+                  <img
+                    src="img2.jpg"
+                    alt="Manula Balasooriya"
+                  >
+
+                </div>
+
+
+                <div class="slide">
+
+                  <img
+                    src="img3.jpg"
+                    alt="Manula Balasooriya"
+                  >
+
+                </div>
+
+
+                <div class="slide">
+
+                  <img
+                    src="img4.jpg"
+                    alt="Manula Balasooriya"
+                  >
+
+                </div>
+
+
+              </div>
+
+
+
+              <button
+                class="slider-button prev"
+                aria-label="Previous image"
+              >
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+              </button>
+
+
+
+              <button
+                class="slider-button next"
+                aria-label="Next image"
+              >
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+              </button>
+
+
+            </div>
+
+
+
+            <div class="slider-dots">
+
+              <button
+                class="dot active"
+                data-slide="0"
+                aria-label="Image 1"
+              ></button>
+
+              <button
+                class="dot"
+                data-slide="1"
+                aria-label="Image 2"
+              ></button>
+
+              <button
+                class="dot"
+                data-slide="2"
+                aria-label="Image 3"
+              ></button>
+
+              <button
+                class="dot"
+                data-slide="3"
+                aria-label="Image 4"
+              ></button>
+
+            </div>
+
 
           </div>
 
 
         </div>
 
-
-
-        <!-- PREVIOUS -->
-
-        <button
-          class="slider-button prev"
-          aria-label="Previous image"
-        >
-
-          <i class="fa-solid fa-chevron-left"></i>
-
-        </button>
+      </section>
 
 
 
-        <!-- NEXT -->
+      <!-- ==================================================
+           CONTACT
+      ================================================== -->
 
-        <button
-          class="slider-button next"
-          aria-label="Next image"
-        >
+      <section
+        class="section"
+        id="contact"
+      >
 
-          <i class="fa-solid fa-chevron-right"></i>
+        <div class="contact-strip">
 
-        </button>
+          <div>
 
+            <h3>
+              Get in touch
+            </h3>
 
-      </div>
+            <p>
+              Feel free to connect with me for education,
+              research, technology or music.
+            </p>
 
-
-
-      <!-- DOTS -->
-
-      <div class="slider-dots">
-
-        <button
-          class="dot active"
-          data-slide="0"
-          aria-label="Image 1"
-        ></button>
-
-        <button
-          class="dot"
-          data-slide="1"
-          aria-label="Image 2"
-        ></button>
-
-        <button
-          class="dot"
-          data-slide="2"
-          aria-label="Image 3"
-        ></button>
-
-        <button
-          class="dot"
-          data-slide="3"
-          aria-label="Image 4"
-        ></button>
-
-      </div>
-
-    </section>
+          </div>
 
 
+          <a
+            class="contact-button"
+            href="mailto:manulab.official@gmail.com"
+          >
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
+            <i class="fa-solid fa-envelope"></i>
 
-    <footer>
-      © 2026 Manula Balasooriya
-    </footer>
+            Contact Me
 
+          </a>
+
+        </div>
+
+      </section>
+
+
+    </div>
 
   </main>
 
 
 
-  <!-- =====================================
-       IMAGE SLIDER JAVASCRIPT
-  ====================================== -->
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 Manula Balasooriya
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ==================================================
+       SLIDER JAVASCRIPT
+  ================================================== -->
 
   <script>
 
@@ -1321,7 +1785,7 @@
       autoSlide =
         setInterval(
           nextSlide,
-          4000
+          4500
         );
 
     }
