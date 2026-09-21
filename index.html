@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -23,38 +24,51 @@
 
   <style>
 
-    /* ==================================================
-       GLOBAL
-    ================================================== */
+    /* =========================================================
+       GLOBAL THEME
+    ========================================================= */
 
     :root {
-      --navy: #0d1726;
-      --navy-light: #152236;
-      --blue: #3977f6;
-      --blue-soft: #eaf1ff;
 
-      --text: #1b2430;
-      --text-soft: #657080;
+      --black: #090a0d;
+      --dark: #0f1115;
+      --dark-2: #14171c;
+      --dark-3: #1a1e24;
+      --dark-4: #22262e;
 
-      --border: #e7eaf0;
-      --surface: #ffffff;
-      --surface-soft: #f6f8fb;
+      --red: #d92f35;
+      --red-bright: #ff5258;
+      --red-light: #ff6b70;
+      --red-dark: #a51f25;
+
+      --text: #f2f3f5;
+      --text-soft: #a9afb8;
+      --text-muted: #727985;
+
+      --border:
+        rgba(255, 255, 255, 0.075);
+
     }
 
 
     * {
+
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+
     }
 
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
 
     body {
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -64,163 +78,275 @@
         Arial,
         sans-serif;
 
-      background: #f4f6f9;
+      background: #0d0f13;
+
       color: var(--text);
 
       line-height: 1.6;
+
     }
 
 
     a {
+
       color: inherit;
+
     }
 
 
     .container {
-      width: min(92%, 1080px);
+
+      width:
+        min(
+          92%,
+          1080px
+        );
+
       margin: auto;
+
     }
 
 
-    /* ==================================================
+    /* =========================================================
        NAVIGATION
-       KEPT THE SAME
-    ================================================== */
+    ========================================================= */
 
     .topbar {
+
       position: sticky;
+
       top: 0;
+
       z-index: 100;
 
       background:
-        rgba(255, 255, 255, 0.93);
+        rgba(10, 11, 14, 0.92);
 
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter:
+        blur(16px);
+
+      -webkit-backdrop-filter:
+        blur(16px);
 
       border-bottom:
-        1px solid rgba(20, 30, 45, 0.07);
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
     }
 
 
     .nav {
+
       min-height: 68px;
 
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       gap: 20px;
+
     }
 
 
     .brand {
+
       display: flex;
+
       align-items: center;
 
       text-decoration: none;
 
       font-weight: 800;
-      letter-spacing: -0.4px;
 
-      color: var(--navy);
-    }
-
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      margin-right: 10px;
-
-      border-radius: 10px;
+      letter-spacing:
+        -0.4px;
 
       color: white;
 
-      background:
-        linear-gradient(
-          135deg,
-          #2f6fee,
-          #5c8fff
-        );
+    }
 
-      font-size: 0.82rem;
-      font-weight: 800;
+
+    .brand-avatar {
+
+      width: 38px;
+      height: 38px;
+
+      display: block;
+
+      margin-right: 11px;
+
+      object-fit: cover;
+
+      border-radius: 11px;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+      box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.30);
+
     }
 
 
     .nav-links {
+
       display: flex;
+
       align-items: center;
 
-      gap: 25px;
+      gap: 27px;
+
     }
 
 
     .nav-links a {
+
+      position: relative;
+
       text-decoration: none;
 
       font-size: 0.88rem;
+
       font-weight: 600;
 
-      color: #697383;
+      color: #aeb3bc;
 
-      transition: color 0.2s ease;
+      transition:
+        color 0.2s ease;
+
     }
 
 
-    .nav-links a:hover {
-      color: var(--blue);
-    }
+    .nav-links a::after {
 
-
-    /* ==================================================
-       HERO
-       KEPT THE SAME
-    ================================================== */
-
-    .hero-section {
-      background: var(--navy);
-
-      position: relative;
-      overflow: hidden;
-    }
-
-
-    .hero-section::before {
       content: "";
 
       position: absolute;
 
-      width: 520px;
-      height: 520px;
+      left: 0;
+      bottom: -7px;
 
-      top: -280px;
-      right: -180px;
+      width: 0;
+      height: 2px;
+
+      border-radius: 999px;
+
+      background: var(--red);
+
+      transition:
+        width 0.25s ease;
+
+    }
+
+
+    .nav-links a:hover {
+
+      color: white;
+
+    }
+
+
+    .nav-links a:hover::after {
+
+      width: 100%;
+
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero-section {
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #0b0d11 0%,
+          #111419 55%,
+          #0c0e12 100%
+        );
+
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.065);
+
+    }
+
+
+    .hero-section::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 620px;
+      height: 620px;
+
+      top: -360px;
+      right: -190px;
 
       border-radius: 50%;
 
       background:
         radial-gradient(
           circle,
-          rgba(70, 130, 255, 0.24),
-          rgba(70, 130, 255, 0)
+          rgba(217, 47, 53, 0.30),
+          rgba(217, 47, 53, 0.08) 38%,
+          transparent 68%
         );
+
+      pointer-events: none;
+
+    }
+
+
+    .hero-section::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 380px;
+      height: 380px;
+
+      left: -250px;
+      bottom: -250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(217, 47, 53, 0.13),
+          transparent 70%
+        );
+
     }
 
 
     .hero {
+
       position: relative;
+
       z-index: 2;
 
       min-height: 580px;
 
       display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
+
+      grid-template-columns:
+        1.35fr
+        0.65fr;
 
       align-items: center;
 
@@ -229,26 +355,53 @@
       padding:
         75px 0
         70px;
+
     }
 
 
     .hero-eyebrow {
-      display: inline-block;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
 
       margin-bottom: 16px;
 
-      color: #83aaff;
+      color: var(--red-light);
 
       font-size: 0.78rem;
+
       font-weight: 800;
 
-      letter-spacing: 0.15em;
+      letter-spacing:
+        0.15em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .hero-eyebrow::before {
+
+      content: "";
+
+      width: 27px;
+      height: 2px;
+
+      border-radius:
+        999px;
+
+      background:
+        var(--red);
+
     }
 
 
     .hero h1 {
+
       max-width: 700px;
 
       color: white;
@@ -260,17 +413,22 @@
           5.7rem
         );
 
-      line-height: 0.98;
-      letter-spacing: -4px;
+      line-height:
+        0.98;
+
+      letter-spacing:
+        -4px;
+
     }
 
 
     .tagline {
+
       max-width: 760px;
 
       margin-top: 25px;
 
-      color: #c4cfdd;
+      color: #b7bdc7;
 
       font-size:
         clamp(
@@ -279,27 +437,41 @@
           1.14rem
         );
 
-      line-height: 1.8;
+      line-height:
+        1.8;
+
       font-weight: 500;
+
     }
 
 
-    /* ==================================================
-       SOCIAL LINKS
-       KEPT THE SAME
-    ================================================== */
+    /* =========================================================
+       SOCIAL MEDIA BUTTONS
+    ========================================================= */
 
     .socials {
+
       display: flex;
+
       flex-wrap: wrap;
 
       gap: 9px;
 
       margin-top: 30px;
+
     }
 
 
     .social {
+
+      --brand: #ffffff;
+
+      --brand-soft:
+        rgba(255, 255, 255, 0.08);
+
+      --brand-border:
+        rgba(255, 255, 255, 0.16);
+
       display: inline-flex;
 
       align-items: center;
@@ -314,97 +486,268 @@
       text-decoration: none;
 
       background:
-        rgba(255, 255, 255, 0.07);
+        rgba(255, 255, 255, 0.04);
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.10);
+        rgba(255, 255, 255, 0.09);
 
-      color: #e8edf5;
+      color: #d8dbe0;
 
       font-size: 0.82rem;
+
       font-weight: 600;
 
       transition:
         transform 0.2s ease,
         background 0.2s ease,
-        border-color 0.2s ease;
-    }
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
 
-
-    .social:hover {
-      transform:
-        translateY(-2px);
-
-      background:
-        rgba(255, 255, 255, 0.13);
-
-      border-color:
-        rgba(255, 255, 255, 0.20);
     }
 
 
     .social i {
-      font-size: 0.98rem;
+
+      width: 17px;
+
+      text-align: center;
+
+      font-size: 1rem;
+
+      color: var(--brand);
+
     }
 
 
-    .facebook i {
-      color: #68a4ff;
-    }
+    .social:hover {
 
-    .youtube i {
-      color: #ff5e69;
-    }
+      transform:
+        translateY(-2px);
 
-    .instagram i {
-      color: #ff7fb2;
-    }
+      color: white;
 
-    .threads i {
-      color: #ffffff;
-    }
+      background:
+        var(--brand-soft);
 
-    .tiktok i {
-      color: #74e3e3;
-    }
+      border-color:
+        var(--brand-border);
 
-    .linkedin i {
-      color: #64adff;
-    }
+      box-shadow:
+        0 8px 22px
+        rgba(0, 0, 0, 0.20);
 
-    .github i {
-      color: #ffffff;
-    }
-
-    .email i {
-      color: #ffd47a;
-    }
-
-    .whatsapp i {
-      color: #67e597;
-    }
-
-    .spotify i {
-      color: #61df8e;
     }
 
 
-    /* ==================================================
+    /* FACEBOOK */
+
+    .social-facebook {
+
+      --brand: #1877f2;
+
+      --brand-soft:
+        rgba(24, 119, 242, 0.13);
+
+      --brand-border:
+        rgba(24, 119, 242, 0.40);
+
+    }
+
+
+    /* INSTAGRAM */
+
+    .social-instagram {
+
+      --brand: #e4405f;
+
+      --brand-soft:
+        rgba(228, 64, 95, 0.13);
+
+      --brand-border:
+        rgba(228, 64, 95, 0.40);
+
+    }
+
+
+    .social-instagram i {
+
+      background:
+        linear-gradient(
+          135deg,
+          #feda75,
+          #fa7e1e,
+          #d62976,
+          #962fbf,
+          #4f5bd5
+        );
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      -webkit-text-fill-color:
+        transparent;
+
+    }
+
+
+    /* YOUTUBE */
+
+    .social-youtube {
+
+      --brand: #ff0033;
+
+      --brand-soft:
+        rgba(255, 0, 51, 0.13);
+
+      --brand-border:
+        rgba(255, 0, 51, 0.40);
+
+    }
+
+
+    /* THREADS */
+
+    .social-threads {
+
+      --brand: #ffffff;
+
+      --brand-soft:
+        rgba(255, 255, 255, 0.09);
+
+      --brand-border:
+        rgba(255, 255, 255, 0.26);
+
+    }
+
+
+    /* TIKTOK */
+
+    .social-tiktok {
+
+      --brand: #25f4ee;
+
+      --brand-soft:
+        rgba(37, 244, 238, 0.09);
+
+      --brand-border:
+        rgba(37, 244, 238, 0.32);
+
+    }
+
+
+    .social-tiktok i {
+
+      color: #25f4ee;
+
+      text-shadow:
+        1.5px 1.5px 0
+        #fe2c55;
+
+    }
+
+
+    /* LINKEDIN */
+
+    .social-linkedin {
+
+      --brand: #0a66c2;
+
+      --brand-soft:
+        rgba(10, 102, 194, 0.15);
+
+      --brand-border:
+        rgba(10, 102, 194, 0.42);
+
+    }
+
+
+    /* GITHUB */
+
+    .social-github {
+
+      --brand: #ffffff;
+
+      --brand-soft:
+        rgba(255, 255, 255, 0.08);
+
+      --brand-border:
+        rgba(255, 255, 255, 0.25);
+
+    }
+
+
+    /* WHATSAPP */
+
+    .social-whatsapp {
+
+      --brand: #25d366;
+
+      --brand-soft:
+        rgba(37, 211, 102, 0.12);
+
+      --brand-border:
+        rgba(37, 211, 102, 0.38);
+
+    }
+
+
+    /* EMAIL */
+
+    .social-email {
+
+      --brand: #ea4335;
+
+      --brand-soft:
+        rgba(234, 67, 53, 0.12);
+
+      --brand-border:
+        rgba(234, 67, 53, 0.38);
+
+    }
+
+
+    /* SPOTIFY */
+
+    .social-spotify {
+
+      --brand: #1ed760;
+
+      --brand-soft:
+        rgba(30, 215, 96, 0.12);
+
+      --brand-border:
+        rgba(30, 215, 96, 0.40);
+
+    }
+
+
+    /* =========================================================
        HERO PROFILE
-       KEPT THE SAME
-    ================================================== */
+    ========================================================= */
 
     .profile-panel {
+
       display: flex;
+
       justify-content: center;
+
     }
 
 
     .profile-frame {
+
       position: relative;
 
-      width: min(100%, 285px);
+      width:
+        min(
+          100%,
+          285px
+        );
 
       aspect-ratio: 1;
 
@@ -413,19 +756,21 @@
       border-radius: 38px;
 
       background:
-        rgba(255, 255, 255, 0.06);
+        rgba(255, 255, 255, 0.035);
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.12);
+        rgba(255, 255, 255, 0.10);
 
       box-shadow:
         0 30px 80px
-        rgba(0, 0, 0, 0.30);
+        rgba(0, 0, 0, 0.40);
+
     }
 
 
     .profile-frame::after {
+
       content: "";
 
       position: absolute;
@@ -434,15 +779,44 @@
 
       border:
         1px solid
-        rgba(91, 142, 255, 0.16);
+        rgba(255, 82, 88, 0.17);
 
-      border-radius: 46px;
+      border-radius:
+        46px;
 
       pointer-events: none;
+
+    }
+
+
+    .profile-frame::before {
+
+      content: "";
+
+      position: absolute;
+
+      z-index: -1;
+
+      width: 210px;
+      height: 210px;
+
+      right: -40px;
+      bottom: -40px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(217, 47, 53, 0.22),
+          transparent 70%
+        );
+
     }
 
 
     .profile-image {
+
       width: 100%;
       height: 100%;
 
@@ -451,296 +825,641 @@
       object-fit: cover;
 
       border-radius: 29px;
+
     }
 
 
-    /* ==================================================
+    /* =========================================================
        MAIN
-    ================================================== */
+    ========================================================= */
 
     main {
+
+      position: relative;
+
       padding:
         76px 0
         65px;
+
+      background:
+        radial-gradient(
+          circle at 100% 32%,
+          rgba(217, 47, 53, 0.055),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 0% 78%,
+          rgba(217, 47, 53, 0.035),
+          transparent 28%
+        ),
+        #0d0f13;
+
     }
 
 
     .section {
-      margin-bottom: 80px;
+
+      margin-bottom:
+        80px;
+
     }
 
 
-    /* ==================================================
-       NEW ABOUT ME DESIGN
-    ================================================== */
+    /* =========================================================
+       ABOUT ME
+    ========================================================= */
 
-    .about-panel {
+    .about-dark {
+
+      position: relative;
+
       overflow: hidden;
 
-      background: white;
+      padding:
+        50px 50px
+        22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #111318 0%,
+          #171a20 55%,
+          #111318 100%
+        );
 
       border:
         1px solid
-        var(--border);
+        rgba(255, 255, 255, 0.075);
 
-      border-radius: 26px;
+      border-radius: 28px;
 
       box-shadow:
-        0 16px 45px
-        rgba(29, 40, 58, 0.055);
+        0 24px 65px
+        rgba(0, 0, 0, 0.28);
+
     }
 
 
-    /* ABOUT HEADER */
+    .about-dark::before {
 
-    .about-header {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      top: -260px;
+      right: -190px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(217, 47, 53, 0.24),
+          rgba(217, 47, 53, 0.05) 40%,
+          transparent 70%
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    .about-dark::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      left: -190px;
+      bottom: -190px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(217, 47, 53, 0.10),
+          transparent 70%
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    .dark-about-header {
+
+      position: relative;
+
+      z-index: 2;
+
       display: flex;
 
-      align-items: end;
-      justify-content: space-between;
+      align-items: flex-end;
+
+      justify-content:
+        space-between;
 
       gap: 30px;
 
-      padding:
-        38px 42px
-        31px;
+      padding-bottom: 34px;
 
       border-bottom:
         1px solid
-        #e8ebf0;
+        rgba(255, 255, 255, 0.08);
+
     }
 
 
-    .about-eyebrow {
-      color: var(--blue);
+    .dark-about-kicker {
 
-      font-size: 0.75rem;
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 9px;
+
+      color: var(--red-light);
+
+      font-size: 0.72rem;
+
       font-weight: 800;
 
-      letter-spacing: 0.15em;
+      letter-spacing:
+        0.17em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
+
     }
 
 
-    .about-header h2 {
-      margin-top: 7px;
+    .dark-about-kicker::before {
 
-      color: var(--navy);
+      content: "";
+
+      width: 26px;
+      height: 2px;
+
+      border-radius:
+        999px;
+
+      background:
+        var(--red);
+
+    }
+
+
+    .dark-about-header h2 {
+
+      color: white;
 
       font-size:
         clamp(
-          2.2rem,
+          2.5rem,
           5vw,
-          3.2rem
+          3.5rem
         );
 
-      letter-spacing: -1.7px;
+      line-height: 1;
 
-      line-height: 1.05;
+      letter-spacing:
+        -2px;
+
     }
 
 
-    .about-summary {
-      max-width: 390px;
+    .about-header-symbol {
 
-      color: #788392;
+      width: 55px;
+      height: 55px;
 
-      font-size: 0.91rem;
+      display: flex;
 
-      line-height: 1.8;
+      align-items: center;
+      justify-content: center;
 
-      text-align: right;
+      border-radius: 16px;
+
+      background:
+        rgba(217, 47, 53, 0.10);
+
+      border:
+        1px solid
+        rgba(255, 91, 91, 0.18);
+
+      color:
+        var(--red-light);
+
+      font-size:
+        1.15rem;
+
     }
 
 
-    /* ABOUT ROWS */
+    /* =========================================================
+       ABOUT ITEMS
+    ========================================================= */
 
-    .about-row {
+    .dark-about-item {
+
+      position: relative;
+
+      z-index: 2;
+
       display: grid;
 
       grid-template-columns:
-        230px 1fr;
+        135px
+        235px
+        1fr;
+
+      gap: 25px;
+
+      align-items: start;
+
+      padding:
+        37px 0;
 
       border-bottom:
         1px solid
-        #e8ebf0;
+        rgba(255, 255, 255, 0.075);
+
+    }
+
+
+    .dark-about-item:last-child {
+
+      border-bottom: none;
+
+    }
+
+
+    .about-index {
+
+      color:
+        rgba(255, 255, 255, 0.07);
+
+      font-size:
+        4.2rem;
+
+      font-weight: 850;
+
+      line-height:
+        0.9;
+
+      letter-spacing:
+        -4px;
 
       transition:
-        background 0.2s ease;
+        color 0.25s ease;
+
     }
 
 
-    .about-row:last-child {
-      border-bottom: 0;
+    .dark-about-item:hover
+    .about-index {
+
+      color:
+        rgba(217, 47, 53, 0.32);
+
     }
 
 
-    .about-row:hover {
-      background: #fafbfd;
+    .about-dark-title {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items:
+        flex-start;
+
     }
 
 
-    /* LEFT LABEL */
+    .about-dark-icon {
 
-    .about-label {
-      padding:
-        31px 30px;
-
-      background: #f7f9fc;
-
-      border-right:
-        1px solid
-        #e8ebf0;
-    }
-
-
-    .about-icon {
       width: 42px;
       height: 42px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      margin-bottom: 16px;
+      margin-bottom: 15px;
 
-      border-radius: 12px;
+      border-radius: 11px;
 
-      color: var(--blue);
+      color:
+        var(--red-light);
 
-      background: var(--blue-soft);
+      background:
+        rgba(217, 47, 53, 0.10);
 
-      font-size: 1rem;
+      border:
+        1px solid
+        rgba(255, 91, 91, 0.13);
+
+      font-size:
+        0.96rem;
+
     }
 
 
-    .about-number {
-      margin-bottom: 6px;
+    .about-dark-category {
 
-      color: #adb5c0;
+      margin-bottom: 4px;
 
-      font-size: 0.68rem;
+      color: #747b88;
+
+      font-size: 0.66rem;
+
       font-weight: 800;
 
-      letter-spacing: 0.14em;
+      letter-spacing:
+        0.15em;
+
+      text-transform:
+        uppercase;
+
     }
 
 
-    .about-label h3 {
-      color: var(--navy);
+    .about-dark-title h3 {
 
-      font-size: 1.08rem;
+      color: white;
 
-      letter-spacing: -0.3px;
+      font-size: 1.2rem;
+
+      font-weight: 720;
+
+      letter-spacing:
+        -0.35px;
+
     }
 
 
-    /* RIGHT TEXT */
+    .about-dark-title::after {
 
-    .about-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      content: "";
+
+      width: 32px;
+      height: 2px;
+
+      margin-top: 14px;
+
+      border-radius: 999px;
+
+      background: var(--red);
+
+    }
+
+
+    .about-dark-copy {
+
+      max-width: 650px;
+
+    }
+
+
+    .about-dark-copy p {
+
+      color: #aab0bb;
+
+      font-size: 0.95rem;
+
+      line-height: 1.9;
+
+    }
+
+
+    .about-dark-copy p + p {
+
+      margin-top: 15px;
+
+    }
+
+
+    .red-highlight {
+
+      color:
+        var(--red-light);
+
+      font-weight: 720;
+
+    }
+
+
+    .dark-about-item.academic {
+
+      margin:
+        0 -18px;
 
       padding:
-        31px 38px;
+        37px 18px;
+
+      background:
+        rgba(255, 255, 255, 0.018);
+
+      border-left:
+        2px solid
+        var(--red);
+
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.075);
+
     }
 
 
-    .about-copy p {
-      color: #687383;
+    /* =========================================================
+       GALLERY
+    ========================================================= */
 
-      font-size: 0.94rem;
+    .gallery-panel {
 
-      line-height: 1.85;
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        44px 46px
+        42px;
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #121419,
+          #171a20
+        );
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.075);
+
+      box-shadow:
+        0 24px 60px
+        rgba(0, 0, 0, 0.24);
+
     }
 
 
-    .about-copy p + p {
-      margin-top: 13px;
+    .gallery-panel::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 330px;
+      height: 330px;
+
+      right: -200px;
+      top: -210px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(217, 47, 53, 0.18),
+          transparent 70%
+        );
+
     }
 
-
-    .highlight {
-      color: #2861c8;
-
-      font-weight: 750;
-    }
-
-
-    /* ==================================================
-       GALLERY HEADING
-    ================================================== */
 
     .gallery-heading {
+
+      position: relative;
+
+      z-index: 2;
+
       display: flex;
 
-      align-items: end;
-      justify-content: space-between;
+      align-items: flex-end;
+
+      justify-content:
+        space-between;
 
       gap: 30px;
 
-      margin-bottom: 28px;
+      margin-bottom: 32px;
+
     }
 
 
     .section-kicker {
-      color: var(--blue);
 
-      font-size: 0.76rem;
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      color:
+        var(--red-light);
+
+      font-size: 0.73rem;
 
       font-weight: 800;
 
-      letter-spacing: 0.14em;
+      letter-spacing:
+        0.15em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .section-kicker::before {
+
+      content: "";
+
+      width: 24px;
+      height: 2px;
+
+      background: var(--red);
+
+      border-radius:
+        999px;
+
     }
 
 
     .gallery-heading h2 {
-      margin-top: 7px;
 
-      color: var(--navy);
+      margin-top: 8px;
+
+      color: white;
 
       font-size:
         clamp(
-          2rem,
+          2.1rem,
           4vw,
-          2.7rem
+          2.9rem
         );
 
-      letter-spacing: -1.3px;
+      letter-spacing:
+        -1.4px;
 
-      line-height: 1.1;
+      line-height:
+        1.05;
+
     }
 
 
     .gallery-heading p {
-      max-width: 470px;
 
-      color: var(--text-soft);
+      max-width: 460px;
 
-      font-size: 0.94rem;
+      color:
+        var(--text-soft);
 
-      line-height: 1.8;
+      font-size:
+        0.93rem;
+
+      line-height:
+        1.8;
+
     }
 
 
-    /* ==================================================
-       GALLERY
-    ================================================== */
+    /* =========================================================
+       IMAGE SLIDER
+    ========================================================= */
 
     .slider-shell {
+
+      position: relative;
+
+      z-index: 2;
+
       width: 100%;
 
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
     }
 
 
     .slider {
+
       position: relative;
 
       display: inline-block;
@@ -752,22 +1471,23 @@
 
       overflow: hidden;
 
-      border-radius: 22px;
+      border-radius: 20px;
 
-      background: #edf0f4;
+      background: #090a0d;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
 
       box-shadow:
-        0 20px 50px
-        rgba(25, 34, 48, 0.14);
+        0 22px 55px
+        rgba(0, 0, 0, 0.38);
+
     }
 
 
-    /*
-      Original image proportions are preserved.
-      Nothing is cropped or stretched.
-    */
-
     .gallery-image {
+
       display: block;
 
       width: auto;
@@ -778,25 +1498,29 @@
 
       object-fit: contain;
 
-      border-radius: 22px;
+      border-radius: 20px;
 
       opacity: 1;
 
       transition:
         opacity 0.32s ease;
+
     }
 
 
     .gallery-image.fade {
+
       opacity: 0;
+
     }
 
 
-    /* ==================================================
-       SLIDER BUTTONS
-    ================================================== */
+    /* =========================================================
+       GALLERY BUTTONS
+    ========================================================= */
 
     .slider-button {
+
       position: absolute;
 
       z-index: 10;
@@ -806,14 +1530,17 @@
       transform:
         translateY(-50%);
 
-      width: 42px;
-      height: 42px;
+      width: 43px;
+      height: 43px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      border: 0;
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
 
       border-radius: 50%;
 
@@ -822,42 +1549,58 @@
       color: white;
 
       background:
-        rgba(13, 23, 38, 0.84);
+        rgba(10, 11, 14, 0.84);
+
+      backdrop-filter:
+        blur(8px);
 
       box-shadow:
-        0 7px 20px
-        rgba(0, 0, 0, 0.17);
+        0 8px 22px
+        rgba(0, 0, 0, 0.28);
 
       transition:
         background 0.2s ease,
+        border-color 0.2s ease,
         transform 0.2s ease;
+
     }
 
 
     .slider-button:hover {
-      background: var(--blue);
+
+      background:
+        var(--red);
+
+      border-color:
+        var(--red);
 
       transform:
         translateY(-50%)
-        scale(1.06);
+        scale(1.07);
+
     }
 
 
     .prev {
+
       left: 14px;
+
     }
 
 
     .next {
+
       right: 14px;
+
     }
 
 
-    /* ==================================================
-       SLIDER DOTS
-    ================================================== */
+    /* =========================================================
+       GALLERY DOTS
+    ========================================================= */
 
     .slider-dots {
+
       display: flex;
 
       align-items: center;
@@ -867,11 +1610,13 @@
 
       gap: 8px;
 
-      margin-top: 17px;
+      margin-top: 19px;
+
     }
 
 
     .dot {
+
       width: 7px;
       height: 7px;
 
@@ -879,50 +1624,62 @@
 
       border: 0;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
       cursor: pointer;
 
-      background: #bec5cf;
+      background:
+        #4b5058;
 
       transition:
         width 0.25s ease,
         background 0.25s ease;
+
     }
 
 
     .dot.active {
-      width: 27px;
 
-      background: var(--blue);
+      width: 29px;
+
+      background:
+        var(--red);
+
     }
 
 
-    /* ==================================================
+    /* =========================================================
        FOOTER
-    ================================================== */
+    ========================================================= */
 
     .footer {
+
       position: relative;
 
       overflow: hidden;
 
       padding:
-        35px 0;
+        38px 0;
 
-      background: var(--navy);
+      background:
+        #08090c;
 
-      color: white;
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
     }
 
 
     .footer::before {
+
       content: "";
 
       position: absolute;
 
-      width: 320px;
-      height: 320px;
+      width: 300px;
+      height: 300px;
 
       right: -150px;
       top: -170px;
@@ -932,34 +1689,42 @@
       background:
         radial-gradient(
           circle,
-          rgba(62, 119, 246, 0.18),
-          transparent 68%
+          rgba(217, 47, 53, 0.15),
+          transparent 70%
         );
+
     }
 
 
     .footer-inner {
+
       position: relative;
+
       z-index: 2;
 
       text-align: center;
+
     }
 
 
     .footer-copy {
-      color: #94a0b1;
+
+      color: #777e88;
 
       font-size: 0.81rem;
 
-      letter-spacing: 0.02em;
+      letter-spacing:
+        0.02em;
+
     }
 
 
-    /* ==================================================
+    /* =========================================================
        BACK TO TOP
-    ================================================== */
+    ========================================================= */
 
     .back-to-top {
+
       position: fixed;
 
       right: 24px;
@@ -971,22 +1736,27 @@
       height: 46px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      border: 0;
+      border:
+        1px solid
+        rgba(255, 82, 88, 0.35);
 
       border-radius: 14px;
 
-      background: var(--navy);
+      background:
+        #16191f;
 
-      color: white;
+      color:
+        var(--red-light);
 
       cursor: pointer;
 
       box-shadow:
         0 12px 30px
-        rgba(13, 23, 38, 0.25);
+        rgba(0, 0, 0, 0.35);
 
       opacity: 0;
 
@@ -999,36 +1769,48 @@
         opacity 0.25s ease,
         transform 0.25s ease,
         visibility 0.25s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        color 0.2s ease;
+
     }
 
 
     .back-to-top.show {
+
       opacity: 1;
 
       visibility: visible;
 
       transform:
         translateY(0);
+
     }
 
 
     .back-to-top:hover {
-      background: var(--blue);
+
+      color: white;
+
+      background:
+        var(--red);
 
       transform:
         translateY(-3px);
+
     }
 
 
-    /* ==================================================
-       RESPONSIVE
-    ================================================== */
+    /* =========================================================
+       TABLET
+    ========================================================= */
 
     @media (max-width: 850px) {
 
+
       .hero {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
 
         text-align: center;
 
@@ -1037,107 +1819,161 @@
         padding:
           60px 0
           58px;
+
       }
 
 
       .hero h1 {
+
         margin: auto;
+
+      }
+
+
+      .hero-eyebrow {
+
+        justify-content:
+          center;
+
       }
 
 
       .tagline {
+
         margin:
           23px auto
           0;
+
       }
 
 
       .socials {
-        justify-content: center;
+
+        justify-content:
+          center;
+
       }
 
 
       .profile-panel {
+
         grid-row: 1;
+
       }
 
 
       .profile-frame {
+
         width: 205px;
 
         border-radius: 30px;
+
       }
 
 
       .profile-image {
+
         border-radius: 22px;
+
       }
 
 
-      .about-header {
-        align-items: flex-start;
+      .dark-about-item {
 
-        flex-direction: column;
-
-        gap: 15px;
-      }
-
-
-      .about-summary {
-        text-align: left;
-      }
-
-
-      .about-row {
         grid-template-columns:
-          190px 1fr;
+          75px
+          180px
+          1fr;
+
+        gap: 20px;
+
+      }
+
+
+      .about-index {
+
+        font-size:
+          3.3rem;
+
       }
 
 
       .gallery-heading {
-        align-items: flex-start;
 
-        flex-direction: column;
+        align-items:
+          flex-start;
 
-        gap: 12px;
+        flex-direction:
+          column;
+
+        gap: 13px;
+
       }
 
 
       .slider {
+
         max-width: 100%;
+
       }
 
 
       .gallery-image {
+
         max-width: 100%;
         max-height: 540px;
+
       }
 
     }
 
 
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
     @media (max-width: 640px) {
 
+
       .nav-links {
+
         display: none;
+
       }
 
 
       .container {
+
         width: 91%;
+
+      }
+
+
+      .brand-avatar {
+
+        width: 35px;
+        height: 35px;
+
+        border-radius: 10px;
+
+        margin-right: 9px;
+
       }
 
 
       .hero {
+
         min-height: unset;
 
         padding:
           46px 0
           45px;
+
       }
 
 
       .hero h1 {
+
         font-size:
           clamp(
             2.75rem,
@@ -1145,114 +1981,199 @@
             4rem
           );
 
-        letter-spacing: -2.7px;
+        letter-spacing:
+          -2.7px;
+
       }
 
 
       .tagline {
-        font-size: 0.91rem;
+
+        font-size:
+          0.91rem;
+
       }
 
 
       .social {
-        font-size: 0.77rem;
+
+        font-size:
+          0.77rem;
 
         padding:
           8px 10px;
+
       }
 
 
       main {
+
         padding:
           50px 0
           48px;
+
       }
 
 
       .section {
-        margin-bottom: 56px;
+
+        margin-bottom:
+          56px;
+
       }
 
 
-      /* ABOUT MOBILE */
+      .about-dark {
 
-      .about-header {
         padding:
-          28px 23px
-          24px;
+          34px 23px
+          12px;
+
+        border-radius:
+          21px;
+
       }
 
 
-      .about-row {
-        grid-template-columns: 1fr;
-      }
+      .dark-about-header {
 
-
-      .about-label {
-        padding:
-          22px 22px
-          16px;
-
-        border-right: 0;
-        border-bottom:
-          1px solid #e8ebf0;
-
-        background: #f8fafc;
-      }
-
-
-      .about-icon {
-        margin-bottom: 12px;
-      }
-
-
-      .about-copy {
-        padding:
-          21px 22px
+        padding-bottom:
           27px;
+
       }
 
 
-      .about-copy p {
-        font-size: 0.9rem;
+      .about-header-symbol {
+
+        width: 46px;
+        height: 46px;
+
+        border-radius:
+          13px;
+
       }
 
 
-      /* GALLERY MOBILE */
+      .dark-about-item {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 16px;
+
+        padding:
+          30px 0;
+
+      }
+
+
+      .dark-about-item.academic {
+
+        margin:
+          0 -10px;
+
+        padding:
+          30px 10px;
+
+      }
+
+
+      .about-index {
+
+        font-size:
+          2.6rem;
+
+        letter-spacing:
+          -2px;
+
+      }
+
+
+      .about-dark-icon {
+
+        margin-bottom:
+          11px;
+
+      }
+
+
+      .about-dark-copy p {
+
+        font-size:
+          0.91rem;
+
+        line-height:
+          1.82;
+
+      }
+
+
+      .gallery-panel {
+
+        padding:
+          31px 20px
+          29px;
+
+        border-radius:
+          21px;
+
+      }
+
 
       .slider {
+
         max-width: 100%;
 
-        border-radius: 17px;
+        border-radius:
+          16px;
+
       }
 
 
       .gallery-image {
+
         max-width: 100%;
 
         max-height: 70vh;
 
-        border-radius: 17px;
+        border-radius:
+          16px;
+
       }
 
 
       .slider-button {
+
         width: 36px;
         height: 36px;
+
       }
 
 
       .prev {
+
         left: 9px;
+
       }
 
 
       .next {
+
         right: 9px;
+
+      }
+
+
+      .footer {
+
+        padding:
+          31px 0;
+
       }
 
 
       .back-to-top {
+
         right: 16px;
         bottom: 16px;
 
@@ -1260,6 +2181,7 @@
         height: 43px;
 
         border-radius: 12px;
+
       }
 
     }
@@ -1272,26 +2194,30 @@
 <body>
 
 
-  <!-- ==================================================
+  <!-- =========================================================
        NAVIGATION
-  ================================================== -->
+  ========================================================= -->
 
   <header class="topbar">
 
     <div class="container nav">
+
 
       <a
         class="brand"
         href="#home"
       >
 
-        <span class="brand-mark">
-          MB
-        </span>
+        <img
+          class="brand-avatar"
+          src="https://github.com/manula-balasooriya.png"
+          alt="Manula Balasooriya"
+        >
 
         Manula Balasooriya
 
       </a>
+
 
 
       <nav class="nav-links">
@@ -1310,16 +2236,16 @@
 
       </nav>
 
+
     </div>
 
   </header>
 
 
 
-  <!-- ==================================================
+  <!-- =========================================================
        HERO
-       EXACT SAME DESIGN
-  ================================================== -->
+  ========================================================= -->
 
   <section
     class="hero-section"
@@ -1331,166 +2257,231 @@
 
       <div class="hero-copy">
 
+
         <span class="hero-eyebrow">
           Personal Portfolio
         </span>
 
 
         <h1>
+
           Manula
+
           <br>
+
           Balasooriya
+
         </h1>
 
 
         <p class="tagline">
+
           First Class Data Science Graduate (Batch Top)
+
           |
+
           Advanced Level Physics Educator
+
           |
+
           Singer-Songwriter &amp; Composer
+
         </p>
 
 
+
+        <!-- =====================================================
+             SOCIAL LINKS
+        ====================================================== -->
 
         <div class="socials">
 
 
           <a
-            class="social facebook"
+            class="social social-facebook"
             href="https://facebook.com/manula.balasooriya.page"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-facebook-f"></i>
+
             Page
+
           </a>
 
 
+
           <a
-            class="social facebook"
+            class="social social-facebook"
             href="https://facebook.com/manula.balasooriya.profile"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-facebook-f"></i>
+
             Facebook
+
           </a>
 
 
+
           <a
-            class="social instagram"
+            class="social social-instagram"
             href="https://instagram.com/manula.balasooriya"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-instagram"></i>
+
             Instagram
+
           </a>
 
 
+
           <a
-            class="social youtube"
+            class="social social-youtube"
             href="https://youtube.com/@manula.balasooriya"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-youtube"></i>
+
             YouTube
+
           </a>
 
 
+
           <a
-            class="social threads"
+            class="social social-threads"
             href="https://threads.com/@manula.balasooriya"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-threads"></i>
+
             Threads
+
           </a>
 
 
+
           <a
-            class="social tiktok"
+            class="social social-tiktok"
             href="https://tiktok.com/@manula.balasooriya"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-tiktok"></i>
+
             TikTok
+
           </a>
 
 
+
           <a
-            class="social linkedin"
+            class="social social-linkedin"
             href="https://linkedin.com/in/manula-balasooriya"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-linkedin-in"></i>
+
             LinkedIn
+
           </a>
 
 
+
           <a
-            class="social github"
+            class="social social-github"
             href="https://github.com/manula-balasooriya"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-github"></i>
+
             GitHub
+
           </a>
 
 
+
           <a
-            class="social whatsapp"
+            class="social social-whatsapp"
             href="https://wa.me/94715476427"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-whatsapp"></i>
+
             WhatsApp
+
           </a>
 
 
+
           <a
-            class="social whatsapp"
+            class="social social-whatsapp"
             href="https://whatsapp.com/channel/0029VbDYV67FCCoUpdNgdy0G"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-whatsapp"></i>
+
             Channel
+
           </a>
 
 
+
           <a
-            class="social email"
+            class="social social-email"
             href="mailto:manulab.official@gmail.com"
           >
+
             <i class="fa-solid fa-envelope"></i>
+
             Email
+
           </a>
 
 
+
           <a
-            class="social spotify"
+            class="social social-spotify"
             href="https://open.spotify.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <i class="fa-brands fa-spotify"></i>
+
             Spotify
+
           </a>
 
 
         </div>
 
+
       </div>
 
 
+
+      <!-- HERO PROFILE -->
 
       <div class="profile-panel">
 
@@ -1513,35 +2504,37 @@
 
 
 
-  <!-- ==================================================
+  <!-- =========================================================
        MAIN
-  ================================================== -->
+  ========================================================= -->
 
   <main>
 
     <div class="container">
 
 
-      <!-- ==================================================
+      <!-- =====================================================
            ABOUT ME
-      ================================================== -->
+      ====================================================== -->
 
       <section
         class="section"
         id="about"
       >
 
-        <div class="about-panel">
+
+        <div class="about-dark">
 
 
           <!-- HEADER -->
 
-          <div class="about-header">
+          <div class="dark-about-header">
+
 
             <div>
 
-              <div class="about-eyebrow">
-                About
+              <div class="dark-about-kicker">
+                Profile
               </div>
 
               <h2>
@@ -1551,46 +2544,67 @@
             </div>
 
 
-            <p class="about-summary">
-              My journey brings together education,
-              science, technology and music.
-            </p>
+            <div class="about-header-symbol">
+
+              <i class="fa-solid fa-user"></i>
+
+            </div>
+
 
           </div>
 
 
 
-          <!-- TEACHING -->
+          <!-- =================================================
+               01 TEACHING
+          ================================================== -->
 
-          <div class="about-row">
+          <div class="dark-about-item">
 
 
-            <div class="about-label">
+            <div class="about-index">
+              01
+            </div>
 
-              <div class="about-icon">
+
+            <div class="about-dark-title">
+
+
+              <div class="about-dark-icon">
+
                 <i class="fa-solid fa-atom"></i>
+
               </div>
 
-              <div class="about-number">
-                01
+
+              <div class="about-dark-category">
+                Education
               </div>
+
 
               <h3>
                 Teaching
               </h3>
 
+
             </div>
 
 
-            <div class="about-copy">
+            <div class="about-dark-copy">
 
               <p>
+
                 I am an
-                <span class="highlight">
+
+                <span class="red-highlight">
+
                   Advanced Level Physics Educator with over 6 years of experience
+
                 </span>,
+
                 passionate about making complex concepts clear and engaging
                 while supporting students throughout their academic journey.
+
               </p>
 
             </div>
@@ -1600,59 +2614,107 @@
 
 
 
-          <!-- ACADEMIC JOURNEY -->
+          <!-- =================================================
+               02 MY ACADEMIC JOURNEY
+          ================================================== -->
 
-          <div class="about-row">
+          <div class="dark-about-item academic">
 
 
-            <div class="about-label">
+            <div class="about-index">
+              02
+            </div>
 
-              <div class="about-icon">
+
+            <div class="about-dark-title">
+
+
+              <div class="about-dark-icon">
+
                 <i class="fa-solid fa-graduation-cap"></i>
+
               </div>
 
-              <div class="about-number">
-                02
+
+              <div class="about-dark-category">
+                Academic
               </div>
+
 
               <h3>
                 My Academic Journey
               </h3>
 
+
             </div>
 
 
-            <div class="about-copy">
+            <div class="about-dark-copy">
+
 
               <p>
+
                 I completed my Advanced Level studies in
-                <span class="highlight">
-                  Combined Mathematics, Chemistry, and Physics
+
+                <span class="red-highlight">
+                  Combined Mathematics, Chemistry,
                 </span>
+
+                and
+
+                <span class="red-highlight">
+                  Physics
+                </span>
+
                 and was selected for admission to a
-                <span class="highlight">
-                  BSc Engineering programme at the University of Ruhuna
-                </span>.
+
+                <span class="red-highlight">
+                  BSc Engineering
+                </span>
+
+                programme at the University of Ruhuna.
+
                 However, driven by my interest in
-                <span class="highlight">
-                  Artificial Intelligence and Data Science
+
+                <span class="red-highlight">
+                  Artificial Intelligence
                 </span>,
+
                 I chose to pursue my higher education at SLIIT.
+
               </p>
 
 
               <p>
+
                 I graduated with a
-                <span class="highlight">
-                  Bachelor’s Honours Degree in Information Technology,
-                  specializing in Data Science, with First Class Honours
+
+                <span class="red-highlight">
+                  Bachelor’s Honours
+                </span>
+
+                Degree in Information Technology,
+
+                <span class="red-highlight">
+                  specializing in Data Science
+                </span>,
+
+                with
+
+                <span class="red-highlight">
+                  First Class Honours
                 </span>.
+
                 I was also honoured to receive the
-                <span class="highlight">
+
+                <span class="red-highlight">
                   Best Performance Award (Batch Top)
                 </span>
+
                 in the Data Science specialization.
+
               </p>
+
 
             </div>
 
@@ -1661,41 +2723,58 @@
 
 
 
-          <!-- MUSIC -->
+          <!-- =================================================
+               03 MUSIC
+          ================================================== -->
 
-          <div class="about-row">
+          <div class="dark-about-item">
 
 
-            <div class="about-label">
+            <div class="about-index">
+              03
+            </div>
 
-              <div class="about-icon">
+
+            <div class="about-dark-title">
+
+
+              <div class="about-dark-icon">
+
                 <i class="fa-solid fa-music"></i>
+
               </div>
 
-              <div class="about-number">
-                03
+
+              <div class="about-dark-category">
+                Creative
               </div>
+
 
               <h3>
                 Music
               </h3>
 
+
             </div>
 
 
-            <div class="about-copy">
+            <div class="about-dark-copy">
 
               <p>
+
                 Music has been a lifelong passion of mine,
                 which led me to pursue a
-                <span class="highlight">
+
+                <span class="red-highlight">
                   Diploma in Audio Engineering and Music Production
                 </span>.
+
                 I have a strong interest in
-                <span class="highlight">
-                  singing, songwriting, composition,
-                  audio engineering, and music production
+
+                <span class="red-highlight">
+                  singing, songwriting, and composing
                 </span>.
+
               </p>
 
             </div>
@@ -1706,13 +2785,14 @@
 
         </div>
 
+
       </section>
 
 
 
-      <!-- ==================================================
+      <!-- =====================================================
            GALLERY
-      ================================================== -->
+      ====================================================== -->
 
       <section
         class="section"
@@ -1720,81 +2800,91 @@
       >
 
 
-        <div class="gallery-heading">
+        <div class="gallery-panel">
 
-          <div>
 
-            <div class="section-kicker">
-              Gallery
+          <div class="gallery-heading">
+
+
+            <div>
+
+
+              <div class="section-kicker">
+                Gallery
+              </div>
+
+
+              <h2>
+                Moments
+              </h2>
+
+
             </div>
 
-            <h2>
-              Moments
-            </h2>
 
-          </div>
+            <p>
 
+              A collection of moments from my academic,
+              professional and personal journey.
 
-          <p>
-            A collection of moments from my academic,
-            professional and personal journey.
-          </p>
-
-        </div>
-
-
-
-        <div class="slider-shell">
-
-
-          <div class="slider">
-
-
-            <img
-              id="galleryImage"
-              class="gallery-image"
-              src="img1.jpg"
-              alt="Manula Balasooriya"
-            >
-
-
-
-            <button
-              class="slider-button prev"
-              aria-label="Previous image"
-            >
-
-              <i class="fa-solid fa-chevron-left"></i>
-
-            </button>
-
-
-
-            <button
-              class="slider-button next"
-              aria-label="Next image"
-            >
-
-              <i class="fa-solid fa-chevron-right"></i>
-
-            </button>
+            </p>
 
 
           </div>
 
 
-          <!--
-            Dots are generated automatically
-            by JavaScript.
-          -->
 
-          <div
-            class="slider-dots"
-            id="sliderDots"
-          ></div>
+          <div class="slider-shell">
+
+
+            <div class="slider">
+
+
+              <img
+                id="galleryImage"
+                class="gallery-image"
+                src="img1.jpg"
+                alt="Manula Balasooriya"
+              >
+
+
+
+              <button
+                class="slider-button prev"
+                aria-label="Previous image"
+              >
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+              </button>
+
+
+
+              <button
+                class="slider-button next"
+                aria-label="Next image"
+              >
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+              </button>
+
+
+            </div>
+
+
+
+            <div
+              class="slider-dots"
+              id="sliderDots"
+            ></div>
+
+
+          </div>
 
 
         </div>
+
 
       </section>
 
@@ -1805,9 +2895,9 @@
 
 
 
-  <!-- ==================================================
+  <!-- =========================================================
        FOOTER
-  ================================================== -->
+  ========================================================= -->
 
   <footer
     class="footer"
@@ -1829,9 +2919,9 @@
 
 
 
-  <!-- ==================================================
+  <!-- =========================================================
        BACK TO TOP
-  ================================================== -->
+  ========================================================= -->
 
   <button
     class="back-to-top"
@@ -1846,43 +2936,57 @@
 
 
 
-  <!-- ==================================================
+  <!-- =========================================================
        JAVASCRIPT
-  ================================================== -->
+  ========================================================= -->
 
   <script>
 
-    /* ==================================================
-       GALLERY IMAGES
 
-       All six images are included here.
-    ================================================== */
+    /* =========================================================
+       GALLERY IMAGES
+    ========================================================= */
 
     const images = [
+
       "img1.jpg",
+
       "img2.jpg",
+
       "img3.jpg",
+
       "img4.jpg",
+
       "img5.jpg",
+
       "img6.jpg"
+
     ];
 
 
 
     const galleryImage =
-      document.getElementById("galleryImage");
+      document.getElementById(
+        "galleryImage"
+      );
 
 
     const sliderDots =
-      document.getElementById("sliderDots");
+      document.getElementById(
+        "sliderDots"
+      );
 
 
     const previousButton =
-      document.querySelector(".prev");
+      document.querySelector(
+        ".prev"
+      );
 
 
     const nextButton =
-      document.querySelector(".next");
+      document.querySelector(
+        ".next"
+      );
 
 
     let currentSlide = 0;
@@ -1891,15 +2995,18 @@
 
 
 
-    /* ==================================================
-       CREATE DOTS AUTOMATICALLY
-    ================================================== */
+    /* =========================================================
+       CREATE DOTS
+    ========================================================= */
 
     images.forEach(
       function(image, index) {
 
+
         const dot =
-          document.createElement("button");
+          document.createElement(
+            "button"
+          );
 
 
         dot.className =
@@ -1918,7 +3025,10 @@
           index;
 
 
-        sliderDots.appendChild(dot);
+        sliderDots.appendChild(
+          dot
+        );
+
 
       }
     );
@@ -1926,97 +3036,172 @@
 
 
     const dots =
-      document.querySelectorAll(".dot");
+      document.querySelectorAll(
+        ".dot"
+      );
 
 
 
-    /* ==================================================
-       PRELOAD ALL SIX IMAGES
-    ================================================== */
+    /* =========================================================
+       PRELOAD IMAGES
+    ========================================================= */
 
     images.forEach(
       function(src) {
 
+
         const image =
           new Image();
 
-        image.src = src;
+
+        image.src =
+          src;
+
 
       }
     );
 
 
 
+    /* =========================================================
+       UPDATE DOTS
+    ========================================================= */
+
     function updateDots() {
+
 
       dots.forEach(
         function(dot, index) {
+
 
           dot.classList.toggle(
             "active",
             index === currentSlide
           );
 
+
         }
       );
+
 
     }
 
 
 
+    /* =========================================================
+       SHOW IMAGE
+    ========================================================= */
+
     function showSlide(index) {
 
+
       const newIndex =
-        (index + images.length)
-        % images.length;
+
+        (
+          index
+          +
+          images.length
+        )
+
+        %
+
+        images.length;
+
 
 
       galleryImage
         .classList
-        .add("fade");
+        .add(
+          "fade"
+        );
+
 
 
       setTimeout(
         function() {
 
+
           currentSlide =
             newIndex;
 
-
-          galleryImage.src =
-            images[currentSlide];
-
-
-          galleryImage.alt =
-            "Manula Balasooriya - Image "
-            + (currentSlide + 1);
 
 
           galleryImage.onload =
             function() {
 
+
               galleryImage
                 .classList
-                .remove("fade");
+                .remove(
+                  "fade"
+                );
+
 
             };
 
 
+
+          galleryImage.src =
+            images[
+              currentSlide
+            ];
+
+
+
+          galleryImage.alt =
+
+            "Manula Balasooriya - Image "
+
+            +
+
+            (
+              currentSlide
+              +
+              1
+            );
+
+
+
+          if (
+            galleryImage.complete
+          ) {
+
+
+            galleryImage
+              .classList
+              .remove(
+                "fade"
+              );
+
+
+          }
+
+
+
           updateDots();
 
+
         },
+
         250
       );
+
 
     }
 
 
 
+    /* =========================================================
+       NEXT / PREVIOUS
+    ========================================================= */
+
     function nextSlide() {
+
 
       showSlide(
         currentSlide + 1
       );
+
 
     }
 
@@ -2024,21 +3209,32 @@
 
     function previousSlide() {
 
+
       showSlide(
         currentSlide - 1
       );
+
 
     }
 
 
 
+    /* =========================================================
+       AUTO SLIDESHOW
+    ========================================================= */
+
     function startAutoSlide() {
+
 
       autoSlide =
         setInterval(
+
           nextSlide,
+
           4500
+
         );
+
 
     }
 
@@ -2046,11 +3242,14 @@
 
     function resetAutoSlide() {
 
+
       clearInterval(
         autoSlide
       );
 
+
       startAutoSlide();
+
 
     }
 
@@ -2060,9 +3259,12 @@
       "click",
       function() {
 
+
         nextSlide();
 
+
         resetAutoSlide();
+
 
       }
     );
@@ -2073,9 +3275,12 @@
       "click",
       function() {
 
+
         previousSlide();
 
+
         resetAutoSlide();
+
 
       }
     );
@@ -2085,9 +3290,11 @@
     dots.forEach(
       function(dot) {
 
+
         dot.addEventListener(
           "click",
           function() {
+
 
             const index =
               Number(
@@ -2095,12 +3302,17 @@
               );
 
 
-            showSlide(index);
+            showSlide(
+              index
+            );
+
 
             resetAutoSlide();
 
+
           }
         );
+
 
       }
     );
@@ -2111,35 +3323,49 @@
 
 
 
-    /* ==================================================
+    /* =========================================================
        BACK TO TOP
-    ================================================== */
+    ========================================================= */
 
     const backToTopButton =
-      document.getElementById("backToTop");
+      document.getElementById(
+        "backToTop"
+      );
+
 
 
     window.addEventListener(
       "scroll",
       function() {
 
+
         if (
           window.scrollY > 400
         ) {
 
+
           backToTopButton
             .classList
-            .add("show");
+            .add(
+              "show"
+            );
+
 
         }
+
 
         else {
 
+
           backToTopButton
             .classList
-            .remove("show");
+            .remove(
+              "show"
+            );
+
 
         }
+
 
       }
     );
@@ -2150,13 +3376,19 @@
       "click",
       function() {
 
+
         window.scrollTo({
+
           top: 0,
+
           behavior: "smooth"
+
         });
+
 
       }
     );
+
 
   </script>
 
