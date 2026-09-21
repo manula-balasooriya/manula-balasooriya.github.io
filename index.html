@@ -39,8 +39,6 @@
       --border: #e7eaf0;
       --surface: #ffffff;
       --surface-soft: #f6f8fb;
-
-      --radius: 22px;
     }
 
 
@@ -67,7 +65,6 @@
         sans-serif;
 
       background: #f4f6f9;
-
       color: var(--text);
 
       line-height: 1.6;
@@ -86,7 +83,8 @@
 
 
     /* ==================================================
-       TOP NAV
+       NAVIGATION
+       KEPT THE SAME
     ================================================== */
 
     .topbar {
@@ -182,13 +180,13 @@
 
     /* ==================================================
        HERO
+       KEPT THE SAME
     ================================================== */
 
     .hero-section {
       background: var(--navy);
 
       position: relative;
-
       overflow: hidden;
     }
 
@@ -242,7 +240,6 @@
       color: #83aaff;
 
       font-size: 0.78rem;
-
       font-weight: 800;
 
       letter-spacing: 0.15em;
@@ -264,7 +261,6 @@
         );
 
       line-height: 0.98;
-
       letter-spacing: -4px;
     }
 
@@ -284,13 +280,13 @@
         );
 
       line-height: 1.8;
-
       font-weight: 500;
     }
 
 
     /* ==================================================
        SOCIAL LINKS
+       KEPT THE SAME
     ================================================== */
 
     .socials {
@@ -396,6 +392,7 @@
 
     /* ==================================================
        HERO PROFILE
+       KEPT THE SAME
     ================================================== */
 
     .profile-panel {
@@ -474,15 +471,11 @@
 
 
     /* ==================================================
-       ABOUT
+       NEW ABOUT ME DESIGN
     ================================================== */
 
-    .about-wrapper {
-      display: grid;
-
-      grid-template-columns:
-        0.38fr
-        0.62fr;
+    .about-panel {
+      overflow: hidden;
 
       background: white;
 
@@ -492,63 +485,36 @@
 
       border-radius: 26px;
 
-      overflow: hidden;
-
       box-shadow:
         0 16px 45px
         rgba(29, 40, 58, 0.055);
     }
 
 
-    .about-intro {
-      position: relative;
+    /* ABOUT HEADER */
+
+    .about-header {
+      display: flex;
+
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 30px;
 
       padding:
-        44px 38px;
+        38px 42px
+        31px;
 
-      background:
-        linear-gradient(
-          155deg,
-          #111e30,
-          #172840
-        );
-
-      color: white;
-
-      overflow: hidden;
+      border-bottom:
+        1px solid
+        #e8ebf0;
     }
 
 
-    .about-intro::after {
-      content: "";
-
-      position: absolute;
-
-      width: 220px;
-      height: 220px;
-
-      left: -100px;
-      bottom: -110px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(70, 130, 255, 0.28),
-          transparent 68%
-        );
-    }
-
-
-    .about-kicker {
-      position: relative;
-      z-index: 2;
-
-      color: #78a7ff;
+    .about-eyebrow {
+      color: var(--blue);
 
       font-size: 0.75rem;
-
       font-weight: 800;
 
       letter-spacing: 0.15em;
@@ -557,11 +523,10 @@
     }
 
 
-    .about-intro h2 {
-      position: relative;
-      z-index: 2;
+    .about-header h2 {
+      margin-top: 7px;
 
-      margin-top: 11px;
+      color: var(--navy);
 
       font-size:
         clamp(
@@ -570,78 +535,67 @@
           3.2rem
         );
 
-      letter-spacing: -1.8px;
+      letter-spacing: -1.7px;
 
       line-height: 1.05;
     }
 
 
-    .about-intro p {
-      position: relative;
-      z-index: 2;
+    .about-summary {
+      max-width: 390px;
 
-      margin-top: 22px;
+      color: #788392;
 
-      color: #b8c5d6;
+      font-size: 0.91rem;
 
-      font-size: 0.94rem;
+      line-height: 1.8;
 
-      line-height: 1.85;
+      text-align: right;
     }
 
 
-    .about-line {
-      position: relative;
-      z-index: 2;
+    /* ABOUT ROWS */
 
-      width: 48px;
-      height: 3px;
-
-      margin-top: 28px;
-
-      border-radius: 999px;
-
-      background: var(--blue);
-    }
-
-
-    .about-content {
-      padding:
-        38px 42px;
-    }
-
-
-    .journey-item {
+    .about-row {
       display: grid;
 
       grid-template-columns:
-        48px 1fr;
+        230px 1fr;
 
-      gap: 18px;
+      border-bottom:
+        1px solid
+        #e8ebf0;
 
-      position: relative;
-
-      padding-bottom: 34px;
+      transition:
+        background 0.2s ease;
     }
 
 
-    .journey-item:last-child {
-      padding-bottom: 0;
+    .about-row:last-child {
+      border-bottom: 0;
     }
 
 
-    .journey-marker {
-      position: relative;
-
-      display: flex;
-      justify-content: center;
+    .about-row:hover {
+      background: #fafbfd;
     }
 
 
-    .journey-icon {
-      position: relative;
-      z-index: 3;
+    /* LEFT LABEL */
 
+    .about-label {
+      padding:
+        31px 30px;
+
+      background: #f7f9fc;
+
+      border-right:
+        1px solid
+        #e8ebf0;
+    }
+
+
+    .about-icon {
       width: 42px;
       height: 42px;
 
@@ -649,53 +603,62 @@
       align-items: center;
       justify-content: center;
 
-      border-radius: 12px;
+      margin-bottom: 16px;
 
-      background: var(--blue-soft);
+      border-radius: 12px;
 
       color: var(--blue);
 
-      font-size: 0.98rem;
+      background: var(--blue-soft);
+
+      font-size: 1rem;
     }
 
 
-    .journey-item:not(:last-child)
-    .journey-marker::after {
-      content: "";
+    .about-number {
+      margin-bottom: 6px;
 
-      position: absolute;
+      color: #adb5c0;
 
-      top: 45px;
-      bottom: -31px;
+      font-size: 0.68rem;
+      font-weight: 800;
 
-      width: 1px;
-
-      background: #dfe5ef;
+      letter-spacing: 0.14em;
     }
 
 
-    .journey-content h3 {
-      margin-bottom: 8px;
-
+    .about-label h3 {
       color: var(--navy);
 
-      font-size: 1.07rem;
+      font-size: 1.08rem;
 
-      letter-spacing: -0.25px;
+      letter-spacing: -0.3px;
     }
 
 
-    .journey-content p {
+    /* RIGHT TEXT */
+
+    .about-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding:
+        31px 38px;
+    }
+
+
+    .about-copy p {
       color: #687383;
 
-      font-size: 0.93rem;
+      font-size: 0.94rem;
 
-      line-height: 1.82;
+      line-height: 1.85;
     }
 
 
-    .journey-content p + p {
-      margin-top: 11px;
+    .about-copy p + p {
+      margin-top: 13px;
     }
 
 
@@ -707,7 +670,7 @@
 
 
     /* ==================================================
-       GALLERY
+       GALLERY HEADING
     ================================================== */
 
     .gallery-heading {
@@ -765,7 +728,7 @@
 
 
     /* ==================================================
-       GALLERY SLIDER
+       GALLERY
     ================================================== */
 
     .slider-shell {
@@ -800,14 +763,8 @@
 
 
     /*
-      Images keep their natural aspect ratio.
-
-      Maximum:
-      width  = 760px
-      height = 540px
-
-      No cropping.
-      No stretching.
+      Original image proportions are preserved.
+      Nothing is cropped or stretched.
     */
 
     .gallery-image {
@@ -836,7 +793,7 @@
 
 
     /* ==================================================
-       GALLERY BUTTONS
+       SLIDER BUTTONS
     ================================================== */
 
     .slider-button {
@@ -897,7 +854,7 @@
 
 
     /* ==================================================
-       GALLERY DOTS
+       SLIDER DOTS
     ================================================== */
 
     .slider-dots {
@@ -905,6 +862,8 @@
 
       align-items: center;
       justify-content: center;
+
+      flex-wrap: wrap;
 
       gap: 8px;
 
@@ -981,7 +940,6 @@
 
     .footer-inner {
       position: relative;
-
       z-index: 2;
 
       text-align: center;
@@ -998,7 +956,7 @@
 
 
     /* ==================================================
-       BACK TO TOP BUTTON
+       BACK TO TOP
     ================================================== */
 
     .back-to-top {
@@ -1063,11 +1021,6 @@
     }
 
 
-    .back-to-top i {
-      font-size: 0.95rem;
-    }
-
-
     /* ==================================================
        RESPONSIVE
     ================================================== */
@@ -1121,20 +1074,23 @@
       }
 
 
-      .about-wrapper {
-        grid-template-columns: 1fr;
+      .about-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
       }
 
 
-      .about-intro {
-        padding:
-          35px 32px;
+      .about-summary {
+        text-align: left;
       }
 
 
-      .about-content {
-        padding:
-          34px 31px;
+      .about-row {
+        grid-template-columns:
+          190px 1fr;
       }
 
 
@@ -1154,7 +1110,6 @@
 
       .gallery-image {
         max-width: 100%;
-
         max-height: 540px;
       }
 
@@ -1219,44 +1174,51 @@
       }
 
 
-      .about-intro {
+      /* ABOUT MOBILE */
+
+      .about-header {
         padding:
-          31px 24px;
+          28px 23px
+          24px;
       }
 
 
-      .about-content {
+      .about-row {
+        grid-template-columns: 1fr;
+      }
+
+
+      .about-label {
         padding:
-          29px 21px;
+          22px 22px
+          16px;
+
+        border-right: 0;
+        border-bottom:
+          1px solid #e8ebf0;
+
+        background: #f8fafc;
       }
 
 
-      .journey-item {
-        grid-template-columns:
-          40px 1fr;
-
-        gap: 13px;
+      .about-icon {
+        margin-bottom: 12px;
       }
 
 
-      .journey-icon {
-        width: 36px;
-        height: 36px;
-
-        border-radius: 10px;
+      .about-copy {
+        padding:
+          21px 22px
+          27px;
       }
 
 
-      .journey-item:not(:last-child)
-      .journey-marker::after {
-        top: 39px;
-      }
-
-
-      .journey-content p {
+      .about-copy p {
         font-size: 0.9rem;
       }
 
+
+      /* GALLERY MOBILE */
 
       .slider {
         max-width: 100%;
@@ -1287,12 +1249,6 @@
 
       .next {
         right: 9px;
-      }
-
-
-      .footer {
-        padding:
-          31px 0;
       }
 
 
@@ -1362,6 +1318,7 @@
 
   <!-- ==================================================
        HERO
+       EXACT SAME DESIGN
   ================================================== -->
 
   <section
@@ -1566,7 +1523,7 @@
 
 
       <!-- ==================================================
-           ABOUT
+           ABOUT ME
       ================================================== -->
 
       <section
@@ -1574,162 +1531,178 @@
         id="about"
       >
 
+        <div class="about-panel">
 
-        <div class="about-wrapper">
 
+          <!-- HEADER -->
 
-          <div class="about-intro">
+          <div class="about-header">
 
-            <div class="about-kicker">
-              About
+            <div>
+
+              <div class="about-eyebrow">
+                About
+              </div>
+
+              <h2>
+                About Me
+              </h2>
+
             </div>
 
-            <h2>
-              About
-              <br>
-              Me
-            </h2>
 
-            <p>
-              A journey shaped by education,
+            <p class="about-summary">
+              My journey brings together education,
               science, technology and music.
             </p>
 
-            <div class="about-line"></div>
+          </div>
+
+
+
+          <!-- TEACHING -->
+
+          <div class="about-row">
+
+
+            <div class="about-label">
+
+              <div class="about-icon">
+                <i class="fa-solid fa-atom"></i>
+              </div>
+
+              <div class="about-number">
+                01
+              </div>
+
+              <h3>
+                Teaching
+              </h3>
+
+            </div>
+
+
+            <div class="about-copy">
+
+              <p>
+                I am an
+                <span class="highlight">
+                  Advanced Level Physics Educator with over 6 years of experience
+                </span>,
+                passionate about making complex concepts clear and engaging
+                while supporting students throughout their academic journey.
+              </p>
+
+            </div>
+
 
           </div>
 
 
 
-          <div class="about-content">
+          <!-- ACADEMIC JOURNEY -->
+
+          <div class="about-row">
 
 
-            <!-- TEACHING -->
+            <div class="about-label">
 
-            <div class="journey-item">
-
-              <div class="journey-marker">
-
-                <div class="journey-icon">
-                  <i class="fa-solid fa-atom"></i>
-                </div>
-
+              <div class="about-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
               </div>
 
-
-              <div class="journey-content">
-
-                <h3>
-                  Teaching
-                </h3>
-
-                <p>
-                  I am an
-                  <span class="highlight">
-                    Advanced Level Physics Educator with over 6 years of experience
-                  </span>,
-                  passionate about making complex concepts clear and engaging
-                  while supporting students throughout their academic journey.
-                </p>
-
+              <div class="about-number">
+                02
               </div>
+
+              <h3>
+                My Academic Journey
+              </h3>
 
             </div>
 
 
+            <div class="about-copy">
 
-            <!-- ACADEMIC JOURNEY -->
-
-            <div class="journey-item">
-
-              <div class="journey-marker">
-
-                <div class="journey-icon">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-
-              </div>
-
-
-              <div class="journey-content">
-
-                <h3>
-                  My Academic Journey
-                </h3>
-
-                <p>
-                  I completed my Advanced Level studies in
-                  <span class="highlight">
-                    Combined Mathematics, Chemistry, and Physics
-                  </span>
-                  and was selected for admission to a
-                  <span class="highlight">
-                    BSc Engineering programme at the University of Ruhuna
-                  </span>.
-                  However, driven by my interest in
-                  <span class="highlight">
-                    Artificial Intelligence and Data Science
-                  </span>,
-                  I chose to pursue my higher education at SLIIT.
-                </p>
-
-                <p>
-                  I graduated with a
-                  <span class="highlight">
-                    Bachelor’s Honours Degree in Information Technology,
-                    specializing in Data Science, with First Class Honours
-                  </span>.
-                  I was also honoured to receive the
-                  <span class="highlight">
-                    Best Performance Award (Batch Top)
-                  </span>
-                  in the Data Science specialization.
-                </p>
-
-              </div>
-
-            </div>
+              <p>
+                I completed my Advanced Level studies in
+                <span class="highlight">
+                  Combined Mathematics, Chemistry, and Physics
+                </span>
+                and was selected for admission to a
+                <span class="highlight">
+                  BSc Engineering programme at the University of Ruhuna
+                </span>.
+                However, driven by my interest in
+                <span class="highlight">
+                  Artificial Intelligence and Data Science
+                </span>,
+                I chose to pursue my higher education at SLIIT.
+              </p>
 
 
-
-            <!-- MUSIC -->
-
-            <div class="journey-item">
-
-              <div class="journey-marker">
-
-                <div class="journey-icon">
-                  <i class="fa-solid fa-music"></i>
-                </div>
-
-              </div>
-
-
-              <div class="journey-content">
-
-                <h3>
-                  Music
-                </h3>
-
-                <p>
-                  Music has been a lifelong passion of mine,
-                  which led me to pursue a
-                  <span class="highlight">
-                    Diploma in Audio Engineering and Music Production
-                  </span>.
-                  I have a strong interest in
-                  <span class="highlight">
-                    singing, songwriting, composition,
-                    audio engineering, and music production
-                  </span>.
-                </p>
-
-              </div>
+              <p>
+                I graduated with a
+                <span class="highlight">
+                  Bachelor’s Honours Degree in Information Technology,
+                  specializing in Data Science, with First Class Honours
+                </span>.
+                I was also honoured to receive the
+                <span class="highlight">
+                  Best Performance Award (Batch Top)
+                </span>
+                in the Data Science specialization.
+              </p>
 
             </div>
 
 
           </div>
+
+
+
+          <!-- MUSIC -->
+
+          <div class="about-row">
+
+
+            <div class="about-label">
+
+              <div class="about-icon">
+                <i class="fa-solid fa-music"></i>
+              </div>
+
+              <div class="about-number">
+                03
+              </div>
+
+              <h3>
+                Music
+              </h3>
+
+            </div>
+
+
+            <div class="about-copy">
+
+              <p>
+                Music has been a lifelong passion of mine,
+                which led me to pursue a
+                <span class="highlight">
+                  Diploma in Audio Engineering and Music Production
+                </span>.
+                I have a strong interest in
+                <span class="highlight">
+                  singing, songwriting, composition,
+                  audio engineering, and music production
+                </span>.
+              </p>
+
+            </div>
+
+
+          </div>
+
 
         </div>
 
@@ -1810,34 +1783,15 @@
           </div>
 
 
+          <!--
+            Dots are generated automatically
+            by JavaScript.
+          -->
 
-          <div class="slider-dots">
-
-            <button
-              class="dot active"
-              data-slide="0"
-              aria-label="Image 1"
-            ></button>
-
-            <button
-              class="dot"
-              data-slide="1"
-              aria-label="Image 2"
-            ></button>
-
-            <button
-              class="dot"
-              data-slide="2"
-              aria-label="Image 3"
-            ></button>
-
-            <button
-              class="dot"
-              data-slide="3"
-              aria-label="Image 4"
-            ></button>
-
-          </div>
+          <div
+            class="slider-dots"
+            id="sliderDots"
+          ></div>
 
 
         </div>
@@ -1898,24 +1852,29 @@
 
   <script>
 
-    /* =========================================
-       GALLERY
-    ========================================== */
+    /* ==================================================
+       GALLERY IMAGES
+
+       All six images are included here.
+    ================================================== */
 
     const images = [
       "img1.jpg",
       "img2.jpg",
       "img3.jpg",
-      "img4.jpg"
+      "img4.jpg",
+      "img5.jpg",
+      "img6.jpg"
     ];
+
 
 
     const galleryImage =
       document.getElementById("galleryImage");
 
 
-    const dots =
-      document.querySelectorAll(".dot");
+    const sliderDots =
+      document.getElementById("sliderDots");
 
 
     const previousButton =
@@ -1932,16 +1891,59 @@
 
 
 
-    /* Preload gallery images */
+    /* ==================================================
+       CREATE DOTS AUTOMATICALLY
+    ================================================== */
 
-    images.forEach(function(src) {
+    images.forEach(
+      function(image, index) {
 
-      const image =
-        new Image();
+        const dot =
+          document.createElement("button");
 
-      image.src = src;
 
-    });
+        dot.className =
+          index === 0
+            ? "dot active"
+            : "dot";
+
+
+        dot.setAttribute(
+          "aria-label",
+          "Image " + (index + 1)
+        );
+
+
+        dot.dataset.slide =
+          index;
+
+
+        sliderDots.appendChild(dot);
+
+      }
+    );
+
+
+
+    const dots =
+      document.querySelectorAll(".dot");
+
+
+
+    /* ==================================================
+       PRELOAD ALL SIX IMAGES
+    ================================================== */
+
+    images.forEach(
+      function(src) {
+
+        const image =
+          new Image();
+
+        image.src = src;
+
+      }
+    );
 
 
 
@@ -1983,6 +1985,11 @@
 
           galleryImage.src =
             images[currentSlide];
+
+
+          galleryImage.alt =
+            "Manula Balasooriya - Image "
+            + (currentSlide + 1);
 
 
           galleryImage.onload =
@@ -2087,6 +2094,7 @@
                 this.dataset.slide
               );
 
+
             showSlide(index);
 
             resetAutoSlide();
@@ -2098,13 +2106,14 @@
     );
 
 
+
     startAutoSlide();
 
 
 
-    /* =========================================
+    /* ==================================================
        BACK TO TOP
-    ========================================== */
+    ================================================== */
 
     const backToTopButton =
       document.getElementById("backToTop");
@@ -2114,13 +2123,17 @@
       "scroll",
       function() {
 
-        if (window.scrollY > 400) {
+        if (
+          window.scrollY > 400
+        ) {
 
           backToTopButton
             .classList
             .add("show");
 
-        } else {
+        }
+
+        else {
 
           backToTopButton
             .classList
