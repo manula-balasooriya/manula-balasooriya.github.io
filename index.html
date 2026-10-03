@@ -5,16 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Manula Balasooriya — Researcher in Artificial Intelligence and Computational Neuroscience, First Class Honours Data Science Graduate, Physics Educator, and Singer-Songwriter.">
+    <meta
+        name="description"
+        content="Manula Balasooriya — Researcher in Artificial Intelligence and Computational Neuroscience, First Class Honours Data Science Graduate, Physics Educator, and Singer-Songwriter."
+    >
 
     <title>Manula Balasooriya</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
     <style>
 
@@ -49,6 +56,7 @@
             background: var(--background);
             color: var(--navy);
             line-height: 1.7;
+            overflow-x: hidden;
         }
 
         a {
@@ -70,7 +78,7 @@
 
 
         /* =====================================
-           NEW NAVIGATION BAR
+           NAVIGATION
         ===================================== */
 
         .topbar {
@@ -105,9 +113,6 @@
             gap: 24px;
         }
 
-
-        /* BRAND */
-
         .brand {
             display: inline-flex;
             align-items: center;
@@ -121,17 +126,20 @@
         }
 
         .brand-avatar {
+            display: block;
+
             width: 43px;
             height: 43px;
 
-            flex-shrink: 0;
+            flex: 0 0 43px;
 
             border-radius: 50%;
             object-fit: cover;
+            object-position: center;
 
             border: 2px solid var(--turquoise);
-
             padding: 2px;
+
             background: white;
         }
 
@@ -140,7 +148,6 @@
             font-weight: 750;
 
             letter-spacing: -0.4px;
-
             color: var(--navy);
         }
 
@@ -148,15 +155,11 @@
             color: var(--turquoise-dark);
         }
 
-
-        /* DESKTOP NAVIGATION */
-
         .nav-links {
             display: flex;
             align-items: center;
 
             gap: 5px;
-
             padding: 5px;
 
             background: #f4f8f8;
@@ -171,7 +174,6 @@
             justify-content: center;
 
             gap: 8px;
-
             padding: 10px 18px;
 
             border-radius: 10px;
@@ -207,9 +209,6 @@
             font-size: 0.85rem;
         }
 
-
-        /* MOBILE MENU BUTTON */
-
         .menu-toggle {
             display: none;
 
@@ -228,12 +227,7 @@
             color: var(--navy);
 
             font-size: 1.15rem;
-
             cursor: pointer;
-
-            transition:
-                background 0.2s,
-                border-color 0.2s;
         }
 
         .menu-toggle:hover {
@@ -243,26 +237,31 @@
 
         .menu-toggle:focus-visible,
         .nav-links a:focus-visible,
-        .brand:focus-visible {
+        .brand:focus-visible,
+        .social:focus-visible {
             outline: 3px solid var(--turquoise);
             outline-offset: 3px;
         }
 
 
         /* =====================================
-           COVER PHOTO
+           FULL COVER PHOTO
         ===================================== */
 
         .cover {
             width: 100%;
+
             background: var(--surface);
+
             border-bottom: 1px solid var(--border);
         }
 
         .cover-image {
             display: block;
+
             width: 100%;
             height: auto;
+
             object-fit: contain;
         }
 
@@ -272,17 +271,25 @@
         ===================================== */
 
         .hero-section {
-            background: linear-gradient(145deg, #ffffff, #f6fcfa);
+            background: linear-gradient(
+                145deg,
+                #ffffff,
+                #f6fcfa
+            );
+
             border-bottom: 1px solid var(--border);
         }
 
         .hero {
             display: grid;
-            grid-template-columns: 1.4fr 0.6fr;
+
+            grid-template-columns:
+                minmax(0, 1.4fr)
+                minmax(0, 0.6fr);
 
             align-items: start;
-            gap: 65px;
 
+            gap: 65px;
             padding: 48px 0 85px;
         }
 
@@ -364,11 +371,6 @@
             box-shadow: 0 8px 25px rgba(16, 24, 44, 0.07);
         }
 
-        .social:focus-visible {
-            outline: 3px solid var(--turquoise);
-            outline-offset: 3px;
-        }
-
         .social i {
             font-size: 1rem;
         }
@@ -395,6 +397,7 @@
 
             display: flex;
             flex-direction: column;
+
             gap: 19px;
         }
 
@@ -411,7 +414,7 @@
 
 
         /* =====================================
-           PROFILE PHOTO
+           PROFILE PHOTO - RESPONSIVE FIX
         ===================================== */
 
         .profile-panel {
@@ -419,37 +422,61 @@
             justify-content: center;
             align-items: center;
 
+            width: 100%;
+            min-width: 0;
+
             margin-top: -125px;
 
             position: relative;
             z-index: 2;
         }
 
-        .profile-frame {
-            width: min(100%, 290px);
-            aspect-ratio: 1 / 1;
+        /*
+           The outer frame has an explicit square
+           size and cannot shrink unexpectedly.
+        */
 
-            padding: 7px;
+        .profile-frame {
+            position: relative;
+
+            width: 290px;
+            height: 290px;
+
+            flex: 0 0 auto;
 
             border-radius: 50%;
 
             background: white;
             border: 3px solid var(--turquoise);
 
-            box-shadow: 0 15px 45px rgba(16, 24, 44, 0.16);
+            box-shadow:
+                0 15px 45px rgba(16, 24, 44, 0.16);
 
             overflow: hidden;
         }
 
+        /*
+           The image fills the inner circular area.
+           Absolute positioning prevents intrinsic
+           image dimensions from changing its shape.
+        */
+
         .profile-image {
+            position: absolute;
+
+            inset: 7px;
+
+            width: calc(100% - 14px);
+            height: calc(100% - 14px);
+
             display: block;
-            width: 100%;
-            height: 100%;
+
+            border-radius: 50%;
 
             object-fit: cover;
             object-position: center;
 
-            border-radius: 50%;
+            background: #e9f0f7;
         }
 
 
@@ -529,8 +556,8 @@
 
         .education-date {
             margin-top: 5px;
-            font-size: 0.83rem;
 
+            font-size: 0.83rem;
             color: var(--light-gray);
         }
 
@@ -572,6 +599,7 @@
 
         .back-to-top {
             position: fixed;
+
             right: 25px;
             bottom: 25px;
 
@@ -592,7 +620,8 @@
 
             cursor: pointer;
 
-            box-shadow: 0 10px 30px rgba(45, 212, 181, 0.3);
+            box-shadow:
+                0 10px 30px rgba(45, 212, 181, 0.3);
 
             opacity: 0;
             visibility: hidden;
@@ -624,7 +653,8 @@
         @media (max-width: 850px) {
 
             .hero {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
+
                 text-align: center;
 
                 gap: 32px;
@@ -638,6 +668,7 @@
 
             .profile-frame {
                 width: 210px;
+                height: 210px;
             }
 
             .professional-title {
@@ -673,6 +704,8 @@
             .brand-avatar {
                 width: 38px;
                 height: 38px;
+
+                flex-basis: 38px;
             }
 
             .brand-name {
@@ -703,7 +736,8 @@
                 border: 1px solid var(--border);
                 border-radius: 16px;
 
-                box-shadow: 0 15px 40px rgba(16, 24, 44, 0.12);
+                box-shadow:
+                    0 15px 40px rgba(16, 24, 44, 0.12);
 
                 opacity: 0;
                 visibility: hidden;
@@ -765,8 +799,14 @@
                 margin-top: -90px;
             }
 
+            /*
+               Responsive square profile frame.
+               Both dimensions always match.
+            */
+
             .profile-frame {
-                width: 185px;
+                width: min(185px, 56vw);
+                height: min(185px, 56vw);
             }
 
             .hero h1 {
@@ -820,6 +860,35 @@
 
 
         /* =====================================
+           EXTRA SMALL SCREENS
+        ===================================== */
+
+        @media (max-width: 360px) {
+
+            .brand-name {
+                font-size: 0.76rem;
+            }
+
+            .brand-avatar {
+                width: 35px;
+                height: 35px;
+
+                flex-basis: 35px;
+            }
+
+            .profile-frame {
+                width: min(170px, 54vw);
+                height: min(170px, 54vw);
+            }
+
+            .profile-panel {
+                margin-top: -75px;
+            }
+
+        }
+
+
+        /* =====================================
            REDUCED MOTION
         ===================================== */
 
@@ -852,7 +921,6 @@
 
         <div class="container nav">
 
-            <!-- BRAND -->
 
             <a class="brand" href="#home">
 
@@ -879,7 +947,11 @@
                 aria-expanded="false"
                 aria-controls="navLinks"
             >
-                <i class="fa-solid fa-bars" id="menuIcon"></i>
+                <i
+                    class="fa-solid fa-bars"
+                    id="menuIcon"
+                    aria-hidden="true"
+                ></i>
             </button>
 
 
@@ -1443,10 +1515,12 @@
             "keydown",
             function (event) {
 
-                if (event.key === "Escape") {
+                if (
+                    event.key === "Escape" &&
+                    menuToggle.getAttribute("aria-expanded") === "true"
+                ) {
 
                     setMenuState(false);
-
                     menuToggle.focus();
 
                 }
@@ -1471,7 +1545,7 @@
         );
 
 
-        /* STICKY NAVIGATION EFFECT */
+        /* STICKY NAVIGATION AND BACK TO TOP */
 
         function updateScrollEffects() {
 
