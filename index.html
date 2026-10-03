@@ -1,35 +1,26 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Manula Balasooriya — Researcher in Artificial Intelligence and Computational Neuroscience, First Class Honours Data Science Graduate, Physics Educator, and Singer-Songwriter."
-    >
+    <meta name="description"
+          content="Manula Balasooriya — Researcher in Artificial Intelligence and Computational Neuroscience, First Class Honours Data Science Graduate, Physics Educator, and Singer-Songwriter.">
 
     <title>Manula Balasooriya</title>
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
 
-        /* ========================================
+        /* =====================================
            GLOBAL
-        ======================================== */
+        ===================================== */
 
         :root {
             --background: #ffffff;
@@ -78,116 +69,215 @@
         }
 
 
-        /* ========================================
-           NAVIGATION
-        ======================================== */
+        /* =====================================
+           NEW NAVIGATION BAR
+        ===================================== */
 
         .topbar {
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
 
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.88);
 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(232, 236, 241, 0.8);
+
+            transition:
+                box-shadow 0.3s,
+                background 0.3s;
+        }
+
+        .topbar.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 5px 25px rgba(16, 24, 44, 0.06);
         }
 
         .nav {
-            min-height: 76px;
+            height: 76px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            gap: 20px;
+            gap: 24px;
         }
 
+
+        /* BRAND */
+
         .brand {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 11px;
+
+            gap: 12px;
 
             text-decoration: none;
+            white-space: nowrap;
 
-            color: var(--navy);
-            font-weight: 700;
-            font-size: 0.98rem;
+            min-width: 0;
         }
 
         .brand-avatar {
-            width: 40px;
-            height: 40px;
+            width: 43px;
+            height: 43px;
+
+            flex-shrink: 0;
 
             border-radius: 50%;
             object-fit: cover;
 
             border: 2px solid var(--turquoise);
+
+            padding: 2px;
+            background: white;
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
+        .brand-name {
+            font-size: 0.98rem;
+            font-weight: 750;
+
+            letter-spacing: -0.4px;
+
+            color: var(--navy);
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--gray);
-
-            font-size: 0.9rem;
-            font-weight: 600;
-
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
+        .brand-name span {
             color: var(--turquoise-dark);
         }
 
 
-        /* ========================================
-           FULL COVER PHOTO
-        ======================================== */
+        /* DESKTOP NAVIGATION */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+
+            gap: 5px;
+
+            padding: 5px;
+
+            background: #f4f8f8;
+
+            border: 1px solid #edf1f1;
+            border-radius: 14px;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 10px 18px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            color: var(--gray);
+
+            font-size: 0.86rem;
+            font-weight: 600;
+
+            transition:
+                color 0.2s,
+                background 0.2s,
+                box-shadow 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--turquoise-dark);
+            background: white;
+
+            box-shadow: 0 2px 8px rgba(16, 24, 44, 0.04);
+        }
+
+        .nav-links a.active {
+            background: white;
+            color: var(--turquoise-dark);
+
+            box-shadow: 0 2px 8px rgba(16, 24, 44, 0.06);
+        }
+
+        .nav-links i {
+            font-size: 0.85rem;
+        }
+
+
+        /* MOBILE MENU BUTTON */
+
+        .menu-toggle {
+            display: none;
+
+            width: 43px;
+            height: 43px;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            background: white;
+            color: var(--navy);
+
+            font-size: 1.15rem;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s,
+                border-color 0.2s;
+        }
+
+        .menu-toggle:hover {
+            background: #f0fcf9;
+            border-color: var(--turquoise);
+        }
+
+        .menu-toggle:focus-visible,
+        .nav-links a:focus-visible,
+        .brand:focus-visible {
+            outline: 3px solid var(--turquoise);
+            outline-offset: 3px;
+        }
+
+
+        /* =====================================
+           COVER PHOTO
+        ===================================== */
 
         .cover {
             width: 100%;
-
             background: var(--surface);
-
             border-bottom: 1px solid var(--border);
         }
 
         .cover-image {
             display: block;
-
             width: 100%;
             height: auto;
-
-            /* Show the entire image without cropping */
             object-fit: contain;
         }
 
 
-        /* ========================================
-           HERO SECTION
-        ======================================== */
+        /* =====================================
+           HERO
+        ===================================== */
 
         .hero-section {
-            background: linear-gradient(
-                145deg,
-                #ffffff,
-                #f6fcfa
-            );
-
+            background: linear-gradient(145deg, #ffffff, #f6fcfa);
             border-bottom: 1px solid var(--border);
         }
 
         .hero {
             display: grid;
-
             grid-template-columns: 1.4fr 0.6fr;
 
             align-items: start;
@@ -206,22 +296,14 @@
 
             letter-spacing: -3px;
             font-weight: 800;
-
-            color: var(--navy);
         }
 
         .hero h1 span {
             color: var(--turquoise-dark);
         }
 
-
-        /* ========================================
-           PROFESSIONAL TITLE
-        ======================================== */
-
         .professional-title {
             margin-top: 27px;
-
             max-width: 780px;
 
             font-size: 1.05rem;
@@ -237,9 +319,9 @@
         }
 
 
-        /* ========================================
-           SOCIAL / CONTACT LINKS
-        ======================================== */
+        /* =====================================
+           SOCIAL LINKS
+        ===================================== */
 
         .socials {
             display: flex;
@@ -264,7 +346,6 @@
             border: 1px solid var(--border);
 
             text-decoration: none;
-
             color: var(--gray);
 
             font-size: 0.81rem;
@@ -278,77 +359,42 @@
 
         .social:hover {
             transform: translateY(-3px);
-
             border-color: var(--turquoise);
 
-            box-shadow:
-                0 8px 25px rgba(16, 24, 44, 0.07);
+            box-shadow: 0 8px 25px rgba(16, 24, 44, 0.07);
         }
 
-        .social:focus-visible,
-        .nav-links a:focus-visible,
-        .brand:focus-visible {
+        .social:focus-visible {
             outline: 3px solid var(--turquoise);
-            outline-offset: 4px;
+            outline-offset: 3px;
         }
 
         .social i {
             font-size: 1rem;
         }
 
-        .social-facebook i {
-            color: #1877f2;
-        }
-
-        .social-instagram i {
-            color: #e4405f;
-        }
-
-        .social-youtube i {
-            color: #ff0033;
-        }
-
-        .social-threads i {
-            color: #111111;
-        }
-
-        .social-tiktok i {
-            color: #111111;
-        }
-
-        .social-linkedin i {
-            color: #0a66c2;
-        }
-
-        .social-github i {
-            color: #24292f;
-        }
-
-        .social-whatsapp i {
-            color: #25d366;
-        }
-
-        .social-email i {
-            color: #ea4335;
-        }
-
-        .social-spotify i {
-            color: #1db954;
-        }
+        .social-facebook i { color: #1877f2; }
+        .social-instagram i { color: #e4405f; }
+        .social-youtube i { color: #ff0033; }
+        .social-threads i { color: #111111; }
+        .social-tiktok i { color: #111111; }
+        .social-linkedin i { color: #0a66c2; }
+        .social-github i { color: #24292f; }
+        .social-whatsapp i { color: #25d366; }
+        .social-email i { color: #ea4335; }
+        .social-spotify i { color: #1db954; }
 
 
-        /* ========================================
+        /* =====================================
            BIOGRAPHY
-        ======================================== */
+        ===================================== */
 
         .hero-description {
             margin-top: 38px;
-
             max-width: 750px;
 
             display: flex;
             flex-direction: column;
-
             gap: 19px;
         }
 
@@ -364,9 +410,9 @@
         }
 
 
-        /* ========================================
+        /* =====================================
            PROFILE PHOTO
-        ======================================== */
+        ===================================== */
 
         .profile-panel {
             display: flex;
@@ -390,15 +436,13 @@
             background: white;
             border: 3px solid var(--turquoise);
 
-            box-shadow:
-                0 15px 45px rgba(16, 24, 44, 0.16);
+            box-shadow: 0 15px 45px rgba(16, 24, 44, 0.16);
 
             overflow: hidden;
         }
 
         .profile-image {
             display: block;
-
             width: 100%;
             height: 100%;
 
@@ -409,9 +453,9 @@
         }
 
 
-        /* ========================================
-           EDUCATION SECTION
-        ======================================== */
+        /* =====================================
+           EDUCATION
+        ===================================== */
 
         .education-section {
             background: white;
@@ -425,14 +469,7 @@
 
             letter-spacing: -1.2px;
             line-height: 1.2;
-
-            color: var(--navy);
         }
-
-
-        /* ========================================
-           EDUCATION TIMELINE
-        ======================================== */
 
         .education-timeline {
             margin-left: 0;
@@ -444,7 +481,6 @@
             border-left: 3px solid var(--turquoise);
 
             padding: 16px 0 26px 19px;
-
             margin-bottom: 8px;
         }
 
@@ -467,11 +503,9 @@
             border-radius: 50%;
 
             background: var(--turquoise);
-
             border: 3px solid white;
 
-            box-shadow:
-                0 0 0 2px var(--turquoise);
+            box-shadow: 0 0 0 2px var(--turquoise);
         }
 
         .education-degree {
@@ -482,8 +516,6 @@
 
             line-height: 1.5;
             letter-spacing: -0.2px;
-
-            color: var(--navy);
         }
 
         .education-school {
@@ -497,7 +529,6 @@
 
         .education-date {
             margin-top: 5px;
-
             font-size: 0.83rem;
 
             color: var(--light-gray);
@@ -505,7 +536,6 @@
 
         .education-description {
             margin-top: 12px;
-
             max-width: 850px;
 
             font-size: 0.9rem;
@@ -515,15 +545,14 @@
         }
 
 
-        /* ========================================
+        /* =====================================
            FOOTER
-        ======================================== */
+        ===================================== */
 
         .footer {
             padding: 35px 0;
 
             border-top: 1px solid var(--border);
-
             background: white;
         }
 
@@ -537,13 +566,12 @@
         }
 
 
-        /* ========================================
+        /* =====================================
            BACK TO TOP
-        ======================================== */
+        ===================================== */
 
         .back-to-top {
             position: fixed;
-
             right: 25px;
             bottom: 25px;
 
@@ -564,8 +592,7 @@
 
             cursor: pointer;
 
-            box-shadow:
-                0 10px 30px rgba(45, 212, 181, 0.3);
+            box-shadow: 0 10px 30px rgba(45, 212, 181, 0.3);
 
             opacity: 0;
             visibility: hidden;
@@ -590,15 +617,14 @@
         }
 
 
-        /* ========================================
+        /* =====================================
            TABLET
-        ======================================== */
+        ===================================== */
 
         @media (max-width: 850px) {
 
             .hero {
                 grid-template-columns: 1fr;
-
                 text-align: center;
 
                 gap: 32px;
@@ -630,9 +656,95 @@
         }
 
 
-        /* ========================================
-           MOBILE
-        ======================================== */
+        /* =====================================
+           MOBILE NAVIGATION
+        ===================================== */
+
+        @media (max-width: 700px) {
+
+            .nav {
+                height: 68px;
+            }
+
+            .brand {
+                gap: 9px;
+            }
+
+            .brand-avatar {
+                width: 38px;
+                height: 38px;
+            }
+
+            .brand-name {
+                font-size: 0.86rem;
+                letter-spacing: -0.5px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                position: absolute;
+
+                top: calc(100% + 8px);
+                left: 4%;
+                right: 4%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 5px;
+                padding: 8px;
+
+                background: rgba(255, 255, 255, 0.98);
+
+                border: 1px solid var(--border);
+                border-radius: 16px;
+
+                box-shadow: 0 15px 40px rgba(16, 24, 44, 0.12);
+
+                opacity: 0;
+                visibility: hidden;
+
+                transform: translateY(-8px);
+
+                transition:
+                    opacity 0.2s,
+                    visibility 0.2s,
+                    transform 0.2s;
+            }
+
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                justify-content: flex-start;
+
+                padding: 13px 15px;
+
+                border-radius: 10px;
+                font-size: 0.9rem;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                background: #effbf8;
+                color: var(--turquoise-dark);
+                box-shadow: none;
+            }
+
+        }
+
+
+        /* =====================================
+           SMALL MOBILE
+        ===================================== */
 
         @media (max-width: 640px) {
 
@@ -640,24 +752,9 @@
                 width: 90%;
             }
 
-            .nav {
-                flex-wrap: wrap;
-                justify-content: center;
-
-                padding: 13px 0;
-            }
-
             .nav-links {
-                gap: 25px;
-            }
-
-            .nav-links a {
-                font-size: 0.83rem;
-            }
-
-            .cover-image {
-                width: 100%;
-                height: auto;
+                left: 5%;
+                right: 5%;
             }
 
             .hero {
@@ -688,7 +785,6 @@
 
             .hero-description p {
                 font-size: 0.9rem;
-                padding-left: 19px;
             }
 
             .section {
@@ -723,9 +819,9 @@
         }
 
 
-        /* ========================================
+        /* =====================================
            REDUCED MOTION
-        ======================================== */
+        ===================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -748,13 +844,15 @@
 <body>
 
 
-    <!-- ========================================
+    <!-- =====================================
          NAVIGATION
-    ======================================== -->
+    ===================================== -->
 
-    <header class="topbar">
+    <header class="topbar" id="topbar">
 
         <div class="container nav">
+
+            <!-- BRAND -->
 
             <a class="brand" href="#home">
 
@@ -764,22 +862,50 @@
                     alt="Manula Balasooriya"
                 >
 
-                Manula Balasooriya
+                <span class="brand-name">
+                    Manula <span>Balasooriya</span>
+                </span>
 
             </a>
 
 
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+
+
+            <!-- NAVIGATION LINKS -->
+
             <nav
                 class="nav-links"
+                id="navLinks"
                 aria-label="Main navigation"
             >
 
-                <a href="#education">
+                <a href="#education" class="nav-link">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
                     Education
+
                 </a>
 
-                <a href="#contact">
+
+                <a href="#contact" class="nav-link">
+
+                    <i class="fa-regular fa-envelope"></i>
+
                     Contact
+
                 </a>
 
             </nav>
@@ -790,9 +916,9 @@
 
 
 
-    <!-- ========================================
+    <!-- =====================================
          FULL COVER PHOTO
-    ======================================== -->
+    ===================================== -->
 
     <div class="cover" id="home">
 
@@ -807,16 +933,14 @@
 
 
 
-    <!-- ========================================
+    <!-- =====================================
          MAIN CONTENT
-    ======================================== -->
+    ===================================== -->
 
     <main>
 
 
-        <!-- ====================================
-             HERO
-        ==================================== -->
+        <!-- HERO -->
 
         <section class="hero-section">
 
@@ -827,8 +951,6 @@
 
                 <div class="hero-copy">
 
-
-                    <!-- NAME -->
 
                     <h1>
 
@@ -877,24 +999,16 @@
                     >
 
 
-                        <!-- FACEBOOK PAGE -->
-
                         <a
                             class="social social-facebook"
                             href="https://facebook.com/manula.balasooriya.page"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-facebook-f"></i>
-
                             Page
-
                         </a>
 
-
-
-                        <!-- FACEBOOK PROFILE -->
 
                         <a
                             class="social social-facebook"
@@ -902,16 +1016,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-facebook-f"></i>
-
                             Facebook
-
                         </a>
 
-
-
-                        <!-- INSTAGRAM -->
 
                         <a
                             class="social social-instagram"
@@ -919,16 +1027,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-instagram"></i>
-
                             Instagram
-
                         </a>
 
-
-
-                        <!-- YOUTUBE -->
 
                         <a
                             class="social social-youtube"
@@ -936,16 +1038,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-youtube"></i>
-
                             YouTube
-
                         </a>
 
-
-
-                        <!-- THREADS -->
 
                         <a
                             class="social social-threads"
@@ -953,16 +1049,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-threads"></i>
-
                             Threads
-
                         </a>
 
-
-
-                        <!-- TIKTOK -->
 
                         <a
                             class="social social-tiktok"
@@ -970,16 +1060,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-tiktok"></i>
-
                             TikTok
-
                         </a>
 
-
-
-                        <!-- LINKEDIN -->
 
                         <a
                             class="social social-linkedin"
@@ -987,16 +1071,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-linkedin-in"></i>
-
                             LinkedIn
-
                         </a>
 
-
-
-                        <!-- GITHUB -->
 
                         <a
                             class="social social-github"
@@ -1004,16 +1082,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-github"></i>
-
                             GitHub
-
                         </a>
 
-
-
-                        <!-- WHATSAPP -->
 
                         <a
                             class="social social-whatsapp"
@@ -1021,16 +1093,10 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-whatsapp"></i>
-
                             WhatsApp
-
                         </a>
 
-
-
-                        <!-- WHATSAPP CHANNEL -->
 
                         <a
                             class="social social-whatsapp"
@@ -1038,33 +1104,21 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-whatsapp"></i>
-
                             Channel
-
                         </a>
 
-
-
-                        <!-- EMAIL -->
 
                         <a
                             class="social social-email"
                             href="mailto:manulab.official@gmail.com"
                         >
-
                             <i class="fa-solid fa-envelope"></i>
-
                             Email
-
                         </a>
 
 
-
-                        <!-- SPOTIFY -->
-
-                        <!-- Replace with your personal Spotify URL -->
+                        <!-- Replace with your Spotify profile URL -->
 
                         <a
                             class="social social-spotify"
@@ -1072,54 +1126,42 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
                             <i class="fa-brands fa-spotify"></i>
-
                             Spotify
-
                         </a>
-
 
                     </div>
 
 
 
-                    <!-- PROFESSIONAL BIOGRAPHY -->
+                    <!-- BIOGRAPHY -->
 
                     <div class="hero-description">
 
 
                         <p>
-
                             Researcher in Artificial Intelligence,
                             Computational Neuroscience, and
                             Brain-Inspired Computing, with a
                             particular interest in the
                             intersection of these fields.
-
                         </p>
 
 
-
                         <p>
-
                             Advanced Level Physics Educator
                             with over six years of experience,
                             committed to making complex
                             scientific concepts clear,
                             accessible, and engaging.
-
                         </p>
 
 
-
                         <p>
-
                             Lifelong interest in music,
                             complemented by academic
                             training in Audio Engineering
                             and Music Production.
-
                         </p>
 
 
@@ -1130,7 +1172,7 @@
 
 
 
-                <!-- CIRCULAR PROFILE PHOTO -->
+                <!-- PROFILE PHOTO -->
 
                 <div class="profile-panel">
 
@@ -1155,9 +1197,9 @@
 
 
 
-        <!-- ====================================
+        <!-- =====================================
              EDUCATION
-        ==================================== -->
+        ===================================== -->
 
         <section
             class="section education-section"
@@ -1172,14 +1214,10 @@
                     class="education-title"
                     id="education-title"
                 >
-
                     Education
-
                 </h2>
 
 
-
-                <!-- EDUCATION TIMELINE -->
 
                 <div class="education-timeline">
 
@@ -1189,22 +1227,16 @@
                     <article class="education-item">
 
                         <h3 class="education-degree">
-
                             BSc (Hons) in Data Science
                             (First Class Honours | Batch Top)
-
                         </h3>
 
                         <p class="education-school">
-
                             SLIIT
-
                         </p>
 
                         <p class="education-date">
-
                             Jul 2022 - Jul 2026
-
                         </p>
 
                     </article>
@@ -1216,57 +1248,43 @@
                     <article class="education-item">
 
                         <h3 class="education-degree">
-
                             Diploma in Audio Engineering
                             and Music Production
-
                         </h3>
 
                         <p class="education-school">
-
                             Music Oven Institute
-
                         </p>
 
                         <p class="education-date">
-
                             Jan 2021 - Jan 2022
-
                         </p>
 
                     </article>
 
 
 
-                    <!-- GCE ADVANCED LEVEL -->
+                    <!-- GCE A/L -->
 
                     <article class="education-item">
 
                         <h3 class="education-degree">
-
                             GCE A/L – Combined Mathematics,
                             Physics, and Chemistry
-
                         </h3>
 
                         <p class="education-school">
-
                             Kingswood College Kandy
-
                         </p>
 
                         <p class="education-date">
-
                             Jan 2018 - Aug 2020
-
                         </p>
 
                         <p class="education-description">
-
                             Selected for admission to the
                             BSc (Hons) in Engineering programme
                             at the University of Ruhuna.
-
                         </p>
 
                     </article>
@@ -1284,19 +1302,17 @@
 
 
 
-    <!-- ========================================
+    <!-- =====================================
          FOOTER
-    ======================================== -->
+    ===================================== -->
 
     <footer class="footer">
 
         <div class="container footer-inner">
 
             <p class="footer-copy">
-
                 © 2026 Manula Balasooriya.
                 All rights reserved.
-
             </p>
 
         </div>
@@ -1305,9 +1321,9 @@
 
 
 
-    <!-- ========================================
+    <!-- =====================================
          BACK TO TOP
-    ======================================== -->
+    ===================================== -->
 
     <button
         class="back-to-top"
@@ -1315,29 +1331,154 @@
         type="button"
         aria-label="Back to top"
     >
-
         <i class="fa-solid fa-arrow-up"></i>
-
     </button>
 
 
 
-    <!-- ========================================
+    <!-- =====================================
          JAVASCRIPT
-    ======================================== -->
+    ===================================== -->
 
     <script>
 
         "use strict";
 
 
-        /* BACK TO TOP */
+        const topbar =
+            document.getElementById("topbar");
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const menuIcon =
+            document.getElementById("menuIcon");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        const navigationLinks =
+            document.querySelectorAll(".nav-link");
 
         const backToTopButton =
             document.getElementById("backToTop");
 
 
-        function updateBackToTop() {
+        /* MOBILE MENU */
+
+        function setMenuState(isOpen) {
+
+            navLinks.classList.toggle("open", isOpen);
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+            menuIcon.classList.toggle(
+                "fa-bars",
+                !isOpen
+            );
+
+            menuIcon.classList.toggle(
+                "fa-xmark",
+                isOpen
+            );
+
+        }
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    menuToggle.getAttribute("aria-expanded") === "true";
+
+                setMenuState(!isOpen);
+
+            }
+        );
+
+
+        /* CLOSE MENU AFTER NAVIGATION */
+
+        navigationLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                setMenuState(false);
+
+            });
+
+        });
+
+
+        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (!topbar.contains(event.target)) {
+
+                    setMenuState(false);
+
+                }
+
+            }
+        );
+
+
+        /* CLOSE MENU USING ESCAPE */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    setMenuState(false);
+
+                    menuToggle.focus();
+
+                }
+
+            }
+        );
+
+
+        /* CLOSE MENU ON DESKTOP RESIZE */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (window.innerWidth > 700) {
+
+                    setMenuState(false);
+
+                }
+
+            }
+        );
+
+
+        /* STICKY NAVIGATION EFFECT */
+
+        function updateScrollEffects() {
+
+            topbar.classList.toggle(
+                "scrolled",
+                window.scrollY > 15
+            );
 
             backToTopButton.classList.toggle(
                 "show",
@@ -1349,19 +1490,19 @@
 
         window.addEventListener(
             "scroll",
-            updateBackToTop,
-            {
-                passive: true
-            }
+            updateScrollEffects,
+            { passive: true }
         );
 
 
-        updateBackToTop();
+        updateScrollEffects();
 
+
+        /* BACK TO TOP */
 
         backToTopButton.addEventListener(
             "click",
-            function() {
+            function () {
 
                 window.scrollTo({
                     top: 0,
