@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="Manula Balasooriya — Researcher in Artificial Intelligence and Computational Neuroscience, First Class Data Science Graduate, Physics Educator, and Singer-Songwriter."
+        content="Manula Balasooriya — Researcher in Artificial Intelligence and Computational Neuroscience, First Class Honours Data Science Graduate, Physics Educator, and Singer-Songwriter."
     >
 
     <title>Manula Balasooriya</title>
@@ -70,12 +70,13 @@
 
         .container {
             width: min(92%, 1100px);
-            margin: auto;
+            margin-inline: auto;
         }
 
         .section {
             padding: 70px 0;
         }
+
 
         /* ========================================
            NAVIGATION
@@ -87,6 +88,7 @@
             z-index: 100;
 
             background: rgba(255, 255, 255, 0.96);
+
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
 
@@ -145,29 +147,29 @@
             color: var(--turquoise-dark);
         }
 
+
         /* ========================================
-           COVER PHOTO
+           FULL COVER PHOTO
         ======================================== */
 
         .cover {
-            position: relative;
+            width: 100%;
 
-            height: clamp(200px, 30vw, 340px);
-
-            background-image:
-                linear-gradient(
-                    to bottom,
-                    rgba(16, 24, 44, 0.06),
-                    rgba(16, 24, 44, 0.2)
-                ),
-                url("img1.jpg");
-
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+            background: var(--surface);
 
             border-bottom: 1px solid var(--border);
         }
+
+        .cover-image {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            /* Show the entire image without cropping */
+            object-fit: contain;
+        }
+
 
         /* ========================================
            HERO SECTION
@@ -185,6 +187,7 @@
 
         .hero {
             display: grid;
+
             grid-template-columns: 1.4fr 0.6fr;
 
             align-items: start;
@@ -211,6 +214,7 @@
             color: var(--turquoise-dark);
         }
 
+
         /* ========================================
            PROFESSIONAL TITLE
         ======================================== */
@@ -231,6 +235,7 @@
             color: var(--turquoise-dark);
             margin: 0 5px;
         }
+
 
         /* ========================================
            SOCIAL / CONTACT LINKS
@@ -331,6 +336,7 @@
             color: #1db954;
         }
 
+
         /* ========================================
            BIOGRAPHY
         ======================================== */
@@ -356,6 +362,7 @@
 
             border-left: 3px solid var(--turquoise);
         }
+
 
         /* ========================================
            PROFILE PHOTO
@@ -401,16 +408,13 @@
             border-radius: 50%;
         }
 
+
         /* ========================================
-           EDUCATION
+           EDUCATION SECTION
         ======================================== */
 
         .education-section {
             background: white;
-        }
-
-        .education-container {
-            max-width: 1000px;
         }
 
         .education-title {
@@ -425,20 +429,21 @@
             color: var(--navy);
         }
 
+
         /* ========================================
-           COMPACT EDUCATION TIMELINE
+           EDUCATION TIMELINE
         ======================================== */
 
         .education-timeline {
-            margin-left: 10px;
+            margin-left: 0;
         }
 
         .education-item {
             position: relative;
 
-            padding: 16px 0 26px 28px;
-
             border-left: 3px solid var(--turquoise);
+
+            padding: 16px 0 26px 19px;
 
             margin-bottom: 8px;
         }
@@ -509,6 +514,7 @@
             color: var(--gray);
         }
 
+
         /* ========================================
            FOOTER
         ======================================== */
@@ -529,6 +535,7 @@
             color: var(--gray);
             font-size: 0.85rem;
         }
+
 
         /* ========================================
            BACK TO TOP
@@ -582,6 +589,7 @@
             background: var(--turquoise-dark);
         }
 
+
         /* ========================================
            TABLET
         ======================================== */
@@ -599,7 +607,6 @@
 
             .profile-panel {
                 grid-row: 1;
-
                 margin-top: -120px;
             }
 
@@ -617,11 +624,11 @@
 
             .hero-description {
                 margin: 38px auto 0;
-
                 text-align: left;
             }
 
         }
+
 
         /* ========================================
            MOBILE
@@ -648,9 +655,9 @@
                 font-size: 0.83rem;
             }
 
-            .cover {
-                height: 190px;
-                background-position: center;
+            .cover-image {
+                width: 100%;
+                height: auto;
             }
 
             .hero {
@@ -658,7 +665,7 @@
             }
 
             .profile-panel {
-                margin-top: -110px;
+                margin-top: -90px;
             }
 
             .profile-frame {
@@ -681,7 +688,7 @@
 
             .hero-description p {
                 font-size: 0.9rem;
-                padding-left: 15px;
+                padding-left: 19px;
             }
 
             .section {
@@ -694,7 +701,7 @@
             }
 
             .education-item {
-                padding: 14px 0 24px 24px;
+                padding: 14px 0 24px 19px;
             }
 
             .education-degree {
@@ -714,6 +721,7 @@
             }
 
         }
+
 
         /* ========================================
            REDUCED MOTION
@@ -736,7 +744,9 @@
     </style>
 </head>
 
+
 <body>
+
 
     <!-- ========================================
          NAVIGATION
@@ -758,6 +768,7 @@
 
             </a>
 
+
             <nav
                 class="nav-links"
                 aria-label="Main navigation"
@@ -778,16 +789,22 @@
     </header>
 
 
+
     <!-- ========================================
-         COVER PHOTO
+         FULL COVER PHOTO
     ======================================== -->
 
-    <div
-        class="cover"
-        id="home"
-        role="img"
-        aria-label="Manula Balasooriya cover photo"
-    ></div>
+    <div class="cover" id="home">
+
+        <img
+            class="cover-image"
+            src="img1.jpg"
+            alt="Manula Balasooriya cover photo"
+            fetchpriority="high"
+        >
+
+    </div>
+
 
 
     <!-- ========================================
@@ -826,6 +843,7 @@
                     </h1>
 
 
+
                     <!-- PROFESSIONAL TITLE -->
 
                     <p class="professional-title">
@@ -847,6 +865,7 @@
                         Singer-Songwriter &amp; Composer
 
                     </p>
+
 
 
                     <!-- SOCIAL LINKS -->
@@ -874,6 +893,7 @@
                         </a>
 
 
+
                         <!-- FACEBOOK PROFILE -->
 
                         <a
@@ -888,6 +908,7 @@
                             Facebook
 
                         </a>
+
 
 
                         <!-- INSTAGRAM -->
@@ -906,6 +927,7 @@
                         </a>
 
 
+
                         <!-- YOUTUBE -->
 
                         <a
@@ -920,6 +942,7 @@
                             YouTube
 
                         </a>
+
 
 
                         <!-- THREADS -->
@@ -938,6 +961,7 @@
                         </a>
 
 
+
                         <!-- TIKTOK -->
 
                         <a
@@ -952,6 +976,7 @@
                             TikTok
 
                         </a>
+
 
 
                         <!-- LINKEDIN -->
@@ -970,6 +995,7 @@
                         </a>
 
 
+
                         <!-- GITHUB -->
 
                         <a
@@ -984,6 +1010,7 @@
                             GitHub
 
                         </a>
+
 
 
                         <!-- WHATSAPP -->
@@ -1002,6 +1029,7 @@
                         </a>
 
 
+
                         <!-- WHATSAPP CHANNEL -->
 
                         <a
@@ -1018,6 +1046,7 @@
                         </a>
 
 
+
                         <!-- EMAIL -->
 
                         <a
@@ -1032,9 +1061,10 @@
                         </a>
 
 
+
                         <!-- SPOTIFY -->
 
-                        <!-- Replace this with your Spotify profile URL -->
+                        <!-- Replace with your personal Spotify URL -->
 
                         <a
                             class="social social-spotify"
@@ -1053,6 +1083,7 @@
                     </div>
 
 
+
                     <!-- PROFESSIONAL BIOGRAPHY -->
 
                     <div class="hero-description">
@@ -1069,6 +1100,7 @@
                         </p>
 
 
+
                         <p>
 
                             Advanced Level Physics Educator
@@ -1078,6 +1110,7 @@
                             accessible, and engaging.
 
                         </p>
+
 
 
                         <p>
@@ -1096,7 +1129,8 @@
                 </div>
 
 
-                <!-- PROFILE PHOTO -->
+
+                <!-- CIRCULAR PROFILE PHOTO -->
 
                 <div class="profile-panel">
 
@@ -1120,6 +1154,7 @@
         </section>
 
 
+
         <!-- ====================================
              EDUCATION
         ==================================== -->
@@ -1130,7 +1165,7 @@
             aria-labelledby="education-title"
         >
 
-            <div class="container education-container">
+            <div class="container">
 
 
                 <h2
@@ -1143,34 +1178,10 @@
                 </h2>
 
 
+
                 <!-- EDUCATION TIMELINE -->
 
                 <div class="education-timeline">
-
-
-                    <!-- MSc -->
-
-                    <article class="education-item">
-
-                        <h3 class="education-degree">
-
-                            MSc in Data Science
-
-                        </h3>
-
-                        <p class="education-school">
-
-                            Kingston University (UK)
-
-                        </p>
-
-                        <p class="education-date">
-
-                            Sept 2025 - Sept 2027
-
-                        </p>
-
-                    </article>
 
 
                     <!-- BSc -->
@@ -1180,7 +1191,7 @@
                         <h3 class="education-degree">
 
                             BSc (Hons) in Data Science
-                            (First Class | Batch Top)
+                            (First Class Honours | Batch Top)
 
                         </h3>
 
@@ -1197,6 +1208,7 @@
                         </p>
 
                     </article>
+
 
 
                     <!-- DIPLOMA -->
@@ -1218,20 +1230,22 @@
 
                         <p class="education-date">
 
-                            Jan 2020 - Jan 2021
+                            Jan 2021 - Jan 2022
 
                         </p>
 
                     </article>
 
 
-                    <!-- ADVANCED LEVEL -->
+
+                    <!-- GCE ADVANCED LEVEL -->
 
                     <article class="education-item">
 
                         <h3 class="education-degree">
 
-                            GCE A/L – Combined Mathematics Stream
+                            GCE A/L – Combined Mathematics,
+                            Physics, and Chemistry
 
                         </h3>
 
@@ -1243,7 +1257,7 @@
 
                         <p class="education-date">
 
-                            Jan 2017 - Jan 2019
+                            Jan 2018 - Aug 2020
 
                         </p>
 
@@ -1260,12 +1274,14 @@
 
                 </div>
 
+
             </div>
 
         </section>
 
 
     </main>
+
 
 
     <!-- ========================================
@@ -1288,6 +1304,7 @@
     </footer>
 
 
+
     <!-- ========================================
          BACK TO TOP
     ======================================== -->
@@ -1304,6 +1321,7 @@
     </button>
 
 
+
     <!-- ========================================
          JAVASCRIPT
     ======================================== -->
@@ -1312,6 +1330,8 @@
 
         "use strict";
 
+
+        /* BACK TO TOP */
 
         const backToTopButton =
             document.getElementById("backToTop");
