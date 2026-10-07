@@ -58,7 +58,24 @@
 
             --border: #e8ecf1;
 
-            --panel-width: 760px;
+            /* Maximum width of the complete site */
+            --panel-width: 580px;
+
+            /*
+               Shared vertical-line geometry.
+
+               Both the upper biography lines and the
+               lower Education timeline use this same
+               horizontal position.
+
+               Line:
+               left = 8px
+               width = 2px
+               center = 9px
+            */
+
+            --timeline-line-left: 8px;
+            --timeline-line-width: 2px;
 
         }
 
@@ -119,6 +136,7 @@
         }
 
 
+
         /* =====================================
            CENTERED WEBSITE PANEL
         ===================================== */
@@ -133,9 +151,11 @@
 
             background: var(--background);
 
-            border-left: 1px solid rgba(16, 24, 44, 0.06);
+            border-left:
+                1px solid rgba(16, 24, 44, 0.06);
 
-            border-right: 1px solid rgba(16, 24, 44, 0.06);
+            border-right:
+                1px solid rgba(16, 24, 44, 0.06);
 
             box-shadow:
                 0 0 45px rgba(16, 24, 44, 0.08);
@@ -147,7 +167,7 @@
 
             width: 90%;
 
-            max-width: 680px;
+            max-width: 522px;
 
             margin-inline: auto;
 
@@ -174,7 +194,7 @@
 
             z-index: 1000;
 
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.90);
 
             backdrop-filter: blur(18px);
 
@@ -192,10 +212,12 @@
 
         .topbar.scrolled {
 
-            background: rgba(255, 255, 255, 0.98);
+            background:
+                rgba(255, 255, 255, 0.98);
 
             box-shadow:
-                0 5px 25px rgba(16, 24, 44, 0.07);
+                0 5px 25px
+                rgba(16, 24, 44, 0.07);
 
         }
 
@@ -250,7 +272,8 @@
 
             object-position: center;
 
-            border: 2px solid var(--turquoise);
+            border:
+                2px solid var(--turquoise);
 
             padding: 2px;
 
@@ -282,7 +305,6 @@
 
         /* =====================================
            MOBILE-STYLE NAVIGATION
-           USED ON DESKTOP TOO
         ===================================== */
 
         .menu-toggle {
@@ -299,7 +321,8 @@
 
             flex-shrink: 0;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             border-radius: 12px;
 
@@ -323,9 +346,11 @@
 
             background: #f0fcf9;
 
-            border-color: var(--turquoise);
+            border-color:
+                var(--turquoise);
 
-            color: var(--turquoise-dark);
+            color:
+                var(--turquoise-dark);
 
         }
 
@@ -350,14 +375,17 @@
 
             padding: 8px;
 
-            background: rgba(255, 255, 255, 0.99);
+            background:
+                rgba(255, 255, 255, 0.99);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             border-radius: 16px;
 
             box-shadow:
-                0 15px 40px rgba(16, 24, 44, 0.14);
+                0 15px 40px
+                rgba(16, 24, 44, 0.14);
 
             opacity: 0;
 
@@ -422,7 +450,8 @@
 
             background: #effbf8;
 
-            color: var(--turquoise-dark);
+            color:
+                var(--turquoise-dark);
 
         }
 
@@ -443,7 +472,8 @@
         .brand:focus-visible,
         .social:focus-visible {
 
-            outline: 3px solid var(--turquoise);
+            outline:
+                3px solid var(--turquoise);
 
             outline-offset: 3px;
 
@@ -461,7 +491,8 @@
 
             background: var(--surface);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
         }
 
@@ -482,7 +513,6 @@
 
         /* =====================================
            HERO
-           MOBILE STYLE ON ALL SCREEN SIZES
         ===================================== */
 
         .hero-section {
@@ -494,7 +524,8 @@
                     #f6fcfa
                 );
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
         }
 
@@ -503,13 +534,15 @@
 
             display: grid;
 
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns:
+                minmax(0, 1fr);
 
             text-align: center;
 
             gap: 32px;
 
-            padding: 38px 0 65px;
+            padding:
+                30px 0 55px;
 
         }
 
@@ -523,11 +556,16 @@
 
         .hero h1 {
 
-            font-size: clamp(2.8rem, 9vw, 4rem);
+            font-size:
+                clamp(
+                    2.5rem,
+                    11vw,
+                    3.25rem
+                );
 
             line-height: 1.08;
 
-            letter-spacing: -2.5px;
+            letter-spacing: -2px;
 
             font-weight: 800;
 
@@ -536,18 +574,20 @@
 
         .hero h1 span {
 
-            color: var(--turquoise-dark);
+            color:
+                var(--turquoise-dark);
 
         }
 
 
         .professional-title {
 
-            margin: 25px auto 0;
+            margin:
+                25px auto 0;
 
-            max-width: 640px;
+            max-width: 500px;
 
-            font-size: 0.98rem;
+            font-size: 0.95rem;
 
             line-height: 1.9;
 
@@ -560,7 +600,8 @@
 
         .separator {
 
-            color: var(--turquoise-dark);
+            color:
+                var(--turquoise-dark);
 
             margin: 0 5px;
 
@@ -570,7 +611,6 @@
 
         /* =====================================
            PROFILE PHOTO
-           MOVED ABOVE INTRO LIKE MOBILE
         ===================================== */
 
         .profile-panel {
@@ -587,7 +627,7 @@
 
             min-width: 0;
 
-            margin-top: -120px;
+            margin-top: -90px;
 
             position: relative;
 
@@ -600,9 +640,9 @@
 
             position: relative;
 
-            width: 210px;
+            width: min(185px, 56vw);
 
-            height: 210px;
+            height: min(185px, 56vw);
 
             flex: 0 0 auto;
 
@@ -610,10 +650,12 @@
 
             background: white;
 
-            border: 3px solid var(--turquoise);
+            border:
+                3px solid var(--turquoise);
 
             box-shadow:
-                0 15px 45px rgba(16, 24, 44, 0.16);
+                0 15px 45px
+                rgba(16, 24, 44, 0.16);
 
             overflow: hidden;
 
@@ -626,9 +668,11 @@
 
             inset: 7px;
 
-            width: calc(100% - 14px);
+            width:
+                calc(100% - 14px);
 
-            height: calc(100% - 14px);
+            height:
+                calc(100% - 14px);
 
             display: block;
 
@@ -673,19 +717,20 @@
 
             gap: 8px;
 
-            padding: 9px 13px;
+            padding: 8px 11px;
 
             border-radius: 10px;
 
             background: white;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
 
             text-decoration: none;
 
             color: var(--gray);
 
-            font-size: 0.81rem;
+            font-size: 0.77rem;
 
             font-weight: 600;
 
@@ -699,12 +744,15 @@
 
         .social:hover {
 
-            transform: translateY(-3px);
+            transform:
+                translateY(-3px);
 
-            border-color: var(--turquoise);
+            border-color:
+                var(--turquoise);
 
             box-shadow:
-                0 8px 25px rgba(16, 24, 44, 0.07);
+                0 8px 25px
+                rgba(16, 24, 44, 0.07);
 
         }
 
@@ -789,13 +837,19 @@
 
         /* =====================================
            BIOGRAPHY
+
+           IMPORTANT:
+           The vertical biography lines use
+           exactly the same horizontal position
+           as the Education timeline below.
         ===================================== */
 
         .hero-description {
 
-            margin: 38px auto 0;
+            margin:
+                38px auto 0;
 
-            max-width: 620px;
+            max-width: 500px;
 
             display: flex;
 
@@ -810,15 +864,31 @@
 
         .hero-description p {
 
-            padding-left: 19px;
+            /*
+               Line starts at 8px from
+               the content's left edge.
+            */
+
+            margin-left:
+                var(--timeline-line-left);
+
+            padding-left: 21px;
 
             color: var(--gray);
 
-            font-size: 0.94rem;
+            font-size: 0.9rem;
 
             line-height: 1.95;
 
-            border-left: 3px solid var(--turquoise);
+            /*
+               Same width and position
+               as Education line.
+            */
+
+            border-left:
+                var(--timeline-line-width)
+                solid
+                var(--turquoise);
 
         }
 
@@ -837,9 +907,9 @@
 
         .education-title {
 
-            margin-bottom: 32px;
+            margin-bottom: 28px;
 
-            font-size: clamp(2rem, 6vw, 2.5rem);
+            font-size: 2rem;
 
             font-weight: 700;
 
@@ -876,20 +946,34 @@
 
 
         /*
-           TIMELINE ALIGNMENT
+           =====================================
+           EXACT TIMELINE ALIGNMENT
+           =====================================
+
+           Circle total width = 18px
 
            Circle:
+           left = 0px
            width = 18px
-           left = 0
-           centre = 9px
 
-           Line:
-           width = 2px
+           Circle center:
+           0 + 18 / 2 = 9px
+
+
+           Vertical line:
            left = 8px
-           centre = 9px
+           width = 2px
 
-           Therefore the line passes exactly
-           through the centre of every circle.
+           Line center:
+           8 + 2 / 2 = 9px
+
+
+           Therefore:
+
+           CIRCLE CENTER = 9px
+           LINE CENTER   = 9px
+
+           They are mathematically aligned.
         */
 
 
@@ -899,15 +983,18 @@
 
             position: absolute;
 
-            left: 8px;
+            left:
+                var(--timeline-line-left);
 
             top: 0;
 
             bottom: 0;
 
-            width: 2px;
+            width:
+                var(--timeline-line-width);
 
-            background: var(--turquoise);
+            background:
+                var(--turquoise);
 
             z-index: 0;
 
@@ -924,18 +1011,27 @@
 
             top: 21px;
 
+            /*
+               Because global box-sizing
+               is border-box, 18px is the
+               COMPLETE circle diameter.
+            */
+
             width: 18px;
 
             height: 18px;
 
             border-radius: 50%;
 
-            background: var(--turquoise);
+            background:
+                var(--turquoise);
 
-            border: 3px solid white;
+            border:
+                3px solid white;
 
             box-shadow:
-                0 0 0 2px var(--turquoise);
+                0 0 0 2px
+                var(--turquoise);
 
             z-index: 1;
 
@@ -953,9 +1049,9 @@
 
         .education-degree {
 
-            max-width: 620px;
+            max-width: 470px;
 
-            font-size: 1.05rem;
+            font-size: 1rem;
 
             font-weight: 600;
 
@@ -979,7 +1075,7 @@
 
             margin-top: 5px;
 
-            font-size: 0.91rem;
+            font-size: 0.88rem;
 
             font-weight: 500;
 
@@ -992,9 +1088,10 @@
 
             margin-top: 5px;
 
-            font-size: 0.8rem;
+            font-size: 0.78rem;
 
-            color: var(--light-gray);
+            color:
+                var(--light-gray);
 
         }
 
@@ -1003,9 +1100,9 @@
 
             margin-top: 12px;
 
-            max-width: 620px;
+            max-width: 470px;
 
-            font-size: 0.87rem;
+            font-size: 0.85rem;
 
             line-height: 1.75;
 
@@ -1023,7 +1120,8 @@
 
             padding: 35px 0;
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
 
             background: white;
 
@@ -1059,7 +1157,10 @@
                 max(
                     18px,
                     calc(
-                        (100vw - var(--panel-width)) / 2 + 18px
+                        (
+                            100vw -
+                            var(--panel-width)
+                        ) / 2 + 18px
                     )
                 );
 
@@ -1081,20 +1182,23 @@
 
             border-radius: 14px;
 
-            background: var(--turquoise);
+            background:
+                var(--turquoise);
 
             color: white;
 
             cursor: pointer;
 
             box-shadow:
-                0 10px 30px rgba(45, 212, 181, 0.3);
+                0 10px 30px
+                rgba(45, 212, 181, 0.3);
 
             opacity: 0;
 
             visibility: hidden;
 
-            transform: translateY(12px);
+            transform:
+                translateY(12px);
 
             transition:
                 opacity 0.25s,
@@ -1111,145 +1215,16 @@
 
             visibility: visible;
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
 
         }
 
 
         .back-to-top:hover {
 
-            background: var(--turquoise-dark);
-
-        }
-
-
-
-        /* =====================================
-           SMALL MOBILE
-        ===================================== */
-
-        @media (max-width: 640px) {
-
-            .container {
-
-                width: 90%;
-
-            }
-
-
-            .hero {
-
-                padding:
-                    30px
-                    0
-                    55px;
-
-            }
-
-
-            .profile-panel {
-
-                margin-top: -90px;
-
-            }
-
-
-            .profile-frame {
-
-                width:
-                    min(
-                        185px,
-                        56vw
-                    );
-
-                height:
-                    min(
-                        185px,
-                        56vw
-                    );
-
-            }
-
-
-            .hero h1 {
-
-                font-size:
-                    clamp(
-                        2.5rem,
-                        11vw,
-                        3rem
-                    );
-
-                letter-spacing: -2px;
-
-            }
-
-
-            .professional-title {
-
-                font-size: 0.95rem;
-
-            }
-
-
-            .social {
-
-                font-size: 0.77rem;
-
-                padding: 8px 11px;
-
-            }
-
-
-            .hero-description p {
-
-                font-size: 0.9rem;
-
-            }
-
-
-            .section {
-
-                padding: 55px 0;
-
-            }
-
-
-            .education-title {
-
-                margin-bottom: 28px;
-
-                font-size: 2rem;
-
-            }
-
-
-            .education-degree {
-
-                font-size: 1rem;
-
-            }
-
-
-            .education-school {
-
-                font-size: 0.88rem;
-
-            }
-
-
-            .education-date {
-
-                font-size: 0.78rem;
-
-            }
-
-
-            .education-description {
-
-                font-size: 0.85rem;
-
-            }
+            background:
+                var(--turquoise-dark);
 
         }
 
@@ -1316,16 +1291,23 @@
 
             }
 
+
+            .education-item {
+
+                padding-left: 29px;
+
+            }
+
         }
 
 
 
         /* =====================================
            REMOVE OUTER PANEL EFFECT
-           ON PHONES / TABLETS
+           AT 580PX AND BELOW
         ===================================== */
 
-        @media (max-width: 760px) {
+        @media (max-width: 580px) {
 
             body {
 
@@ -1361,7 +1343,9 @@
            REDUCED MOTION
         ===================================== */
 
-        @media (prefers-reduced-motion: reduce) {
+        @media (
+            prefers-reduced-motion: reduce
+        ) {
 
             html {
 
@@ -1421,10 +1405,13 @@
                     >
 
                     <span class="brand-name">
+
                         Manula
+
                         <span>
                             Balasooriya
                         </span>
+
                     </span>
 
                 </a>
@@ -2194,7 +2181,7 @@
 
 
         /* =====================================
-           MOBILE MENU STATE
+           MENU STATE
         ===================================== */
 
         function setMenuState(isOpen) {
@@ -2285,7 +2272,7 @@
 
 
         /* =====================================
-           CLOSE MENU WHEN CLICKING OUTSIDE
+           CLOSE MENU OUTSIDE
         ===================================== */
 
         document.addEventListener(
@@ -2312,7 +2299,7 @@
 
 
         /* =====================================
-           CLOSE MENU USING ESCAPE
+           ESCAPE KEY
         ===================================== */
 
         document.addEventListener(
@@ -2342,7 +2329,7 @@
 
 
         /* =====================================
-           CLOSE MENU WHEN WINDOW RESIZES
+           WINDOW RESIZE
         ===================================== */
 
         window.addEventListener(
@@ -2359,8 +2346,7 @@
 
 
         /* =====================================
-           STICKY NAVIGATION
-           AND BACK TO TOP
+           SCROLL EFFECTS
         ===================================== */
 
         function updateScrollEffects() {
