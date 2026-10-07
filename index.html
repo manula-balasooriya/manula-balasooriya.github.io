@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -11,7 +16,11 @@
 
     <title>Manula Balasooriya</title>
 
-    <!-- Fonts -->
+
+    <!-- =====================================
+         FONTS
+    ===================================== -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
@@ -22,6 +31,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
+
     <style>
 
         /* =====================================
@@ -29,51 +39,127 @@
         ===================================== */
 
         :root {
+
             --background: #ffffff;
+
+            --outside-background: #eef2f5;
+
             --surface: #f8fafc;
+
             --navy: #10182c;
+
             --gray: #667085;
+
             --light-gray: #98a2b3;
+
             --turquoise: #2dd4b5;
+
             --turquoise-dark: #17b99c;
+
             --border: #e8ecf1;
+
+            --panel-width: 760px;
+
         }
+
 
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
+
 
         html {
+
             scroll-behavior: smooth;
-            scroll-padding-top: 105px;
+
+            scroll-padding-top: 90px;
+
         }
+
 
         body {
+
             font-family: "Inter", sans-serif;
-            background: var(--background);
+
+            background: var(--outside-background);
+
             color: var(--navy);
+
             line-height: 1.7;
+
             overflow-x: hidden;
+
         }
+
 
         a {
+
             color: inherit;
+
         }
+
 
         button {
+
             font: inherit;
+
         }
+
+
+        img {
+
+            max-width: 100%;
+
+        }
+
+
+        /* =====================================
+           CENTERED WEBSITE PANEL
+        ===================================== */
+
+        .site-shell {
+
+            width: min(100%, var(--panel-width));
+
+            min-height: 100vh;
+
+            margin-inline: auto;
+
+            background: var(--background);
+
+            border-left: 1px solid rgba(16, 24, 44, 0.06);
+
+            border-right: 1px solid rgba(16, 24, 44, 0.06);
+
+            box-shadow:
+                0 0 45px rgba(16, 24, 44, 0.08);
+
+        }
+
 
         .container {
-            width: min(92%, 1100px);
+
+            width: 90%;
+
+            max-width: 680px;
+
             margin-inline: auto;
+
         }
 
+
         .section {
-            padding: 70px 0;
+
+            padding: 55px 0;
+
         }
+
 
 
         /* =====================================
@@ -81,380 +167,467 @@
         ===================================== */
 
         .topbar {
+
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
 
-            background: rgba(255, 255, 255, 0.88);
+            background: rgba(255, 255, 255, 0.9);
 
             backdrop-filter: blur(18px);
+
             -webkit-backdrop-filter: blur(18px);
 
-            border-bottom: 1px solid rgba(232, 236, 241, 0.8);
+            border-bottom:
+                1px solid rgba(232, 236, 241, 0.82);
 
             transition:
                 box-shadow 0.3s,
                 background 0.3s;
+
         }
+
 
         .topbar.scrolled {
-            background: rgba(255, 255, 255, 0.97);
-            box-shadow: 0 5px 25px rgba(16, 24, 44, 0.06);
+
+            background: rgba(255, 255, 255, 0.98);
+
+            box-shadow:
+                0 5px 25px rgba(16, 24, 44, 0.07);
+
         }
+
 
         .nav {
-            height: 76px;
+
+            position: relative;
+
+            height: 68px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
-            gap: 24px;
+            gap: 18px;
+
         }
+
 
         .brand {
+
             display: inline-flex;
+
             align-items: center;
 
-            gap: 12px;
-
-            text-decoration: none;
-            white-space: nowrap;
+            gap: 9px;
 
             min-width: 0;
+
+            text-decoration: none;
+
+            white-space: nowrap;
+
         }
 
+
         .brand-avatar {
+
             display: block;
 
-            width: 43px;
-            height: 43px;
+            width: 38px;
 
-            flex: 0 0 43px;
+            height: 38px;
+
+            flex: 0 0 38px;
 
             border-radius: 50%;
+
             object-fit: cover;
+
             object-position: center;
 
             border: 2px solid var(--turquoise);
+
             padding: 2px;
 
             background: white;
+
         }
+
 
         .brand-name {
-            font-size: 0.98rem;
+
+            font-size: 0.88rem;
+
             font-weight: 750;
 
-            letter-spacing: -0.4px;
+            letter-spacing: -0.45px;
+
             color: var(--navy);
+
         }
+
 
         .brand-name span {
-            color: var(--turquoise-dark);
-        }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-
-            gap: 5px;
-            padding: 5px;
-
-            background: #f4f8f8;
-
-            border: 1px solid #edf1f1;
-            border-radius: 14px;
-        }
-
-        .nav-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 8px;
-            padding: 10px 18px;
-
-            border-radius: 10px;
-
-            text-decoration: none;
-
-            color: var(--gray);
-
-            font-size: 0.86rem;
-            font-weight: 600;
-
-            transition:
-                color 0.2s,
-                background 0.2s,
-                box-shadow 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--turquoise-dark);
-            background: white;
-
-            box-shadow: 0 2px 8px rgba(16, 24, 44, 0.04);
-        }
-
-        .nav-links a.active {
-            background: white;
             color: var(--turquoise-dark);
 
-            box-shadow: 0 2px 8px rgba(16, 24, 44, 0.06);
         }
 
-        .nav-links i {
-            font-size: 0.85rem;
-        }
+
+
+        /* =====================================
+           MOBILE-STYLE NAVIGATION
+           USED ON DESKTOP TOO
+        ===================================== */
 
         .menu-toggle {
-            display: none;
 
             width: 43px;
+
             height: 43px;
 
+            display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
 
             flex-shrink: 0;
 
             border: 1px solid var(--border);
+
             border-radius: 12px;
 
             background: white;
+
             color: var(--navy);
 
             font-size: 1.15rem;
+
             cursor: pointer;
+
+            transition:
+                background 0.2s,
+                border-color 0.2s,
+                color 0.2s;
+
         }
 
+
         .menu-toggle:hover {
+
             background: #f0fcf9;
+
             border-color: var(--turquoise);
+
+            color: var(--turquoise-dark);
+
         }
+
+
+        .nav-links {
+
+            position: absolute;
+
+            top: calc(100% + 8px);
+
+            left: 0;
+
+            right: 0;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: stretch;
+
+            gap: 5px;
+
+            padding: 8px;
+
+            background: rgba(255, 255, 255, 0.99);
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 15px 40px rgba(16, 24, 44, 0.14);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transform: translateY(-8px);
+
+            transition:
+                opacity 0.2s,
+                visibility 0.2s,
+                transform 0.2s;
+
+        }
+
+
+        .nav-links.open {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+
+            transform: translateY(0);
+
+        }
+
+
+        .nav-links a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: flex-start;
+
+            gap: 9px;
+
+            padding: 13px 15px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            color: var(--gray);
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            transition:
+                color 0.2s,
+                background 0.2s;
+
+        }
+
+
+        .nav-links a:hover,
+        .nav-links a.active {
+
+            background: #effbf8;
+
+            color: var(--turquoise-dark);
+
+        }
+
+
+        .nav-links i {
+
+            width: 18px;
+
+            text-align: center;
+
+            font-size: 0.9rem;
+
+        }
+
 
         .menu-toggle:focus-visible,
         .nav-links a:focus-visible,
         .brand:focus-visible,
         .social:focus-visible {
+
             outline: 3px solid var(--turquoise);
+
             outline-offset: 3px;
+
         }
 
 
+
         /* =====================================
-           FULL COVER PHOTO
+           COVER PHOTO
         ===================================== */
 
         .cover {
+
             width: 100%;
 
             background: var(--surface);
 
             border-bottom: 1px solid var(--border);
+
         }
 
+
         .cover-image {
+
             display: block;
 
             width: 100%;
+
             height: auto;
 
             object-fit: contain;
+
         }
+
 
 
         /* =====================================
            HERO
+           MOBILE STYLE ON ALL SCREEN SIZES
         ===================================== */
 
         .hero-section {
-            background: linear-gradient(
-                145deg,
-                #ffffff,
-                #f6fcfa
-            );
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f6fcfa
+                );
 
             border-bottom: 1px solid var(--border);
+
         }
+
 
         .hero {
+
             display: grid;
 
-            grid-template-columns:
-                minmax(0, 1.4fr)
-                minmax(0, 0.6fr);
+            grid-template-columns: minmax(0, 1fr);
 
-            align-items: start;
+            text-align: center;
 
-            gap: 65px;
-            padding: 48px 0 85px;
+            gap: 32px;
+
+            padding: 38px 0 65px;
+
         }
+
 
         .hero-copy {
+
             min-width: 0;
+
         }
+
 
         .hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            line-height: 1.1;
 
-            letter-spacing: -3px;
+            font-size: clamp(2.8rem, 9vw, 4rem);
+
+            line-height: 1.08;
+
+            letter-spacing: -2.5px;
+
             font-weight: 800;
+
         }
+
 
         .hero h1 span {
+
             color: var(--turquoise-dark);
+
         }
 
-        .professional-title {
-            margin-top: 27px;
-            max-width: 780px;
 
-            font-size: 1.05rem;
+        .professional-title {
+
+            margin: 25px auto 0;
+
+            max-width: 640px;
+
+            font-size: 0.98rem;
+
             line-height: 1.9;
 
             font-weight: 600;
+
             color: var(--gray);
+
         }
+
 
         .separator {
+
             color: var(--turquoise-dark);
+
             margin: 0 5px;
+
         }
 
-
-        /* =====================================
-           SOCIAL LINKS
-        ===================================== */
-
-        .socials {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 10px;
-            margin-top: 26px;
-
-            scroll-margin-top: 115px;
-        }
-
-        .social {
-            display: inline-flex;
-            align-items: center;
-
-            gap: 8px;
-            padding: 9px 13px;
-
-            border-radius: 10px;
-
-            background: white;
-            border: 1px solid var(--border);
-
-            text-decoration: none;
-            color: var(--gray);
-
-            font-size: 0.81rem;
-            font-weight: 600;
-
-            transition:
-                transform 0.2s,
-                border-color 0.2s,
-                box-shadow 0.2s;
-        }
-
-        .social:hover {
-            transform: translateY(-3px);
-            border-color: var(--turquoise);
-
-            box-shadow: 0 8px 25px rgba(16, 24, 44, 0.07);
-        }
-
-        .social i {
-            font-size: 1rem;
-        }
-
-        .social-facebook i { color: #1877f2; }
-        .social-instagram i { color: #e4405f; }
-        .social-youtube i { color: #ff0033; }
-        .social-threads i { color: #111111; }
-        .social-tiktok i { color: #111111; }
-        .social-linkedin i { color: #0a66c2; }
-        .social-github i { color: #24292f; }
-        .social-whatsapp i { color: #25d366; }
-        .social-email i { color: #ea4335; }
-        .social-spotify i { color: #1db954; }
-
-
-        /* =====================================
-           BIOGRAPHY
-        ===================================== */
-
-        .hero-description {
-            margin-top: 38px;
-            max-width: 750px;
-
-            display: flex;
-            flex-direction: column;
-
-            gap: 19px;
-        }
-
-        .hero-description p {
-            padding-left: 19px;
-
-            color: var(--gray);
-
-            font-size: 0.96rem;
-            line-height: 1.95;
-
-            border-left: 3px solid var(--turquoise);
-        }
 
 
         /* =====================================
            PROFILE PHOTO
+           MOVED ABOVE INTRO LIKE MOBILE
         ===================================== */
 
         .profile-panel {
+
+            grid-row: 1;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             width: 100%;
+
             min-width: 0;
 
-            margin-top: -125px;
+            margin-top: -120px;
 
             position: relative;
+
             z-index: 2;
+
         }
 
+
         .profile-frame {
+
             position: relative;
 
-            width: 290px;
-            height: 290px;
+            width: 210px;
+
+            height: 210px;
 
             flex: 0 0 auto;
 
             border-radius: 50%;
 
             background: white;
+
             border: 3px solid var(--turquoise);
 
             box-shadow:
                 0 15px 45px rgba(16, 24, 44, 0.16);
 
             overflow: hidden;
+
         }
 
+
         .profile-image {
+
             position: absolute;
 
             inset: 7px;
 
             width: calc(100% - 14px);
+
             height: calc(100% - 14px);
 
             display: block;
@@ -462,10 +635,193 @@
             border-radius: 50%;
 
             object-fit: cover;
+
             object-position: center;
 
             background: #e9f0f7;
+
         }
+
+
+
+        /* =====================================
+           SOCIAL LINKS
+        ===================================== */
+
+        .socials {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 26px;
+
+            scroll-margin-top: 100px;
+
+        }
+
+
+        .social {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 9px 13px;
+
+            border-radius: 10px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            text-decoration: none;
+
+            color: var(--gray);
+
+            font-size: 0.81rem;
+
+            font-weight: 600;
+
+            transition:
+                transform 0.2s,
+                border-color 0.2s,
+                box-shadow 0.2s;
+
+        }
+
+
+        .social:hover {
+
+            transform: translateY(-3px);
+
+            border-color: var(--turquoise);
+
+            box-shadow:
+                0 8px 25px rgba(16, 24, 44, 0.07);
+
+        }
+
+
+        .social i {
+
+            font-size: 1rem;
+
+        }
+
+
+        .social-facebook i {
+
+            color: #1877f2;
+
+        }
+
+
+        .social-instagram i {
+
+            color: #e4405f;
+
+        }
+
+
+        .social-youtube i {
+
+            color: #ff0033;
+
+        }
+
+
+        .social-threads i {
+
+            color: #111111;
+
+        }
+
+
+        .social-tiktok i {
+
+            color: #111111;
+
+        }
+
+
+        .social-linkedin i {
+
+            color: #0a66c2;
+
+        }
+
+
+        .social-github i {
+
+            color: #24292f;
+
+        }
+
+
+        .social-whatsapp i {
+
+            color: #25d366;
+
+        }
+
+
+        .social-email i {
+
+            color: #ea4335;
+
+        }
+
+
+        .social-spotify i {
+
+            color: #1db954;
+
+        }
+
+
+
+        /* =====================================
+           BIOGRAPHY
+        ===================================== */
+
+        .hero-description {
+
+            margin: 38px auto 0;
+
+            max-width: 620px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 19px;
+
+            text-align: left;
+
+        }
+
+
+        .hero-description p {
+
+            padding-left: 19px;
+
+            color: var(--gray);
+
+            font-size: 0.94rem;
+
+            line-height: 1.95;
+
+            border-left: 3px solid var(--turquoise);
+
+        }
+
 
 
         /* =====================================
@@ -473,130 +829,190 @@
         ===================================== */
 
         .education-section {
+
             background: white;
+
         }
 
-        .education-title {
-            margin-bottom: 35px;
 
-            font-size: clamp(2rem, 4vw, 2.65rem);
+        .education-title {
+
+            margin-bottom: 32px;
+
+            font-size: clamp(2rem, 6vw, 2.5rem);
+
             font-weight: 700;
 
             letter-spacing: -1.2px;
+
             line-height: 1.2;
+
         }
+
 
         .education-timeline {
+
             position: relative;
+
             margin-left: 0;
+
         }
+
 
         .education-item {
+
             position: relative;
 
-            padding: 16px 0 26px 30px;
-            margin-bottom: 8px;
+            padding:
+                14px
+                0
+                27px
+                31px;
+
+            margin-bottom: 7px;
+
         }
 
-        /*
-           Vertical timeline line.
 
-           The line is 3px wide and its center is at 9.5px.
-           The timeline circles are 19px wide including their
-           border, so their center is also exactly 9.5px.
+
+        /*
+           TIMELINE ALIGNMENT
+
+           Circle:
+           width = 18px
+           left = 0
+           centre = 9px
+
+           Line:
+           width = 2px
+           left = 8px
+           centre = 9px
+
+           Therefore the line passes exactly
+           through the centre of every circle.
         */
 
+
         .education-item::after {
+
             content: "";
 
             position: absolute;
 
             left: 8px;
+
             top: 0;
+
             bottom: 0;
 
-            width: 3px;
+            width: 2px;
 
             background: var(--turquoise);
 
             z-index: 0;
+
         }
 
-        .education-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 12px;
-        }
-
-        /*
-           Timeline circle.
-
-           13px content + 3px border on both sides
-           creates a total diameter of 19px.
-
-           left: 0 means the center is 9.5px,
-           exactly matching the vertical line.
-        */
 
         .education-item::before {
+
             content: "";
 
             position: absolute;
 
             left: 0;
-            top: 23px;
 
-            width: 13px;
-            height: 13px;
+            top: 21px;
+
+            width: 18px;
+
+            height: 18px;
 
             border-radius: 50%;
 
             background: var(--turquoise);
+
             border: 3px solid white;
 
-            box-shadow: 0 0 0 2px var(--turquoise);
+            box-shadow:
+                0 0 0 2px var(--turquoise);
 
             z-index: 1;
+
         }
 
-        .education-degree {
-            max-width: 850px;
 
-            font-size: 1.12rem;
+        .education-item:last-child {
+
+            margin-bottom: 0;
+
+            padding-bottom: 12px;
+
+        }
+
+
+        .education-degree {
+
+            max-width: 620px;
+
+            font-size: 1.05rem;
+
             font-weight: 600;
 
             line-height: 1.5;
+
             letter-spacing: -0.2px;
+
         }
+
 
         .education-degree-subtitle {
+
             display: block;
+
+            margin-top: 1px;
+
         }
 
+
         .education-school {
+
             margin-top: 5px;
 
-            font-size: 0.95rem;
+            font-size: 0.91rem;
+
             font-weight: 500;
 
             color: var(--gray);
+
         }
+
 
         .education-date {
+
             margin-top: 5px;
 
-            font-size: 0.83rem;
+            font-size: 0.8rem;
+
             color: var(--light-gray);
+
         }
 
-        .education-description {
-            margin-top: 12px;
-            max-width: 850px;
 
-            font-size: 0.9rem;
+        .education-description {
+
+            margin-top: 12px;
+
+            max-width: 620px;
+
+            font-size: 0.87rem;
+
             line-height: 1.75;
 
             color: var(--gray);
+
         }
+
 
 
         /* =====================================
@@ -604,20 +1020,31 @@
         ===================================== */
 
         .footer {
+
             padding: 35px 0;
 
             border-top: 1px solid var(--border);
+
             background: white;
+
         }
+
 
         .footer-inner {
+
             text-align: center;
+
         }
 
+
         .footer-copy {
+
             color: var(--gray);
-            font-size: 0.85rem;
+
+            font-size: 0.83rem;
+
         }
+
 
 
         /* =====================================
@@ -625,24 +1052,37 @@
         ===================================== */
 
         .back-to-top {
+
             position: fixed;
 
-            right: 25px;
-            bottom: 25px;
+            right:
+                max(
+                    18px,
+                    calc(
+                        (100vw - var(--panel-width)) / 2 + 18px
+                    )
+                );
 
-            z-index: 200;
+            bottom: 22px;
 
-            width: 48px;
-            height: 48px;
+            z-index: 1200;
+
+            width: 46px;
+
+            height: 46px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             border: none;
+
             border-radius: 14px;
 
             background: var(--turquoise);
+
             color: white;
 
             cursor: pointer;
@@ -651,6 +1091,7 @@
                 0 10px 30px rgba(45, 212, 181, 0.3);
 
             opacity: 0;
+
             visibility: hidden;
 
             transform: translateY(12px);
@@ -658,149 +1099,29 @@
             transition:
                 opacity 0.25s,
                 visibility 0.25s,
-                transform 0.25s;
+                transform 0.25s,
+                background 0.2s;
+
         }
 
+
         .back-to-top.show {
+
             opacity: 1;
+
             visibility: visible;
 
             transform: translateY(0);
+
         }
+
 
         .back-to-top:hover {
+
             background: var(--turquoise-dark);
-        }
-
-
-        /* =====================================
-           TABLET
-        ===================================== */
-
-        @media (max-width: 850px) {
-
-            .hero {
-                grid-template-columns: minmax(0, 1fr);
-
-                text-align: center;
-
-                gap: 32px;
-                padding: 40px 0 65px;
-            }
-
-            .profile-panel {
-                grid-row: 1;
-                margin-top: -120px;
-            }
-
-            .profile-frame {
-                width: 210px;
-                height: 210px;
-            }
-
-            .professional-title {
-                margin: 25px auto 0;
-            }
-
-            .socials {
-                justify-content: center;
-            }
-
-            .hero-description {
-                margin: 38px auto 0;
-                text-align: left;
-            }
 
         }
 
-
-        /* =====================================
-           MOBILE NAVIGATION
-        ===================================== */
-
-        @media (max-width: 700px) {
-
-            .nav {
-                height: 68px;
-            }
-
-            .brand {
-                gap: 9px;
-            }
-
-            .brand-avatar {
-                width: 38px;
-                height: 38px;
-
-                flex-basis: 38px;
-            }
-
-            .brand-name {
-                font-size: 0.86rem;
-                letter-spacing: -0.5px;
-            }
-
-            .menu-toggle {
-                display: inline-flex;
-            }
-
-            .nav-links {
-                position: absolute;
-
-                top: calc(100% + 8px);
-                left: 4%;
-                right: 4%;
-
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 5px;
-                padding: 8px;
-
-                background: rgba(255, 255, 255, 0.98);
-
-                border: 1px solid var(--border);
-                border-radius: 16px;
-
-                box-shadow:
-                    0 15px 40px rgba(16, 24, 44, 0.12);
-
-                opacity: 0;
-                visibility: hidden;
-
-                transform: translateY(-8px);
-
-                transition:
-                    opacity 0.2s,
-                    visibility 0.2s,
-                    transform 0.2s;
-            }
-
-            .nav-links.open {
-                opacity: 1;
-                visibility: visible;
-
-                transform: translateY(0);
-            }
-
-            .nav-links a {
-                justify-content: flex-start;
-
-                padding: 13px 15px;
-
-                border-radius: 10px;
-                font-size: 0.9rem;
-            }
-
-            .nav-links a:hover,
-            .nav-links a.active {
-                background: #effbf8;
-                color: var(--turquoise-dark);
-                box-shadow: none;
-            }
-
-        }
 
 
         /* =====================================
@@ -810,79 +1131,128 @@
         @media (max-width: 640px) {
 
             .container {
+
                 width: 90%;
+
             }
 
-            .nav-links {
-                left: 5%;
-                right: 5%;
-            }
 
             .hero {
-                padding: 30px 0 55px;
+
+                padding:
+                    30px
+                    0
+                    55px;
+
             }
+
 
             .profile-panel {
+
                 margin-top: -90px;
+
             }
+
 
             .profile-frame {
-                width: min(185px, 56vw);
-                height: min(185px, 56vw);
+
+                width:
+                    min(
+                        185px,
+                        56vw
+                    );
+
+                height:
+                    min(
+                        185px,
+                        56vw
+                    );
+
             }
+
 
             .hero h1 {
-                font-size: clamp(2.5rem, 11vw, 3rem);
+
+                font-size:
+                    clamp(
+                        2.5rem,
+                        11vw,
+                        3rem
+                    );
+
                 letter-spacing: -2px;
+
             }
+
 
             .professional-title {
+
                 font-size: 0.95rem;
+
             }
+
 
             .social {
+
                 font-size: 0.77rem;
+
                 padding: 8px 11px;
+
             }
+
 
             .hero-description p {
+
                 font-size: 0.9rem;
+
             }
+
 
             .section {
+
                 padding: 55px 0;
+
             }
+
 
             .education-title {
+
                 margin-bottom: 28px;
+
                 font-size: 2rem;
+
             }
 
-            .education-item {
-                padding: 14px 0 24px 30px;
-            }
-
-            .education-item::before {
-                top: 21px;
-            }
 
             .education-degree {
+
                 font-size: 1rem;
+
             }
+
 
             .education-school {
+
                 font-size: 0.88rem;
+
             }
+
 
             .education-date {
+
                 font-size: 0.78rem;
+
             }
 
+
             .education-description {
+
                 font-size: 0.85rem;
+
             }
 
         }
+
 
 
         /* =====================================
@@ -892,26 +1262,99 @@
         @media (max-width: 360px) {
 
             .brand-name {
+
                 font-size: 0.76rem;
+
             }
 
+
             .brand-avatar {
+
                 width: 35px;
+
                 height: 35px;
 
                 flex-basis: 35px;
+
             }
+
 
             .profile-frame {
-                width: min(170px, 54vw);
-                height: min(170px, 54vw);
+
+                width:
+                    min(
+                        170px,
+                        54vw
+                    );
+
+                height:
+                    min(
+                        170px,
+                        54vw
+                    );
+
             }
 
+
             .profile-panel {
+
                 margin-top: -75px;
+
+            }
+
+
+            .socials {
+
+                gap: 8px;
+
+            }
+
+
+            .social {
+
+                padding: 8px 9px;
+
             }
 
         }
+
+
+
+        /* =====================================
+           REMOVE OUTER PANEL EFFECT
+           ON PHONES / TABLETS
+        ===================================== */
+
+        @media (max-width: 760px) {
+
+            body {
+
+                background: white;
+
+            }
+
+
+            .site-shell {
+
+                width: 100%;
+
+                border-left: none;
+
+                border-right: none;
+
+                box-shadow: none;
+
+            }
+
+
+            .back-to-top {
+
+                right: 18px;
+
+            }
+
+        }
+
 
 
         /* =====================================
@@ -921,18 +1364,25 @@
         @media (prefers-reduced-motion: reduce) {
 
             html {
+
                 scroll-behavior: auto;
+
             }
+
 
             *,
             *::before,
             *::after {
-                transition-duration: 0.01ms !important;
+
+                transition-duration:
+                    0.01ms !important;
+
             }
 
         }
 
     </style>
+
 </head>
 
 
@@ -940,520 +1390,752 @@
 
 
     <!-- =====================================
-         NAVIGATION
+         CENTERED WEBSITE PANEL
     ===================================== -->
 
-    <header class="topbar" id="topbar">
-
-        <div class="container nav">
-
-
-            <a class="brand" href="#home">
-
-                <img
-                    class="brand-avatar"
-                    src="manula passport.jpg"
-                    alt="Manula Balasooriya"
-                >
-
-                <span class="brand-name">
-                    Manula <span>Balasooriya</span>
-                </span>
-
-            </a>
-
-
-            <!-- MOBILE MENU BUTTON -->
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="navLinks"
-            >
-                <i
-                    class="fa-solid fa-bars"
-                    id="menuIcon"
-                    aria-hidden="true"
-                ></i>
-            </button>
-
-
-            <!-- NAVIGATION LINKS -->
-
-            <nav
-                class="nav-links"
-                id="navLinks"
-                aria-label="Main navigation"
-            >
-
-                <a href="#education" class="nav-link">
-
-                    <i class="fa-solid fa-graduation-cap"></i>
-
-                    Education
-
-                </a>
-
-
-                <a href="#contact" class="nav-link">
-
-                    <i class="fa-regular fa-envelope"></i>
-
-                    Contact
-
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =====================================
-         FULL COVER PHOTO
-    ===================================== -->
-
-    <div class="cover" id="home">
-
-        <img
-            class="cover-image"
-            src="img1.jpg"
-            alt="Manula Balasooriya cover photo"
-            fetchpriority="high"
-        >
-
-    </div>
-
-
-
-    <!-- =====================================
-         MAIN CONTENT
-    ===================================== -->
-
-    <main>
-
-
-        <!-- HERO -->
-
-        <section class="hero-section">
-
-            <div class="container hero">
-
-
-                <!-- INTRODUCTION -->
-
-                <div class="hero-copy">
-
-
-                    <h1>
-
-                        Manula
-
-                        <br>
-
-                        <span>
-                            Balasooriya
-                        </span>
-
-                    </h1>
-
-
-
-                    <!-- PROFESSIONAL TITLE -->
-
-                    <p class="professional-title">
-
-                        Researcher in AI &amp;
-                        Computational Neuroscience
-
-                        <span class="separator">|</span>
-
-                        First Class Data Science
-                        Graduate (Batch Top)
-
-                        <span class="separator">|</span>
-
-                        Advanced Level Physics Educator
-
-                        <span class="separator">|</span>
-
-                        Singer-Songwriter &amp; Composer
-
-                    </p>
-
-
-
-                    <!-- SOCIAL LINKS -->
-
-                    <div
-                        class="socials"
-                        id="contact"
-                        aria-label="Social and contact links"
-                    >
-
-
-                        <!-- TEMPORARILY HIDDEN: FACEBOOK PAGE
-                        <a
-                            class="social social-facebook"
-                            href="https://facebook.com/manula.balasooriya.page"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-facebook-f"></i>
-                            Page
-                        </a>
-                        END TEMPORARILY HIDDEN: FACEBOOK PAGE -->
-
-
-                        <a
-                            class="social social-facebook"
-                            href="https://facebook.com/manula.balasooriya.profile"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-facebook-f"></i>
-                            Facebook
-                        </a>
-
-
-                        <a
-                            class="social social-instagram"
-                            href="https://instagram.com/manula.balasooriya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-instagram"></i>
-                            Instagram
-                        </a>
-
-
-                        <a
-                            class="social social-youtube"
-                            href="https://youtube.com/@manula.balasooriya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-youtube"></i>
-                            YouTube
-                        </a>
-
-
-                        <a
-                            class="social social-threads"
-                            href="https://threads.com/@manula.balasooriya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-threads"></i>
-                            Threads
-                        </a>
-
-
-                        <a
-                            class="social social-tiktok"
-                            href="https://tiktok.com/@manula.balasooriya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-tiktok"></i>
-                            TikTok
-                        </a>
-
-
-                        <a
-                            class="social social-linkedin"
-                            href="https://linkedin.com/in/manula-balasooriya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-linkedin-in"></i>
-                            LinkedIn
-                        </a>
-
-
-                        <a
-                            class="social social-github"
-                            href="https://github.com/manula-balasooriya"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-github"></i>
-                            GitHub
-                        </a>
-
-
-                        <a
-                            class="social social-whatsapp"
-                            href="https://wa.me/94715476427"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                            WhatsApp
-                        </a>
-
-
-                        <!-- TEMPORARILY HIDDEN: WHATSAPP CHANNEL
-                        <a
-                            class="social social-whatsapp"
-                            href="https://whatsapp.com/channel/0029VbDYV67FCCoUpdNgdy0G"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-whatsapp"></i>
-                            Channel
-                        </a>
-                        END TEMPORARILY HIDDEN: WHATSAPP CHANNEL -->
-
-
-                        <a
-                            class="social social-email"
-                            href="mailto:manulab.official@gmail.com"
-                        >
-                            <i class="fa-solid fa-envelope"></i>
-                            Email
-                        </a>
-
-
-                        <a
-                            class="social social-spotify"
-                            href="https://open.spotify.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="fa-brands fa-spotify"></i>
-                            Spotify
-                        </a>
-
-                    </div>
-
-
-
-                    <!-- BIOGRAPHY -->
-
-                    <div class="hero-description">
-
-
-                        <p>
-                            Researcher in Artificial Intelligence,
-                            Computational Neuroscience, and
-                            Brain-Inspired Computing, with a
-                            particular interest in the
-                            intersection of these fields.
-                        </p>
-
-
-                        <p>
-                            Advanced Level Physics Educator
-                            with over six years of experience,
-                            committed to making complex
-                            scientific concepts clear,
-                            accessible, and engaging.
-                        </p>
-
-
-                        <p>
-                            Lifelong interest in music,
-                            complemented by academic
-                            training in Audio Engineering
-                            and Music Production.
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- PROFILE PHOTO -->
-
-                <div class="profile-panel">
-
-                    <div class="profile-frame">
-
-                        <img
-                            class="profile-image"
-                            src="manula passport.jpg"
-                            alt="Portrait of Manula Balasooriya"
-                            width="290"
-                            height="290"
-                        >
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
+    <div class="site-shell">
 
 
 
         <!-- =====================================
-             EDUCATION
+             NAVIGATION
         ===================================== -->
 
-        <section
-            class="section education-section"
-            id="education"
-            aria-labelledby="education-title"
+        <header
+            class="topbar"
+            id="topbar"
         >
 
-            <div class="container">
+            <div class="container nav">
 
 
-                <h2
-                    class="education-title"
-                    id="education-title"
+                <a
+                    class="brand"
+                    href="#home"
                 >
-                    Education
-                </h2>
+
+                    <img
+                        class="brand-avatar"
+                        src="manula passport.jpg"
+                        alt="Manula Balasooriya"
+                    >
+
+                    <span class="brand-name">
+                        Manula
+                        <span>
+                            Balasooriya
+                        </span>
+                    </span>
+
+                </a>
 
 
 
-                <div class="education-timeline">
+                <!-- MOBILE MENU BUTTON -->
 
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks"
+                >
 
-                    <!-- BACHELOR OF SCIENCE HONOURS, DATA SCIENCE -->
+                    <i
+                        class="fa-solid fa-bars"
+                        id="menuIcon"
+                        aria-hidden="true"
+                    ></i>
 
-                    <article class="education-item">
-
-                        <h3 class="education-degree">
-                            Bachelor of Science Honours, Data Science
-                            <span class="education-degree-subtitle">
-                                (First Class Honours | Batch Top)
-                            </span>
-                        </h3>
-
-                        <p class="education-school">
-                            SLIIT
-                        </p>
-
-                        <p class="education-date">
-                            Jul 2022 - Jul 2026
-                        </p>
-
-                        <p class="education-description">
-                            Best Performing Student Award | 7× Dean’s List Awards
-                        </p>
-
-                    </article>
+                </button>
 
 
 
-                    <!-- BACHELOR OF SCIENCE HONOURS, ENGINEERING -->
+                <!-- NAVIGATION LINKS -->
 
-                    <article class="education-item">
+                <nav
+                    class="nav-links"
+                    id="navLinks"
+                    aria-label="Main navigation"
+                >
 
-                        <h3 class="education-degree">
-                            Bachelor of Science Honours, Engineering
-                        </h3>
+                    <a
+                        href="#education"
+                        class="nav-link"
+                    >
 
-                        <p class="education-school">
-                            University of Ruhuna
-                        </p>
+                        <i
+                            class="fa-solid fa-graduation-cap"
+                            aria-hidden="true"
+                        ></i>
 
-                        <p class="education-date">
-                            Jan 2021 - Oct 2022
-                        </p>
+                        Education
 
-                        <p class="education-description">
-                            Selected for Admission &amp; Completed First Year
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- DIPLOMA -->
-
-                    <article class="education-item">
-
-                        <h3 class="education-degree">
-                            Diploma in Audio Engineering
-                            and Music Production
-                        </h3>
-
-                        <p class="education-school">
-                            Music Oven Institute
-                        </p>
-
-                        <p class="education-date">
-                            Jan 2021 - Jan 2022
-                        </p>
-
-                        <p class="education-description">
-                            Completed a Diploma in Audio Engineering and Music Production,
-                            with comprehensive training in professional audio production,
-                            recording, mixing, mastering, and sound design.
-                        </p>
-
-                    </article>
+                    </a>
 
 
+                    <a
+                        href="#contact"
+                        class="nav-link"
+                    >
 
-                    <!-- GCE A/L -->
+                        <i
+                            class="fa-regular fa-envelope"
+                            aria-hidden="true"
+                        ></i>
 
-                    <article class="education-item">
+                        Contact
 
-                        <h3 class="education-degree">
-                            GCE A/L – Combined Mathematics,
-                            Physics, and Chemistry
-                        </h3>
+                    </a>
 
-                        <p class="education-school">
-                            Kingswood College Kandy
-                        </p>
-
-                        <p class="education-date">
-                            Jan 2018 - Aug 2020
-                        </p>
-
-                        <p class="education-description">
-                            Selected for admission to the
-                            BSc (Hons) in Engineering programme
-                            at the University of Ruhuna.
-                        </p>
-
-                    </article>
-
-
-                </div>
+                </nav>
 
 
             </div>
 
-        </section>
-
-
-    </main>
+        </header>
 
 
 
-    <!-- =====================================
-         FOOTER
-    ===================================== -->
+        <!-- =====================================
+             COVER PHOTO
+        ===================================== -->
 
-    <footer class="footer">
+        <div
+            class="cover"
+            id="home"
+        >
 
-        <div class="container footer-inner">
-
-            <p class="footer-copy">
-                © 2026 Manula Balasooriya.
-                All rights reserved.
-            </p>
+            <img
+                class="cover-image"
+                src="img1.jpg"
+                alt="Manula Balasooriya cover photo"
+                fetchpriority="high"
+            >
 
         </div>
 
-    </footer>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ===================================== -->
+
+        <main>
+
+
+
+            <!-- =====================================
+                 HERO
+            ===================================== -->
+
+            <section class="hero-section">
+
+                <div class="container hero">
+
+
+
+                    <!-- =====================================
+                         INTRODUCTION
+                    ===================================== -->
+
+                    <div class="hero-copy">
+
+
+                        <h1>
+
+                            Manula
+
+                            <br>
+
+                            <span>
+                                Balasooriya
+                            </span>
+
+                        </h1>
+
+
+
+                        <!-- PROFESSIONAL TITLE -->
+
+                        <p class="professional-title">
+
+                            Researcher in AI &amp;
+                            Computational Neuroscience
+
+                            <span class="separator">
+                                |
+                            </span>
+
+                            First Class Data Science
+                            Graduate (Batch Top)
+
+                            <span class="separator">
+                                |
+                            </span>
+
+                            Advanced Level Physics Educator
+
+                            <span class="separator">
+                                |
+                            </span>
+
+                            Singer-Songwriter &amp; Composer
+
+                        </p>
+
+
+
+                        <!-- =====================================
+                             SOCIAL LINKS
+                        ===================================== -->
+
+                        <div
+                            class="socials"
+                            id="contact"
+                            aria-label="Social and contact links"
+                        >
+
+
+                            <!--
+                            ==========================================
+                            TEMPORARILY HIDDEN:
+                            FACEBOOK PAGE
+                            ==========================================
+
+                            <a
+                                class="social social-facebook"
+                                href="https://facebook.com/manula.balasooriya.page"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-facebook-f"
+                                ></i>
+
+                                Page
+
+                            </a>
+
+                            ==========================================
+                            END TEMPORARILY HIDDEN:
+                            FACEBOOK PAGE
+                            ==========================================
+                            -->
+
+
+                            <a
+                                class="social social-facebook"
+                                href="https://facebook.com/manula.balasooriya.profile"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-facebook-f"
+                                ></i>
+
+                                Facebook
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-instagram"
+                                href="https://instagram.com/manula.balasooriya"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-instagram"
+                                ></i>
+
+                                Instagram
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-youtube"
+                                href="https://youtube.com/@manula.balasooriya"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-youtube"
+                                ></i>
+
+                                YouTube
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-threads"
+                                href="https://threads.com/@manula.balasooriya"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-threads"
+                                ></i>
+
+                                Threads
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-tiktok"
+                                href="https://tiktok.com/@manula.balasooriya"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-tiktok"
+                                ></i>
+
+                                TikTok
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-linkedin"
+                                href="https://linkedin.com/in/manula-balasooriya"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-linkedin-in"
+                                ></i>
+
+                                LinkedIn
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-github"
+                                href="https://github.com/manula-balasooriya"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-github"
+                                ></i>
+
+                                GitHub
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-whatsapp"
+                                href="https://wa.me/94715476427"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-whatsapp"
+                                ></i>
+
+                                WhatsApp
+
+                            </a>
+
+
+
+                            <!--
+                            ==========================================
+                            TEMPORARILY HIDDEN:
+                            WHATSAPP CHANNEL
+                            ==========================================
+
+                            <a
+                                class="social social-whatsapp"
+                                href="https://whatsapp.com/channel/0029VbDYV67FCCoUpdNgdy0G"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-whatsapp"
+                                ></i>
+
+                                Channel
+
+                            </a>
+
+                            ==========================================
+                            END TEMPORARILY HIDDEN:
+                            WHATSAPP CHANNEL
+                            ==========================================
+                            -->
+
+
+
+                            <a
+                                class="social social-email"
+                                href="mailto:manulab.official@gmail.com"
+                            >
+
+                                <i
+                                    class="fa-solid fa-envelope"
+                                ></i>
+
+                                Email
+
+                            </a>
+
+
+
+                            <a
+                                class="social social-spotify"
+                                href="https://open.spotify.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <i
+                                    class="fa-brands fa-spotify"
+                                ></i>
+
+                                Spotify
+
+                            </a>
+
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             BIOGRAPHY
+                        ===================================== -->
+
+                        <div class="hero-description">
+
+
+                            <p>
+
+                                Researcher in Artificial Intelligence,
+                                Computational Neuroscience, and
+                                Brain-Inspired Computing, with a
+                                particular interest in the
+                                intersection of these fields.
+
+                            </p>
+
+
+
+                            <p>
+
+                                Advanced Level Physics Educator
+                                with over six years of experience,
+                                committed to making complex
+                                scientific concepts clear,
+                                accessible, and engaging.
+
+                            </p>
+
+
+
+                            <p>
+
+                                Lifelong interest in music,
+                                complemented by academic
+                                training in Audio Engineering
+                                and Music Production.
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         PROFILE PHOTO
+                    ===================================== -->
+
+                    <div class="profile-panel">
+
+                        <div class="profile-frame">
+
+                            <img
+                                class="profile-image"
+                                src="manula passport.jpg"
+                                alt="Portrait of Manula Balasooriya"
+                                width="290"
+                                height="290"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 EDUCATION
+            ===================================== -->
+
+            <section
+                class="section education-section"
+                id="education"
+                aria-labelledby="education-title"
+            >
+
+                <div class="container">
+
+
+                    <h2
+                        class="education-title"
+                        id="education-title"
+                    >
+
+                        Education
+
+                    </h2>
+
+
+
+                    <div class="education-timeline">
+
+
+
+                        <!-- =====================================
+                             DATA SCIENCE
+                        ===================================== -->
+
+                        <article class="education-item">
+
+
+                            <h3 class="education-degree">
+
+                                Bachelor of Science Honours,
+                                Data Science
+
+                                <span
+                                    class="education-degree-subtitle"
+                                >
+
+                                    (First Class Honours | Batch Top)
+
+                                </span>
+
+                            </h3>
+
+
+                            <p class="education-school">
+
+                                SLIIT
+
+                            </p>
+
+
+                            <p class="education-date">
+
+                                Jul 2022 - Jul 2026
+
+                            </p>
+
+
+                            <p class="education-description">
+
+                                Best Performing Student Award |
+                                7× Dean’s List Awards
+
+                            </p>
+
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             ENGINEERING
+                        ===================================== -->
+
+                        <article class="education-item">
+
+
+                            <h3 class="education-degree">
+
+                                Bachelor of Science Honours,
+                                Engineering
+
+                            </h3>
+
+
+                            <p class="education-school">
+
+                                University of Ruhuna
+
+                            </p>
+
+
+                            <p class="education-date">
+
+                                Jan 2021 - Oct 2022
+
+                            </p>
+
+
+                            <p class="education-description">
+
+                                Selected for Admission &amp;
+                                Completed First Year
+
+                            </p>
+
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             AUDIO ENGINEERING
+                        ===================================== -->
+
+                        <article class="education-item">
+
+
+                            <h3 class="education-degree">
+
+                                Diploma in Audio Engineering
+                                and Music Production
+
+                            </h3>
+
+
+                            <p class="education-school">
+
+                                Music Oven Institute
+
+                            </p>
+
+
+                            <p class="education-date">
+
+                                Jan 2021 - Jan 2022
+
+                            </p>
+
+
+                            <p class="education-description">
+
+                                Completed a Diploma in Audio Engineering
+                                and Music Production, with comprehensive
+                                training in professional audio production,
+                                recording, mixing, mastering, and sound design.
+
+                            </p>
+
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             GCE A/L
+                        ===================================== -->
+
+                        <article class="education-item">
+
+
+                            <h3 class="education-degree">
+
+                                GCE A/L – Combined Mathematics,
+                                Physics, and Chemistry
+
+                            </h3>
+
+
+                            <p class="education-school">
+
+                                Kingswood College Kandy
+
+                            </p>
+
+
+                            <p class="education-date">
+
+                                Jan 2018 - Aug 2020
+
+                            </p>
+
+
+                            <p class="education-description">
+
+                                Selected for admission to the
+                                BSc (Hons) in Engineering programme
+                                at the University of Ruhuna.
+
+                            </p>
+
+
+                        </article>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =====================================
+             FOOTER
+        ===================================== -->
+
+        <footer class="footer">
+
+            <div class="container footer-inner">
+
+                <p class="footer-copy">
+
+                    © 2026 Manula Balasooriya.
+                    All rights reserved.
+
+                </p>
+
+            </div>
+
+        </footer>
+
+
+    </div>
 
 
 
@@ -1467,7 +2149,12 @@
         type="button"
         aria-label="Back to top"
     >
-        <i class="fa-solid fa-arrow-up"></i>
+
+        <i
+            class="fa-solid fa-arrow-up"
+            aria-hidden="true"
+        ></i>
+
     </button>
 
 
@@ -1484,32 +2171,46 @@
         const topbar =
             document.getElementById("topbar");
 
+
         const menuToggle =
             document.getElementById("menuToggle");
+
 
         const menuIcon =
             document.getElementById("menuIcon");
 
+
         const navLinks =
             document.getElementById("navLinks");
 
+
         const navigationLinks =
             document.querySelectorAll(".nav-link");
+
 
         const backToTopButton =
             document.getElementById("backToTop");
 
 
-        /* MOBILE MENU */
+
+        /* =====================================
+           MOBILE MENU STATE
+        ===================================== */
 
         function setMenuState(isOpen) {
 
-            navLinks.classList.toggle("open", isOpen);
+
+            navLinks.classList.toggle(
+                "open",
+                isOpen
+            );
+
 
             menuToggle.setAttribute(
                 "aria-expanded",
                 String(isOpen)
             );
+
 
             menuToggle.setAttribute(
                 "aria-label",
@@ -1518,139 +2219,206 @@
                     : "Open navigation menu"
             );
 
+
             menuIcon.classList.toggle(
                 "fa-bars",
                 !isOpen
             );
+
 
             menuIcon.classList.toggle(
                 "fa-xmark",
                 isOpen
             );
 
+
         }
 
+
+
+        /* =====================================
+           MENU BUTTON
+        ===================================== */
 
         menuToggle.addEventListener(
             "click",
             function () {
 
+
                 const isOpen =
-                    menuToggle.getAttribute("aria-expanded") === "true";
+                    menuToggle.getAttribute(
+                        "aria-expanded"
+                    ) === "true";
+
 
                 setMenuState(!isOpen);
+
 
             }
         );
 
 
-        /* CLOSE MENU AFTER NAVIGATION */
 
-        navigationLinks.forEach(function (link) {
+        /* =====================================
+           CLOSE MENU AFTER NAVIGATION
+        ===================================== */
 
-            link.addEventListener("click", function () {
-
-                setMenuState(false);
-
-            });
-
-        });
+        navigationLinks.forEach(
+            function (link) {
 
 
-        /* CLOSE MENU WHEN CLICKING OUTSIDE */
+                link.addEventListener(
+                    "click",
+                    function () {
+
+
+                        setMenuState(false);
+
+
+                    }
+                );
+
+
+            }
+        );
+
+
+
+        /* =====================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ===================================== */
 
         document.addEventListener(
             "click",
             function (event) {
 
-                if (!topbar.contains(event.target)) {
+
+                if (
+                    !topbar.contains(
+                        event.target
+                    )
+                ) {
+
 
                     setMenuState(false);
 
+
                 }
+
 
             }
         );
 
 
-        /* CLOSE MENU USING ESCAPE */
+
+        /* =====================================
+           CLOSE MENU USING ESCAPE
+        ===================================== */
 
         document.addEventListener(
             "keydown",
             function (event) {
 
+
                 if (
                     event.key === "Escape" &&
-                    menuToggle.getAttribute("aria-expanded") === "true"
+                    menuToggle.getAttribute(
+                        "aria-expanded"
+                    ) === "true"
                 ) {
 
+
                     setMenuState(false);
+
                     menuToggle.focus();
 
+
                 }
+
 
             }
         );
 
 
-        /* CLOSE MENU ON DESKTOP RESIZE */
+
+        /* =====================================
+           CLOSE MENU WHEN WINDOW RESIZES
+        ===================================== */
 
         window.addEventListener(
             "resize",
             function () {
 
-                if (window.innerWidth > 700) {
 
-                    setMenuState(false);
+                setMenuState(false);
 
-                }
 
             }
         );
 
 
-        /* STICKY NAVIGATION AND BACK TO TOP */
+
+        /* =====================================
+           STICKY NAVIGATION
+           AND BACK TO TOP
+        ===================================== */
 
         function updateScrollEffects() {
+
 
             topbar.classList.toggle(
                 "scrolled",
                 window.scrollY > 15
             );
 
+
             backToTopButton.classList.toggle(
                 "show",
                 window.scrollY > 400
             );
 
+
         }
+
 
 
         window.addEventListener(
             "scroll",
             updateScrollEffects,
-            { passive: true }
+            {
+                passive: true
+            }
         );
 
 
         updateScrollEffects();
 
 
-        /* BACK TO TOP */
+
+        /* =====================================
+           BACK TO TOP
+        ===================================== */
 
         backToTopButton.addEventListener(
             "click",
             function () {
 
+
                 window.scrollTo({
+
                     top: 0,
+
                     behavior: "smooth"
+
                 });
+
 
             }
         );
 
+
     </script>
+
 
 </body>
 </html>
