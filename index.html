@@ -413,7 +413,7 @@
 
 
         /* =====================================
-           PROFILE PHOTO - RESPONSIVE FIX
+           PROFILE PHOTO
         ===================================== */
 
         .profile-panel {
@@ -429,11 +429,6 @@
             position: relative;
             z-index: 2;
         }
-
-        /*
-           The outer frame has an explicit square
-           size and cannot shrink unexpectedly.
-        */
 
         .profile-frame {
             position: relative;
@@ -453,12 +448,6 @@
 
             overflow: hidden;
         }
-
-        /*
-           The image fills the inner circular area.
-           Absolute positioning prevents intrinsic
-           image dimensions from changing its shape.
-        */
 
         .profile-image {
             position: absolute;
@@ -498,16 +487,39 @@
         }
 
         .education-timeline {
+            position: relative;
             margin-left: 0;
         }
 
         .education-item {
             position: relative;
 
-            border-left: 3px solid var(--turquoise);
-
-            padding: 16px 0 26px 19px;
+            padding: 16px 0 26px 30px;
             margin-bottom: 8px;
+        }
+
+        /*
+           Vertical timeline line.
+
+           The line is 3px wide and its center is at 9.5px.
+           The timeline circles are 19px wide including their
+           border, so their center is also exactly 9.5px.
+        */
+
+        .education-item::after {
+            content: "";
+
+            position: absolute;
+
+            left: 8px;
+            top: 0;
+            bottom: 0;
+
+            width: 3px;
+
+            background: var(--turquoise);
+
+            z-index: 0;
         }
 
         .education-item:last-child {
@@ -515,12 +527,22 @@
             padding-bottom: 12px;
         }
 
+        /*
+           Timeline circle.
+
+           13px content + 3px border on both sides
+           creates a total diameter of 19px.
+
+           left: 0 means the center is 9.5px,
+           exactly matching the vertical line.
+        */
+
         .education-item::before {
             content: "";
 
             position: absolute;
 
-            left: -8px;
+            left: 0;
             top: 23px;
 
             width: 13px;
@@ -532,6 +554,8 @@
             border: 3px solid white;
 
             box-shadow: 0 0 0 2px var(--turquoise);
+
+            z-index: 1;
         }
 
         .education-degree {
@@ -542,6 +566,10 @@
 
             line-height: 1.5;
             letter-spacing: -0.2px;
+        }
+
+        .education-degree-subtitle {
+            display: block;
         }
 
         .education-school {
@@ -798,11 +826,6 @@
                 margin-top: -90px;
             }
 
-            /*
-               Responsive square profile frame.
-               Both dimensions always match.
-            */
-
             .profile-frame {
                 width: min(185px, 56vw);
                 height: min(185px, 56vw);
@@ -836,7 +859,11 @@
             }
 
             .education-item {
-                padding: 14px 0 24px 19px;
+                padding: 14px 0 24px 30px;
+            }
+
+            .education-item::before {
+                top: 21px;
             }
 
             .education-degree {
@@ -1193,8 +1220,6 @@
                         </a>
 
 
-                        <!-- Replace with your Spotify profile URL -->
-
                         <a
                             class="social social-spotify"
                             href="https://open.spotify.com/"
@@ -1297,13 +1322,15 @@
                 <div class="education-timeline">
 
 
-                    <!-- BSc DATA SCIENCE -->
+                    <!-- BACHELOR OF SCIENCE HONOURS, DATA SCIENCE -->
 
                     <article class="education-item">
 
                         <h3 class="education-degree">
-                            BSc (Hons) in Data Science
-                            (First Class Honours | Batch Top)
+                            Bachelor of Science Honours, Data Science
+                            <span class="education-degree-subtitle">
+                                (First Class Honours | Batch Top)
+                            </span>
                         </h3>
 
                         <p class="education-school">
@@ -1314,11 +1341,15 @@
                             Jul 2022 - Jul 2026
                         </p>
 
+                        <p class="education-description">
+                            Best Performing Student Award | 7× Dean’s List Awards
+                        </p>
+
                     </article>
 
 
 
-                    <!-- BSc ENGINEERING -->
+                    <!-- BACHELOR OF SCIENCE HONOURS, ENGINEERING -->
 
                     <article class="education-item">
 
@@ -1357,6 +1388,12 @@
 
                         <p class="education-date">
                             Jan 2021 - Jan 2022
+                        </p>
+
+                        <p class="education-description">
+                            Completed a Diploma in Audio Engineering and Music Production,
+                            with comprehensive training in professional audio production,
+                            recording, mixing, mastering, and sound design.
                         </p>
 
                     </article>
