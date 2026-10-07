@@ -68,10 +68,6 @@
 
             /* =====================================
                SHARED VERTICAL AXIS
-
-               Both upper biography lines and
-               lower Education timeline use
-               EXACTLY this same horizontal point.
             ===================================== */
 
             --vertical-axis: 12px;
@@ -862,14 +858,6 @@
 
         /* =====================================
            BIOGRAPHY
-
-           IMPORTANT:
-           This now occupies the SAME FULL
-           container width as Education.
-
-           The line itself is positioned using
-           --vertical-axis, exactly like the
-           Education line below.
         ===================================== */
 
         .hero-description {
@@ -910,13 +898,6 @@
         }
 
 
-
-        /*
-           UPPER VERTICAL LINE
-
-           The center of this line is always
-           exactly --vertical-axis.
-        */
 
         .hero-description p::before {
 
@@ -972,17 +953,6 @@
 
 
 
-        /* =====================================
-           EDUCATION TIMELINE
-
-           One continuous line instead of
-           creating a separate line inside
-           every education item.
-
-           This prevents gaps and alignment
-           differences between entries.
-        ===================================== */
-
         .education-timeline {
 
             position: relative;
@@ -996,10 +966,10 @@
 
 
         /*
-           LOWER CONTINUOUS VERTICAL LINE
+           SINGLE CONTINUOUS VERTICAL LINE
 
-           Same exact horizontal coordinate
-           used by the biography above.
+           Uses the exact same coordinate as
+           every Education circle.
         */
 
         .education-timeline::before {
@@ -1047,28 +1017,11 @@
 
 
         /*
-           =====================================
-           TIMELINE CIRCLES
-           =====================================
+           The circle center and line center
+           use the identical horizontal point:
 
-           CRITICAL ALIGNMENT FIX:
-
-           Circle:
-               left = --vertical-axis
-
-           Vertical line:
-               left = --vertical-axis
-
-           BOTH then use:
-
-               transform: translateX(-50%)
-
-           Therefore the CENTER of the circle
-           and CENTER of the vertical line are
-           literally the same coordinate.
-
-           Border thickness and box-sizing can
-           no longer shift the alignment.
+           left: var(--vertical-axis);
+           transform: translateX(-50%);
         */
 
         .education-item::before {
@@ -1863,6 +1816,12 @@
 
 
 
+                            <!--
+                            ==========================================
+                            TEMPORARILY HIDDEN:
+                            SPOTIFY
+                            ==========================================
+
                             <a
                                 class="social social-spotify"
                                 href="https://open.spotify.com/"
@@ -1877,6 +1836,12 @@
                                 Spotify
 
                             </a>
+
+                            ==========================================
+                            END TEMPORARILY HIDDEN:
+                            SPOTIFY
+                            ==========================================
+                            -->
 
 
                         </div>
