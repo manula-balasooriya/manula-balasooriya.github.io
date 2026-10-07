@@ -58,26 +58,30 @@
 
             --border: #e8ecf1;
 
-            /* Maximum width of the complete site */
+
+            /* =====================================
+               SITE WIDTH
+            ===================================== */
+
             --panel-width: 580px;
 
-            /*
-               Shared vertical-line geometry.
 
-               Both the upper biography lines and the
-               lower Education timeline use this same
-               horizontal position.
+            /* =====================================
+               SHARED VERTICAL AXIS
 
-               Line:
-               left = 8px
-               width = 2px
-               center = 9px
-            */
+               Both upper biography lines and
+               lower Education timeline use
+               EXACTLY this same horizontal point.
+            ===================================== */
 
-            --timeline-line-left: 8px;
-            --timeline-line-width: 2px;
+            --vertical-axis: 12px;
+
+            --vertical-line-width: 2px;
+
+            --timeline-circle-size: 18px;
 
         }
+
 
 
         * {
@@ -91,6 +95,7 @@
         }
 
 
+
         html {
 
             scroll-behavior: smooth;
@@ -98,6 +103,7 @@
             scroll-padding-top: 90px;
 
         }
+
 
 
         body {
@@ -115,6 +121,7 @@
         }
 
 
+
         a {
 
             color: inherit;
@@ -122,11 +129,13 @@
         }
 
 
+
         button {
 
             font: inherit;
 
         }
+
 
 
         img {
@@ -143,7 +152,10 @@
 
         .site-shell {
 
-            width: min(100%, var(--panel-width));
+            width: min(
+                100%,
+                var(--panel-width)
+            );
 
             min-height: 100vh;
 
@@ -163,6 +175,7 @@
         }
 
 
+
         .container {
 
             width: 90%;
@@ -172,6 +185,7 @@
             margin-inline: auto;
 
         }
+
 
 
         .section {
@@ -194,20 +208,23 @@
 
             z-index: 1000;
 
-            background: rgba(255, 255, 255, 0.90);
+            background:
+                rgba(255, 255, 255, 0.90);
 
             backdrop-filter: blur(18px);
 
             -webkit-backdrop-filter: blur(18px);
 
             border-bottom:
-                1px solid rgba(232, 236, 241, 0.82);
+                1px solid
+                rgba(232, 236, 241, 0.82);
 
             transition:
                 box-shadow 0.3s,
                 background 0.3s;
 
         }
+
 
 
         .topbar.scrolled {
@@ -220,6 +237,7 @@
                 rgba(16, 24, 44, 0.07);
 
         }
+
 
 
         .nav {
@@ -239,6 +257,7 @@
         }
 
 
+
         .brand {
 
             display: inline-flex;
@@ -254,6 +273,7 @@
             white-space: nowrap;
 
         }
+
 
 
         .brand-avatar {
@@ -282,6 +302,7 @@
         }
 
 
+
         .brand-name {
 
             font-size: 0.88rem;
@@ -293,6 +314,7 @@
             color: var(--navy);
 
         }
+
 
 
         .brand-name span {
@@ -342,6 +364,7 @@
         }
 
 
+
         .menu-toggle:hover {
 
             background: #f0fcf9;
@@ -353,6 +376,7 @@
                 var(--turquoise-dark);
 
         }
+
 
 
         .nav-links {
@@ -393,7 +417,8 @@
 
             pointer-events: none;
 
-            transform: translateY(-8px);
+            transform:
+                translateY(-8px);
 
             transition:
                 opacity 0.2s,
@@ -401,6 +426,7 @@
                 transform 0.2s;
 
         }
+
 
 
         .nav-links.open {
@@ -411,9 +437,11 @@
 
             pointer-events: auto;
 
-            transform: translateY(0);
+            transform:
+                translateY(0);
 
         }
+
 
 
         .nav-links a {
@@ -445,6 +473,7 @@
         }
 
 
+
         .nav-links a:hover,
         .nav-links a.active {
 
@@ -456,6 +485,7 @@
         }
 
 
+
         .nav-links i {
 
             width: 18px;
@@ -465,6 +495,7 @@
             font-size: 0.9rem;
 
         }
+
 
 
         .menu-toggle:focus-visible,
@@ -495,6 +526,7 @@
                 1px solid var(--border);
 
         }
+
 
 
         .cover-image {
@@ -530,6 +562,7 @@
         }
 
 
+
         .hero {
 
             display: grid;
@@ -547,11 +580,15 @@
         }
 
 
+
         .hero-copy {
 
             min-width: 0;
 
+            width: 100%;
+
         }
+
 
 
         .hero h1 {
@@ -572,12 +609,14 @@
         }
 
 
+
         .hero h1 span {
 
             color:
                 var(--turquoise-dark);
 
         }
+
 
 
         .professional-title {
@@ -596,6 +635,7 @@
             color: var(--gray);
 
         }
+
 
 
         .separator {
@@ -636,13 +676,22 @@
         }
 
 
+
         .profile-frame {
 
             position: relative;
 
-            width: min(185px, 56vw);
+            width:
+                min(
+                    185px,
+                    56vw
+                );
 
-            height: min(185px, 56vw);
+            height:
+                min(
+                    185px,
+                    56vw
+                );
 
             flex: 0 0 auto;
 
@@ -660,6 +709,7 @@
             overflow: hidden;
 
         }
+
 
 
         .profile-image {
@@ -709,6 +759,7 @@
         }
 
 
+
         .social {
 
             display: inline-flex;
@@ -742,6 +793,7 @@
         }
 
 
+
         .social:hover {
 
             transform:
@@ -757,6 +809,7 @@
         }
 
 
+
         .social i {
 
             font-size: 1rem;
@@ -764,73 +817,45 @@
         }
 
 
+
         .social-facebook i {
-
             color: #1877f2;
-
         }
-
 
         .social-instagram i {
-
             color: #e4405f;
-
         }
-
 
         .social-youtube i {
-
             color: #ff0033;
-
         }
-
 
         .social-threads i {
-
             color: #111111;
-
         }
-
 
         .social-tiktok i {
-
             color: #111111;
-
         }
-
 
         .social-linkedin i {
-
             color: #0a66c2;
-
         }
-
 
         .social-github i {
-
             color: #24292f;
-
         }
-
 
         .social-whatsapp i {
-
             color: #25d366;
-
         }
-
 
         .social-email i {
-
             color: #ea4335;
-
         }
 
-
         .social-spotify i {
-
             color: #1db954;
-
         }
 
 
@@ -839,17 +864,22 @@
            BIOGRAPHY
 
            IMPORTANT:
-           The vertical biography lines use
-           exactly the same horizontal position
-           as the Education timeline below.
+           This now occupies the SAME FULL
+           container width as Education.
+
+           The line itself is positioned using
+           --vertical-axis, exactly like the
+           Education line below.
         ===================================== */
 
         .hero-description {
 
-            margin:
-                38px auto 0;
+            width: 100%;
 
-            max-width: 500px;
+            max-width: none;
+
+            margin:
+                38px 0 0;
 
             display: flex;
 
@@ -862,17 +892,14 @@
         }
 
 
+
         .hero-description p {
 
-            /*
-               Line starts at 8px from
-               the content's left edge.
-            */
+            position: relative;
 
-            margin-left:
-                var(--timeline-line-left);
+            width: 100%;
 
-            padding-left: 21px;
+            padding-left: 34px;
 
             color: var(--gray);
 
@@ -880,15 +907,38 @@
 
             line-height: 1.95;
 
-            /*
-               Same width and position
-               as Education line.
-            */
+        }
 
-            border-left:
-                var(--timeline-line-width)
-                solid
+
+
+        /*
+           UPPER VERTICAL LINE
+
+           The center of this line is always
+           exactly --vertical-axis.
+        */
+
+        .hero-description p::before {
+
+            content: "";
+
+            position: absolute;
+
+            left:
+                var(--vertical-axis);
+
+            top: 0;
+
+            bottom: 0;
+
+            width:
+                var(--vertical-line-width);
+
+            background:
                 var(--turquoise);
+
+            transform:
+                translateX(-50%);
 
         }
 
@@ -903,6 +953,7 @@
             background: white;
 
         }
+
 
 
         .education-title {
@@ -920,13 +971,63 @@
         }
 
 
+
+        /* =====================================
+           EDUCATION TIMELINE
+
+           One continuous line instead of
+           creating a separate line inside
+           every education item.
+
+           This prevents gaps and alignment
+           differences between entries.
+        ===================================== */
+
         .education-timeline {
 
             position: relative;
 
-            margin-left: 0;
+            width: 100%;
+
+            margin: 0;
 
         }
+
+
+
+        /*
+           LOWER CONTINUOUS VERTICAL LINE
+
+           Same exact horizontal coordinate
+           used by the biography above.
+        */
+
+        .education-timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left:
+                var(--vertical-axis);
+
+            top: 0;
+
+            bottom: 0;
+
+            width:
+                var(--vertical-line-width);
+
+            background:
+                var(--turquoise);
+
+            transform:
+                translateX(-50%);
+
+            z-index: 0;
+
+        }
+
 
 
         .education-item {
@@ -936,10 +1037,10 @@
             padding:
                 14px
                 0
-                27px
-                31px;
+                28px
+                34px;
 
-            margin-bottom: 7px;
+            margin: 0;
 
         }
 
@@ -947,59 +1048,28 @@
 
         /*
            =====================================
-           EXACT TIMELINE ALIGNMENT
+           TIMELINE CIRCLES
            =====================================
 
-           Circle total width = 18px
+           CRITICAL ALIGNMENT FIX:
 
            Circle:
-           left = 0px
-           width = 18px
-
-           Circle center:
-           0 + 18 / 2 = 9px
-
+               left = --vertical-axis
 
            Vertical line:
-           left = 8px
-           width = 2px
+               left = --vertical-axis
 
-           Line center:
-           8 + 2 / 2 = 9px
+           BOTH then use:
 
+               transform: translateX(-50%)
 
-           Therefore:
+           Therefore the CENTER of the circle
+           and CENTER of the vertical line are
+           literally the same coordinate.
 
-           CIRCLE CENTER = 9px
-           LINE CENTER   = 9px
-
-           They are mathematically aligned.
+           Border thickness and box-sizing can
+           no longer shift the alignment.
         */
-
-
-        .education-item::after {
-
-            content: "";
-
-            position: absolute;
-
-            left:
-                var(--timeline-line-left);
-
-            top: 0;
-
-            bottom: 0;
-
-            width:
-                var(--timeline-line-width);
-
-            background:
-                var(--turquoise);
-
-            z-index: 0;
-
-        }
-
 
         .education-item::before {
 
@@ -1007,19 +1077,19 @@
 
             position: absolute;
 
-            left: 0;
+            left:
+                var(--vertical-axis);
 
             top: 21px;
 
-            /*
-               Because global box-sizing
-               is border-box, 18px is the
-               COMPLETE circle diameter.
-            */
+            width:
+                var(--timeline-circle-size);
 
-            width: 18px;
+            height:
+                var(--timeline-circle-size);
 
-            height: 18px;
+            transform:
+                translateX(-50%);
 
             border-radius: 50%;
 
@@ -1033,23 +1103,23 @@
                 0 0 0 2px
                 var(--turquoise);
 
-            z-index: 1;
+            z-index: 2;
 
         }
 
 
-        .education-item:last-child {
 
-            margin-bottom: 0;
+        .education-item:last-child {
 
             padding-bottom: 12px;
 
         }
 
 
+
         .education-degree {
 
-            max-width: 470px;
+            max-width: 100%;
 
             font-size: 1rem;
 
@@ -1062,6 +1132,7 @@
         }
 
 
+
         .education-degree-subtitle {
 
             display: block;
@@ -1069,6 +1140,7 @@
             margin-top: 1px;
 
         }
+
 
 
         .education-school {
@@ -1084,6 +1156,7 @@
         }
 
 
+
         .education-date {
 
             margin-top: 5px;
@@ -1096,11 +1169,12 @@
         }
 
 
+
         .education-description {
 
             margin-top: 12px;
 
-            max-width: 470px;
+            max-width: 100%;
 
             font-size: 0.85rem;
 
@@ -1128,11 +1202,13 @@
         }
 
 
+
         .footer-inner {
 
             text-align: center;
 
         }
+
 
 
         .footer-copy {
@@ -1209,6 +1285,7 @@
         }
 
 
+
         .back-to-top.show {
 
             opacity: 1;
@@ -1219,6 +1296,7 @@
                 translateY(0);
 
         }
+
 
 
         .back-to-top:hover {
@@ -1291,20 +1369,12 @@
 
             }
 
-
-            .education-item {
-
-                padding-left: 29px;
-
-            }
-
         }
 
 
 
         /* =====================================
-           REMOVE OUTER PANEL EFFECT
-           AT 580PX AND BELOW
+           FULL WIDTH ON 580PX AND BELOW
         ===================================== */
 
         @media (max-width: 580px) {
@@ -2272,7 +2342,7 @@
 
 
         /* =====================================
-           CLOSE MENU OUTSIDE
+           CLOSE MENU WHEN CLICKING OUTSIDE
         ===================================== */
 
         document.addEventListener(
