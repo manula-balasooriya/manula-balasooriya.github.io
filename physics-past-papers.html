@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse and view A/L Physics Sinhala medium multiple choice past papers from 2000 to 2026.">
+<meta name="theme-color" content="#080d16">
+<title>A/L Physics Past Papers | Manula Balasooriya</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{color-scheme:dark;--background:#0d1422;--outside-background:#080d16;--surface:#111b2a;--text:#e7edf6;--gray:#aab6c8;--muted:#8290a5;--teal:#42e2c2;--teal-dark:#35cfb1;--border:#263449;--panel-width:760px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{min-height:100vh;background:var(--outside-background);color:var(--text);font-family:"Inter",sans-serif;line-height:1.65}
+button,input{font:inherit}
+a{color:inherit}
+.site-shell{width:min(100%,var(--panel-width));min-height:100vh;margin:0 auto;background:var(--background);border-inline:1px solid rgba(0,0,0,.22);box-shadow:0 0 45px rgba(0,0,0,.3)}
+.container{width:min(90%,680px);margin-inline:auto}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(13,20,34,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(38,52,73,.82)}
+.nav{height:68px;position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;white-space:nowrap;font-size:.9rem;font-weight:750;letter-spacing:-.35px}
+.brand-mark{width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(66,226,194,.4);border-radius:11px;background:rgba(66,226,194,.1);color:var(--teal)}
+.brand span:last-child{color:var(--teal)}
+.menu-toggle{width:43px;height:43px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);font-size:1.1rem;cursor:pointer}
+.menu-toggle:hover{border-color:var(--teal);color:var(--teal)}
+.nav-links{position:absolute;top:calc(100% + 8px);left:0;right:0;display:flex;flex-direction:column;gap:5px;padding:8px;border:1px solid var(--border);border-radius:15px;background:#111b2a;box-shadow:0 15px 40px rgba(0,0,0,.5);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .2s,visibility .2s,transform .2s}
+.nav-links.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nav-links a{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:9px;color:var(--gray);text-decoration:none;font-size:.9rem;font-weight:600}
+.nav-links a:hover,.nav-links a[aria-current="page"]{background:rgba(66,226,194,.1);color:var(--teal)}
+.nav-links i{width:18px;text-align:center}
+.menu-toggle:focus-visible,.nav-links a:focus-visible,.brand:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+main{padding:54px 0 70px}
+.heading{margin-bottom:28px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+h1{font-size:clamp(2rem,7vw,2.65rem);line-height:1.15;letter-spacing:-1.3px}
+.heading p{max-width:560px;margin-top:12px;color:var(--gray);font-size:.94rem}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:24px 0 16px}
+.paper-count{color:var(--muted);font-size:.84rem}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.search-wrap{position:relative;width:min(100%,270px)}
+.search-wrap i{position:absolute;top:50%;left:13px;transform:translateY(-50%);color:var(--muted);font-size:.9rem;pointer-events:none}
+.paper-search{width:100%;padding:11px 13px 11px 38px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-size:.88rem;outline:none}
+.paper-search::placeholder{color:var(--muted)}
+.paper-search:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(66,226,194,.12)}
+.paper-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.paper-card{min-width:0;display:flex;flex-direction:column;gap:12px;padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--surface);transition:transform .2s,border-color .2s,box-shadow .2s}
+.paper-card:hover{transform:translateY(-2px);border-color:var(--teal);box-shadow:0 10px 28px rgba(0,0,0,.22)}
+.paper-info{display:flex;align-items:center;gap:11px}
+.paper-icon{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:11px;background:rgba(66,226,194,.11);color:var(--teal);font-size:1.05rem}
+.paper-card h2{font-size:.98rem;line-height:1.35}
+.paper-card p{margin-top:3px;color:var(--gray);font-size:.77rem}
+.view-button{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:auto;padding:10px 12px;border:1px solid rgba(66,226,194,.35);border-radius:9px;background:rgba(66,226,194,.09);color:var(--teal);font-size:.83rem;font-weight:650;cursor:pointer;transition:background .2s,border-color .2s}
+.view-button:hover{border-color:var(--teal);background:rgba(66,226,194,.17)}
+.empty-state{grid-column:1/-1;padding:24px 14px;border:1px dashed var(--border);border-radius:12px;color:var(--gray);text-align:center}
+.viewer{margin-top:30px;scroll-margin-top:84px}
+.viewer[hidden]{display:none}
+.viewer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.viewer-head h2{font-size:1rem}
+.close-viewer{width:38px;height:38px;flex:0 0 38px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);cursor:pointer}
+.close-viewer:hover{border-color:var(--teal);color:var(--teal)}
+.pdf-frame{display:block;width:100%;height:min(78vh,900px);min-height:480px;border:1px solid var(--border);border-radius:12px;background:#fff}
+.footer{padding:25px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;text-align:center}
+@media(max-width:520px){main{padding-top:38px}.toolbar{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.paper-grid{grid-template-columns:1fr}.pdf-frame{min-height:380px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="site-shell">
+<header class="topbar" id="topbar">
+<div class="container nav">
+<a class="brand" href="index.html#home" aria-label="Manula Balasooriya home"><span class="brand-mark"><i class="fa-solid fa-wave-square" aria-hidden="true"></i></span><span>Manula <span>Balasooriya</span></span></a>
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><i class="fa-solid fa-bars" id="menuIcon" aria-hidden="true"></i></button>
+<nav class="nav-links" id="navLinks" aria-label="Main navigation">
+<a href="index.html#education"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Education</a>
+<a href="physics-past-papers.html" aria-current="page"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Physics</a>
+<a href="index.html#contact"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Contact</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="heading" aria-labelledby="page-title">
+<p class="eyebrow"><i class="fa-solid fa-atom" aria-hidden="true"></i> A/L · Sinhala Medium</p>
+<h1 id="page-title">Physics Past Papers</h1>
+<p>Browse multiple choice question papers by year. Select a paper to view it here.</p>
+</section>
+<div class="toolbar">
+<p class="paper-count" id="paperCount" aria-live="polite">27 papers · 2000–2026</p>
+<div class="search-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><label class="visually-hidden" for="paperSearch">Search papers by year</label><input class="paper-search" id="paperSearch" type="search" inputmode="numeric" placeholder="Search year (e.g. 2024)" autocomplete="off"></div>
+</div>
+<section class="paper-grid" id="paperGrid" aria-label="Physics past papers" aria-live="polite"></section>
+<section class="viewer" id="paperViewer" aria-label="Paper viewer" hidden>
+<div class="viewer-head"><h2 id="paperViewerTitle">Physics past paper</h2><button class="close-viewer" id="closePaperViewer" type="button" aria-label="Close paper viewer"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>
+<iframe class="pdf-frame" id="paperFrame" title="View Physics past paper" loading="lazy"></iframe>
+</section>
+</main>
+<footer class="footer"><div class="container">© 2026 Manula Balasooriya. All rights reserved.</div></footer>
+</div>
+<script>
+"use strict";
+const topbar=document.getElementById("topbar");
+const menuToggle=document.getElementById("menuToggle");
+const menuIcon=document.getElementById("menuIcon");
+const navLinks=document.getElementById("navLinks");
+const paperGrid=document.getElementById("paperGrid");
+const paperSearch=document.getElementById("paperSearch");
+const paperCount=document.getElementById("paperCount");
+const paperViewer=document.getElementById("paperViewer");
+const paperViewerTitle=document.getElementById("paperViewerTitle");
+const paperFrame=document.getElementById("paperFrame");
+const closePaperViewer=document.getElementById("closePaperViewer");
+const paperFileIds={
+2000:"1ifyGmFGkk0cf31X8__GHJt6FRSoRtB14",
+2001:"14oP3cwf7rnSICaBxRV9utb_yuYUn42pj",
+2002:"1WGz5DsXFsbqXP3OP0C3zutufDc6rRdzm",
+2003:"1lFlXjVLFIXzGOv3yPjvMxqc5BJ0jg9yG",
+2004:"17oqdC4m0Z3z8gEsrQeVV9XPALC6vOBeZ",
+2005:"1yerii6Ef0h2nwyKe_MzysU2mACbb92S6",
+2006:"1hzAabzp8kBa2Z7KLNu6ckIwoS7kT9pL-",
+2007:"1W7EGGKViwYx-VWxx1WRGegXarc8MrQ19",
+2008:"1UzAYZxUky-QvXnfSqqT_dKrpIuPaLGmf",
+2009:"1Sw0YDGO-hNqv2nzS7WICGx8aGEqNUjVT",
+2010:"13V0Q74Tp7jdJ2lymLgjNjOYsslfNs87p",
+2011:"1skj1aQiBD_B0qkJ02OeBcDw7VkSn7lAo",
+2012:"1sab5j7cG6vMDgY-TTYvoA-c-MMSFI-xC",
+2013:"1hA7odD_lvbY02Ef0BA7hSer9TbH-JtYA",
+2014:"1DynazG00JxptK0mMk6YXc3MeJNOqWYep",
+2015:"1_2z1SWR2TioWWE33sitqZY67SXfT2AQo",
+2016:"1xg3dmyFp1puUo0qoqnngwvWrDL49ZzcJ",
+2017:"1RMgsyxyvXa0HUytNDU94rO-4dg04D4fQ",
+2018:"1ZsyrBAsG9FitgVlKfDLP-Qe5ozTO68vZ",
+2019:"1p49C5UYUA2TVlxmxMK66I_p2to5pgiYb",
+2020:"1GQuVR6nEfWJVHs_cDmVjT6GWh7X-1Zte",
+2021:"14Fh_k5Xc72w-CgkczDHqIp7h39SbRjbd",
+2022:"1Q6I5FVo2hITkKgLnnCckkZ4CSIz4bvJA",
+2023:"1Lj3xikJ3_-nPB2QSwf57wnvHpJRoo5I7",
+2024:"1R5cy_SwHalFIC6x8nhfA6a3GXdrhCKGC",
+2025:"14OoxpJ-D-XOx_V2oLYQ4sxQdaYrGXAjW",
+2026:"1Ofe-YpYxSjL9DQvDMCAxA1slUKM6SFXR"
+};
+const paperYears=Object.keys(paperFileIds).map(Number).sort((a,b)=>b-a);
+
+function setMenuState(isOpen){
+ navLinks.classList.toggle("open",isOpen);
+ menuToggle.setAttribute("aria-expanded",String(isOpen));
+ menuToggle.setAttribute("aria-label",isOpen?"Close navigation menu":"Open navigation menu");
+ menuIcon.classList.toggle("fa-bars",!isOpen);
+ menuIcon.classList.toggle("fa-xmark",isOpen);
+}
+menuToggle.addEventListener("click",function(){setMenuState(menuToggle.getAttribute("aria-expanded")!=="true");});
+document.addEventListener("click",function(event){if(!topbar.contains(event.target)){setMenuState(false);}});
+document.addEventListener("keydown",function(event){if(event.key==="Escape"&&menuToggle.getAttribute("aria-expanded")==="true"){setMenuState(false);menuToggle.focus();}});
+window.addEventListener("resize",function(){setMenuState(false);});
+
+function renderPaperCards(query=""){
+ const years=paperYears.filter(year=>String(year).includes(query.trim()));
+ paperCount.textContent=`${years.length} ${years.length===1?"paper":"papers"} · 2000–2026`;
+ paperGrid.innerHTML=years.length?years.map(year=>`<article class="paper-card"><div class="paper-info"><span class="paper-icon"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i></span><div><h2>${year} MCQ Paper</h2><p>A/L Physics · Sinhala Medium</p></div></div><button class="view-button" type="button" data-paper-year="${year}" aria-label="View ${year} Physics paper online"><i class="fa-regular fa-eye" aria-hidden="true"></i> View paper</button></article>`).join(""):'<p class="empty-state">No papers match that year.</p>';
+}
+function viewPaper(year){
+ const fileId=paperFileIds[year];
+ if(!fileId){return;}
+ paperViewerTitle.textContent=`${year} A/L Physics MCQ Paper`;
+ paperFrame.src=`https://drive.google.com/file/d/${fileId}/preview?rm=minimal`;
+ paperViewer.hidden=false;
+ paperViewer.scrollIntoView({behavior:"smooth",block:"start"});
+}
+paperGrid.addEventListener("click",function(event){const button=event.target.closest("[data-paper-year]");if(button){viewPaper(button.dataset.paperYear);}});
+paperSearch.addEventListener("input",function(){renderPaperCards(paperSearch.value);});
+closePaperViewer.addEventListener("click",function(){paperViewer.hidden=true;paperFrame.removeAttribute("src");});
+renderPaperCards();
+</script>
+</body>
+</html>
