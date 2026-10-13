@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-:root{color-scheme:dark;--background:#0d1422;--outside-background:#080d16;--surface:#111b2a;--text:#e7edf6;--gray:#aab6c8;--muted:#8290a5;--accent:#F4FF61;--accent-hover:#e6f04e;--border:#263449;--panel-width:580px}
+:root{color-scheme:dark;--background:#0d1422;--outside-background:#080d16;--surface:#111b2a;--text:#e7edf6;--gray:#aab6c8;--muted:#8290a5;--accent:#F4FF61;--accent-hover:#e6f04e;--view-paper:#F4FF61;--marking:#E63946;--border:#263449;--panel-width:580px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{min-height:100vh;background:var(--outside-background);color:var(--text);font-family:"Inter",sans-serif;line-height:1.65}
@@ -53,8 +53,11 @@ h1{font-size:clamp(2rem,7vw,2.65rem);line-height:1.15;letter-spacing:-1.3px}
 .paper-card h2{font-size:.98rem;line-height:1.35}
 .paper-card p{margin-top:3px;color:var(--gray);font-size:.77rem}
 .paper-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
-.view-button,.marking-button{width:100%;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 7px;border:1px solid rgba(244,255,97,.35);border-radius:9px;background:rgba(244,255,97,.09);color:var(--accent);font-size:.77rem;font-weight:650;cursor:pointer;transition:background .2s,border-color .2s}
-.view-button:hover,.marking-button:hover{border-color:var(--accent);background:rgba(244,255,97,.17)}
+.view-button,.marking-button{width:100%;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 7px;border-radius:9px;font-size:.77rem;font-weight:650;cursor:pointer;transition:background .2s,border-color .2s}
+.view-button{border:1px solid rgba(244,255,97,.35);background:rgba(244,255,97,.09);color:var(--view-paper)}
+.marking-button{border:1px solid rgba(230,57,70,.35);background:rgba(230,57,70,.09);color:var(--marking)}
+.view-button:hover{border-color:var(--view-paper);background:rgba(244,255,97,.17)}
+.marking-button:hover{border-color:var(--marking);background:rgba(230,57,70,.17)}
 .empty-state{grid-column:1/-1;padding:24px 14px;border:1px dashed var(--border);border-radius:12px;color:var(--gray);text-align:center}
 .viewer{margin-top:30px;scroll-margin-top:84px}
 .viewer[hidden]{display:none}
